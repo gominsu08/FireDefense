@@ -6,4 +6,7 @@ using UnityEngine;
 
 public class Combat : MonoBehaviour
 {
+    [SerializeField]EnemySO enemyData;
+    [SerializeField]Checker check;
+    [SerializeField]EnemyMovement moveCtl;
 }
