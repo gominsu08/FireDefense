@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 377ad4d7a492ca34c9376cfd8f11906d, type: 3}
-  m_Name: StageName_stageSO
+  m_Name: 1_stage_stageSO
   m_EditorClassIdentifier: 
   enemyCount: 0
   haveEnemyType: 
-  enemyList: {fileID: 11400000, guid: a464fa7a1d98b2f4ca3fd1a8b0e6cacd, type: 2}
-  stageName: StageName
+  enemyList: {fileID: 0}
+  stageName: 1_stage
   stageChapter: 0
   stageNumber: 0
-  stageSize: {x: 0, y: 0}
+  stageSize: {x: 40, y: 20}
   tile: {fileID: 11400000, guid: cdbc735d10c11f1479b3ffeac65ee6eb, type: 2}
   tileMap: {fileID: 0}

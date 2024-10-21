@@ -44,10 +44,8 @@ public class StageEditorWindow : EditorWindow
 
     public void CreateGUI()
     {
-        // Each editor window contains a root VisualElement object
         VisualElement root = rootVisualElement;
 
-        // Instantiate UXML
         VisualElement content = m_VisualTreeAsset.Instantiate();
         content.style.flexGrow = 1;
         root.Add(content);
@@ -61,6 +59,7 @@ public class StageEditorWindow : EditorWindow
 
     private void Initalize(VisualElement root)
     {
+        
         _createBtn = root.Q<Button>("SOCreatBtn");
         _stageName = root.Q<TextField>("StageName");
         _enemyCount = root.Q<IntegerField>("EnemyCount");
@@ -83,6 +82,7 @@ public class StageEditorWindow : EditorWindow
         stageSO.haveEnemyType = _haveEnemyType;
         stageSO.stageChapter = _stageChapter.value;
         stageSO.stageNumber = _stageNumber.value;
+        stageSO.stageSize = _stageSize.value;
 
         string fileName = $"{_stageName.value}_stageSO.asset";
         string filePath = $"{toolInfoSO.StageSOFolder}";
@@ -96,10 +96,25 @@ public class StageEditorWindow : EditorWindow
     {
         if (_stageSize.value != pVec2)
         {
-            _btnContainer.style.backgroundSize = new BackgroundSize(new Length(_stageSize.value.x * 18),new Length());
-            for (int x = 0; x < _stageSize.value.x;x++)
+            _btnContainer.Clear();
+            
+
+            for (int y = 0;y < _stageSize.value.y;y++)
             {
-                
+                VisualElement rowContainer = new VisualElement();
+                rowContainer.style.flexDirection = FlexDirection.Row;
+                _btnContainer.Add(rowContainer);
+
+                for (int x = 0; x < _stageSize.value.x; x++)
+                {
+                    Button btn = new Button();
+                    btn.AddToClassList("stage-btn");
+                    btn.clicked += () =>
+                    {
+                        btn.AddToClassList("stage-enemy-click-btn");
+                    };
+                    rowContainer.Add(btn);
+                }
             }
         }
 
