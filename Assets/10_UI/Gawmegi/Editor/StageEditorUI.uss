@@ -1,0 +1,6 @@
+.stage-enemy-btn {
+}
+
+.stage-enemy-click-btn {
+    background-color: rgb(151, 0, 0);
+}
