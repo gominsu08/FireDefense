@@ -1,21 +1,19 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
 
 public class StageEditorWindow : EditorWindow
 {
+    private List<StageEnemyData> _enemyArrangement = new List<StageEnemyData>();
+
 
     [Header("Enemy")]
     private IntegerField _enemyCount;
     private EnumField _useEnemyType;
     private ObjectField _enemyList;
-    private EnemyEnum[] _haveEnemyType;
+    private List<EnemyEnum> _haveEnemyType = new List<EnemyEnum>();
 
 
     [Header("Stage")]
@@ -26,7 +24,7 @@ public class StageEditorWindow : EditorWindow
     private ObjectField _tile;
 
 
-    [SerializeField]private VisualTreeAsset m_VisualTreeAsset = default;
+    [SerializeField] private VisualTreeAsset m_VisualTreeAsset = default;
     [SerializeField] private EnemyListSO enemyListSO = default;
     [SerializeField] private ToolInfoSO toolInfoSO = default;
 
@@ -59,7 +57,7 @@ public class StageEditorWindow : EditorWindow
 
     private void Initalize(VisualElement root)
     {
-        
+
         _createBtn = root.Q<Button>("SOCreatBtn");
         _stageName = root.Q<TextField>("StageName");
         _enemyCount = root.Q<IntegerField>("EnemyCount");
@@ -75,7 +73,9 @@ public class StageEditorWindow : EditorWindow
     private void SOCreate()
     {
         StageDataSO stageSO = ScriptableObject.CreateInstance<StageDataSO>();
-        stageSO.enemyList = _enemyList.value as EnemyListSO;
+        stageSO.enemyArrangement = _enemyArrangement;
+        Debug.Log(stageSO.enemyArrangement);
+        stageSO.enemyListSO = _enemyList.value as EnemyListSO;
         stageSO.tile = _tile.value as RuleTile;
         stageSO.stageName = _stageName.value;
         stageSO.enemyCount = _enemyCount.value;
@@ -97,9 +97,8 @@ public class StageEditorWindow : EditorWindow
         if (_stageSize.value != pVec2)
         {
             _btnContainer.Clear();
-            
-
-            for (int y = 0;y < _stageSize.value.y;y++)
+           
+            for (int y = 0; y < _stageSize.value.y; y++)
             {
                 VisualElement rowContainer = new VisualElement();
                 rowContainer.style.flexDirection = FlexDirection.Row;
@@ -107,11 +106,46 @@ public class StageEditorWindow : EditorWindow
 
                 for (int x = 0; x < _stageSize.value.x; x++)
                 {
-                    Button btn = new Button();
+
+                    StageEnemyData stageEnemyData = new StageEnemyData()
+                    {
+                        position = new Vector2Int(x, y),
+                        enemyEnum = EnemyEnum.None
+                    };
+
+                    _enemyArrangement.Add(stageEnemyData);
+
+                    PosBtn btn = new PosBtn();
+                    btn.position = new Vector2Int(x, y);
                     btn.AddToClassList("stage-btn");
                     btn.clicked += () =>
                     {
                         btn.AddToClassList("stage-enemy-click-btn");
+
+                        StageEnemyData stageEnemyData = new StageEnemyData()
+                        {
+                            position = new Vector2Int(x, y),
+                            enemyEnum = EnemyEnum.None
+                        };
+
+                        //////////////////////////////////////////////////////////////////////////////
+
+                        for(int i = 0; i < _enemyArrangement.Count;i++)
+                        {
+                            StageEnemyData item = _enemyArrangement[i];
+
+                            if (item.position == btn.position)
+                            {
+                                item.enemyEnum = (EnemyEnum)_useEnemyType.value;
+                            }
+                        }
+
+                        Debug.Log($" X : {btn.position.x} / Y : {btn.position.y}");
+
+                        if (!_haveEnemyType.Contains((EnemyEnum)_useEnemyType.value))
+                        {
+                            _haveEnemyType.Add((EnemyEnum)_useEnemyType.value);
+                        }
                     };
                     rowContainer.Add(btn);
                 }

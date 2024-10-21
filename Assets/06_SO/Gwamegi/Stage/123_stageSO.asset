@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 377ad4d7a492ca34c9376cfd8f11906d, type: 3}
+  m_Name: 123_stageSO
+  m_EditorClassIdentifier: 
+  enemyCount: 1
+  haveEnemyType: 01000000
+  enemyListSO: {fileID: 11400000, guid: a464fa7a1d98b2f4ca3fd1a8b0e6cacd, type: 2}
+  stageName: 123
+  stageChapter: 1
+  stageNumber: 1
+  stageSize: {x: 5, y: 5}
+  enemyArrangement:
+  - position: {x: 0, y: 0}
+    enemyEnum: 0
+  - position: {x: 1, y: 0}
+    enemyEnum: 0
+  - position: {x: 2, y: 0}
+    enemyEnum: 0
+  - position: {x: 3, y: 0}
+    enemyEnum: 1
+  - position: {x: 4, y: 0}
+    enemyEnum: 0
+  - position: {x: 0, y: 1}
+    enemyEnum: 1
+  - position: {x: 1, y: 1}
+    enemyEnum: 1
+  - position: {x: 2, y: 1}
+    enemyEnum: 1
+  - position: {x: 3, y: 1}
+    enemyEnum: 1
+  - position: {x: 4, y: 1}
+    enemyEnum: 1
+  - position: {x: 0, y: 2}
+    enemyEnum: 0
+  - position: {x: 1, y: 2}
+    enemyEnum: 0
+  - position: {x: 2, y: 2}
+    enemyEnum: 0
+  - position: {x: 3, y: 2}
+    enemyEnum: 1
+  - position: {x: 4, y: 2}
+    enemyEnum: 0
+  - position: {x: 0, y: 3}
+    enemyEnum: 0
+  - position: {x: 1, y: 3}
+    enemyEnum: 0
+  - position: {x: 2, y: 3}
+    enemyEnum: 0
+  - position: {x: 3, y: 3}
+    enemyEnum: 1
+  - position: {x: 4, y: 3}
+    enemyEnum: 0
+  - position: {x: 0, y: 4}
+    enemyEnum: 0
+  - position: {x: 1, y: 4}
+    enemyEnum: 0
+  - position: {x: 2, y: 4}
+    enemyEnum: 0
+  - position: {x: 3, y: 4}
+    enemyEnum: 1
+  - position: {x: 4, y: 4}
+    enemyEnum: 0
+  tile: {fileID: 11400000, guid: cdbc735d10c11f1479b3ffeac65ee6eb, type: 2}
+  tileMap: {fileID: 0}
