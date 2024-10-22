@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Checker : MonoBehaviour
 {
@@ -46,7 +47,7 @@ public class Checker : MonoBehaviour
             }
         }
     }
-    public event Action OnEnemyEnter,OnEnemyAllExit;
+    public UnityEvent OnEnemyEnter,OnEnemyAllExit;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         FindedEnemy++;
