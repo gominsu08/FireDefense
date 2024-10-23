@@ -285,6 +285,7 @@ MonoBehaviour:
   MyEnemy:
     serializedVersion: 2
     m_Bits: 128
+  canMove: 0
   <EnemyData>k__BackingField: {fileID: 0}
   lastAttackTime: 0
 --- !u!1 &362269583
@@ -1028,7 +1029,7 @@ Transform:
   m_GameObject: {fileID: 1535765688}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.53, y: 0.63, z: 0}
+  m_LocalPosition: {x: -2.521, y: 0.495, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

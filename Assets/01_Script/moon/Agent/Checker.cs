@@ -6,8 +6,8 @@ using UnityEngine.Events;
 
 public class Checker : MonoBehaviour
 {
-    public int findedEnemy;
-    public int FindedEnemy
+    private int findedEnemy;
+    private int FindedEnemy
     {
         get
         {

@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMoveState : EnemyState
+public class MoveState : State
 {
     private float time;
     [SerializeField] private float moveTime = 1;
     private bool canMove = true;
+    protected override void EnterState()
+    {
+        _agent.AnimatorCompo.PlayAnimaiton(AnimationType.Move);
+    }
     private void Update()
     {
         if (canMove)

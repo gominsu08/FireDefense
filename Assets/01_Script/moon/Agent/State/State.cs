@@ -1,29 +1,16 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
-public enum EnemyEnum
+public abstract class State : MonoBehaviour
 {
-    Air,
-    Idle,
-    Chase,
-    Attack,
-    Dead
-}
-
-public abstract class EnemyState : MonoBehaviour
-{
-    protected Enemy _agent;
     public UnityEvent OnEnter, OnExit;
-
-    public void InitializeState(Enemy agent)
+    protected Agent _agent;
+    public void InitializeState(Agent agent)
     {
         _agent = agent;
     }
-
     public void Enter()
     {
         OnEnter?.Invoke();
@@ -32,15 +19,15 @@ public abstract class EnemyState : MonoBehaviour
 
     protected virtual void EnterState()
     {
-    }
-
-    protected virtual void HandleMovement(Vector2 vector)
-    {
 
     }
 
     public virtual void StateUpdate()
     {
+        if(!_agent.canAttack)
+        {
+            _agent.lastAttackTime += Time.deltaTime;
+        }
     }
 
     public virtual void StateFixedUpdate()
