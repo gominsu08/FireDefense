@@ -12,6 +12,6 @@ public class StageManager : MonoBehaviour
     {
 
         currentStageData.tileMap = tileMap;
-        currentStageData.StageCreate();
+        StartCoroutine(currentStageData.StageCreate());
     }
 }

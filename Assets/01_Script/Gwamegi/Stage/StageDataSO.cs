@@ -34,35 +34,30 @@ public class StageDataSO : ScriptableObject
     public RuleTile tile;
     public Tilemap tileMap;
 
-    public void StageCreate()
+    internal IEnumerator StageCreate()
     {
-        int m = 0;
-        for (int i = 0; i < stageSize.x; i++)
+        for (int i = 0; i < enemyArrangement.Count; i++)
         {
-            for (int j = 0; j < stageSize.y; j++)
-            {
-                tileMap.SetTile(new Vector3Int(i, j), tile);
-                if (enemyArrangement[m].enemyEnum != EnemyEnum.None)
-                {
-                    EnemyCreate(enemyArrangement[m].position.x, enemyArrangement[m].position.y, enemyArrangement[m].enemyEnum);
-                }
-                m++;
-            }
+            tileMap.SetTile((Vector3Int)enemyArrangement[i].position, tile);
+            EnemyCreate(enemyArrangement[i]);
+            Debug.Log($"Current Create Position {(Vector3Int)enemyArrangement[i].position}");
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
-    private void EnemyCreate(int i, int j, EnemyEnum enemyEnum)
+    private void EnemyCreate(StageEnemyData stageEnemyData)
     {
-        Vector3 createPosition = new Vector3(j,i);
-        Debug.Log(createPosition);
+        Vector3 position = tileMap.GetCellCenterWorld((Vector3Int)stageEnemyData.position);
 
-        foreach (GameObject item in enemyListSO.enemyList)
+        if(stageEnemyData.enemyEnum == EnemyEnum.None) return;
+
+        for (int i = 0; i< enemyListSO.enemyList.Count;i++)
         {
-            Debug.Log(enemyEnum);
-            if (item.GetComponent<TestEnemy>().enemyData.enemyEnum == enemyEnum)
+            EnemyEnum enemyEnum = enemyListSO.enemyList[i].GetComponent<TestEnemy>().enemyData.enemyEnum;
+
+            if (enemyEnum == stageEnemyData.enemyEnum)
             {
-                Instantiate(item, createPosition, Quaternion.identity);
-                Debug.Log("¹Ö °³»õ³¢");
+                Instantiate(enemyListSO.enemyList[i], position,Quaternion.identity);
             }
         }
     }

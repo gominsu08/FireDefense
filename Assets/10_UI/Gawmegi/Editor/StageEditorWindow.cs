@@ -97,7 +97,7 @@ public class StageEditorWindow : EditorWindow
         if (_stageSize.value != pVec2)
         {
             _btnContainer.Clear();
-           
+
             for (int y = 0; y < _stageSize.value.y; y++)
             {
                 VisualElement rowContainer = new VisualElement();
@@ -120,32 +120,7 @@ public class StageEditorWindow : EditorWindow
                     btn.AddToClassList("stage-btn");
                     btn.clicked += () =>
                     {
-                        btn.AddToClassList("stage-enemy-click-btn");
-
-                        StageEnemyData stageEnemyData = new StageEnemyData()
-                        {
-                            position = new Vector2Int(x, y),
-                            enemyEnum = EnemyEnum.None
-                        };
-
-                        //////////////////////////////////////////////////////////////////////////////
-
-                        for(int i = 0; i < _enemyArrangement.Count;i++)
-                        {
-                            StageEnemyData item = _enemyArrangement[i];
-
-                            if (item.position == btn.position)
-                            {
-                                item.enemyEnum = (EnemyEnum)_useEnemyType.value;
-                            }
-                        }
-
-                        Debug.Log($" X : {btn.position.x} / Y : {btn.position.y}");
-
-                        if (!_haveEnemyType.Contains((EnemyEnum)_useEnemyType.value))
-                        {
-                            _haveEnemyType.Add((EnemyEnum)_useEnemyType.value);
-                        }
+                        EnemyBtnClick(y, x, btn);
                     };
                     rowContainer.Add(btn);
                 }
@@ -153,6 +128,25 @@ public class StageEditorWindow : EditorWindow
         }
 
         pVec2 = _stageSize.value;
+    }
+
+    private void EnemyBtnClick(int y, int x, PosBtn btn)
+    {
+        btn.AddToClassList("stage-enemy-click-btn");
+
+        for (int i = 0; i < _enemyArrangement.Count; i++)
+        {
+
+            if (_enemyArrangement[i].position == btn.position)
+            {
+                _enemyArrangement[i].enemyEnum = (EnemyEnum)_useEnemyType.value;
+            }
+        }
+
+        if (!_haveEnemyType.Contains((EnemyEnum)_useEnemyType.value))
+        {
+            _haveEnemyType.Add((EnemyEnum)_useEnemyType.value);
+        }
     }
 
     private void CreateForderinfoNotExist(string fullPath)
