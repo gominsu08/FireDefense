@@ -8,5 +8,6 @@ public class AgentDataSO : ScriptableObject
     public Sprite unitSprite;
     public string unitName;
     public float attackPower;
+    public float attackSpeed;
     public float moveSpeed;
 }
