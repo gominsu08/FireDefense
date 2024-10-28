@@ -123,6 +123,83 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &192602539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 192602540}
+  - component: {fileID: 192602542}
+  - component: {fileID: 192602541}
+  m_Layer: 5
+  m_Name: ChoisPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &192602540
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192602539}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1114037931}
+  - {fileID: 1964815490}
+  m_Father: {fileID: 1400296900}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -450.03253}
+  m_SizeDelta: {x: 0, y: -900.0651}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &192602541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192602539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &192602542
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192602539}
+  m_CullTransparentMesh: 1
 --- !u!1 &472734799
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a0a49f760411f4897d1341adead08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 1112650917}
 --- !u!114 &566847169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,7 +689,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1\uBC88 \uBF51\uAE30"
+  m_text: "1\uBC88 \uBF51\uAE30\n<size=16>4\uCF54\uC778</size>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d083de4ff869e04383ed2963e6c7ed6, type: 2}
   m_sharedMaterial: {fileID: 2461589939628508803, guid: 3d083de4ff869e04383ed2963e6c7ed6, type: 2}
@@ -1034,17 +1112,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114037930}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 660326229}
-  m_Father: {fileID: 1400296900}
+  m_Father: {fileID: 192602540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 394, y: -450}
+  m_AnchoredPosition: {x: 394, y: 0.03253174}
   m_SizeDelta: {x: 324.6454, y: 82.3871}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1114037932
@@ -1093,7 +1171,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1400296901}
         m_TargetAssemblyTypeName: Gacha, Assembly-CSharp
-        m_MethodName: TryGachaOne
+        m_MethodName: TryGacha
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1170,7 +1248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00f2e38936caa74a894382eb14fdbf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitDataList: {fileID: 11400000, guid: 9461219b1e5946d428dc9ff6f249cb4c, type: 2}
+  unitDataList: {fileID: 11400000, guid: 9461219b1e5946d428dc9ff6f249cb4c, type: 2}
 --- !u!4 &1120742713
 Transform:
   m_ObjectHideFlags: 0
@@ -1281,8 +1359,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1114037931}
-  - {fileID: 1964815490}
+  - {fileID: 192602540}
   - {fileID: 566847167}
   - {fileID: 1859571571}
   m_Father: {fileID: 0}
@@ -1304,7 +1381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b4d846cdab5084aa7cb90874dfaeea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MassegeWindow: {fileID: 566847167}
+  MassegeWindow: {fileID: 566847168}
   _manager: {fileID: 1120742712}
   _tryCoinCount: 4
 --- !u!1 &1515264158
@@ -1432,7 +1509,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "10\uBC88 \uBF51\uAE30"
+  m_text: "10\uBC88 \uBF51\uAE30\n<size=16>40\uCF54\uC778</size>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d083de4ff869e04383ed2963e6c7ed6, type: 2}
   m_sharedMaterial: {fileID: 2461589939628508803, guid: 3d083de4ff869e04383ed2963e6c7ed6, type: 2}
@@ -1897,17 +1974,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1964815489}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1541851341}
-  m_Father: {fileID: 1400296900}
+  m_Father: {fileID: 192602540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 753, y: -450}
+  m_AnchoredPosition: {x: 753, y: 0.03253174}
   m_SizeDelta: {x: 324.6454, y: 82.3871}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1964815491
@@ -1956,7 +2033,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1400296901}
         m_TargetAssemblyTypeName: Gacha, Assembly-CSharp
-        m_MethodName: TryGachaOne
+        m_MethodName: TryGacha
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2048,6 +2125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57355d8d12678b4e85e88c4622156f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  haveUnit: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

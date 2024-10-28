@@ -8,7 +8,7 @@ public enum UnitRarityEnum
 
 public class GachaManager : MonoBehaviour
 {
-    [SerializeField] private UnitDataList _unitDataList;
+    public UnitDataList unitDataList;
 
 
     private void Update()
@@ -50,13 +50,13 @@ public class GachaManager : MonoBehaviour
         switch (rarityEnum)
         {
             case UnitRarityEnum.Common:
-                return _unitDataList.commonUnitList[Random.Range(0, _unitDataList.commonUnitList.Count)];
+                return unitDataList.commonUnitList[Random.Range(0, unitDataList.commonUnitList.Count)];
             case UnitRarityEnum.UnCommon:
-                return _unitDataList.unCommonUnitList[Random.Range(0, _unitDataList.unCommonUnitList.Count)];
+                return unitDataList.unCommonUnitList[Random.Range(0, unitDataList.unCommonUnitList.Count)];
             case UnitRarityEnum.Rare:
-                return _unitDataList.rareUnitList[Random.Range(0, _unitDataList.rareUnitList.Count)];
+                return unitDataList.rareUnitList[Random.Range(0, unitDataList.rareUnitList.Count)];
             case UnitRarityEnum.Legendary:
-                return _unitDataList.legendaryUnitList[Random.Range(0, _unitDataList.legendaryUnitList.Count)];
+                return unitDataList.legendaryUnitList[Random.Range(0, unitDataList.legendaryUnitList.Count)];
 
         }
 

@@ -17,12 +17,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 34a2d3ac74c424d4d88fb344d6f779b3, type: 2}
   - {fileID: 11400000, guid: 2cad392ca980950489d0ccbaba617745, type: 2}
   - {fileID: 11400000, guid: 9d39010c01f640c4ba4d621a62d0862b, type: 2}
+  - {fileID: 11400000, guid: 772c8be07d0be5c4b875dda0688d5d00, type: 2}
   commonUnitList:
   - {fileID: 11400000, guid: bbd858a28acbf0a4d8d6350f6266b48a, type: 2}
+  - {fileID: 11400000, guid: 772c8be07d0be5c4b875dda0688d5d00, type: 2}
   unCommonUnitList:
   - {fileID: 11400000, guid: 34a2d3ac74c424d4d88fb344d6f779b3, type: 2}
   rareUnitList:
   - {fileID: 11400000, guid: 2cad392ca980950489d0ccbaba617745, type: 2}
   legendaryUnitList:
   - {fileID: 11400000, guid: 9d39010c01f640c4ba4d621a62d0862b, type: 2}
-  haveUnit: []
