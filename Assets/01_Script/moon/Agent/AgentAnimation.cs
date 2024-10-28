@@ -6,13 +6,14 @@ using UnityEngine.Events;
 public class AgentAnimation : MonoBehaviour
 {
     private Animator _animator;
+    private Agent _agent;
     public UnityEvent OnAnimationAction;
     private void Awake()
     {
+        _agent = transform.parent.GetComponent<Agent>();
         _animator = GetComponent<Animator>();
     }
-
-    public void PlayAnimaiton(AnimationType animationType)
+    public void PlayAnimation(AnimationType animationType)
     {
         switch (animationType)
         {
@@ -25,9 +26,9 @@ public class AgentAnimation : MonoBehaviour
             case AnimationType.Attack:
                 Play("Attack");
                 break;
-            case AnimationType.Dead:
-                Play("Dead");
-                break;
+            //case AnimationType.Dead:
+            //    Play("Dead");
+            //    break;
             default:
                 break;
         }
@@ -40,11 +41,19 @@ public class AgentAnimation : MonoBehaviour
     {
         OnAnimationAction?.Invoke();
     }
+    public void EndAnimaiton()
+    {
+        _agent.EndAttackAnimaiton();
+    }
+    public void AttackCheck()
+    {
+        _agent.AttackCheck();
+    }
 }
 public enum AnimationType
 {
     Idle,
     Move,
-    Attack,
-    Dead
+    Attack
+    //,Dead
 }

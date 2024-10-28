@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class State : MonoBehaviour
+public abstract class State
 {
     public UnityEvent OnEnter, OnExit;
     protected Agent _agent;
-    public void InitializeState(Agent agent)
+    public State(Agent agent)
     {
         _agent = agent;
     }
@@ -24,10 +24,7 @@ public abstract class State : MonoBehaviour
 
     public virtual void StateUpdate()
     {
-        if(!_agent.canAttack)
-        {
-            _agent.lastAttackTime += Time.deltaTime;
-        }
+        
     }
 
     public virtual void StateFixedUpdate()

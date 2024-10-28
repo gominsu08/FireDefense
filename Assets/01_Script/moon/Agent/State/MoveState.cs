@@ -5,34 +5,40 @@ using UnityEngine;
 public class MoveState : State
 {
     private float time;
-    [SerializeField] private float moveTime = 1;
-    private bool canMove = true;
+    private float moveTime = 1;
+
+    public MoveState(Agent agent) : base(agent)
+    {
+    }
+
     protected override void EnterState()
     {
-        _agent.AnimatorCompo.PlayAnimaiton(AnimationType.Move);
+        _agent.AnimatorCompo.PlayAnimation(AnimationType.Move);
+        moveTime = _agent.DataCompo.moveSpeed;
     }
-    private void Update()
+    public override void StateUpdate()
     {
-        if (canMove)
+        base.StateUpdate();
+        if (_agent.CheckerCompo.IsEnemy)
         {
-            time += Time.deltaTime;
-            if (time >= moveTime)
+            if (_agent.canAttack)
             {
-                transform.position += new Vector3(-1, 0, 0);
-                time = 0;
+                _agent.TransitionState(StateType.Attack);
+            }
+            else
+            {
+                _agent.TransitionState(StateType.Idle);
             }
         }
-        else
+        time += Time.deltaTime;
+        if (time >= moveTime)
         {
+            _agent.Move();
             time = 0;
         }
     }
-    public void CanMove()
+    protected override void ExitState()
     {
-        canMove = true;
-    }
-    public void CantMove()
-    {
-        canMove = false;
+        time = 0;
     }
 }
