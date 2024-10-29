@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14f5cb44f22e361458593f59bfeacc11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <DataCompo>k__BackingField: {fileID: 11400000, guid: 2554769c8a8b6aa40966687cf2587251, type: 2}
+  <DataCompo>k__BackingField: {fileID: 11400000, guid: e29dfc75f6eff24459efff3fc1a3032f, type: 2}
   iAmEnemy: 1
   MyEnemy:
     serializedVersion: 2
