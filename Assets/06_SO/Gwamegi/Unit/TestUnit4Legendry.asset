@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170cd9a6e057f6349afef1182aa08df2, type: 3}
   m_Name: TestUnit4Legendry
   m_EditorClassIdentifier: 
-  unitSprite: {fileID: 0}
+  unitSprite: {fileID: 116000998, guid: 33b78a5fd6057a1429905f36a6ab0f6b, type: 3}
   unitName: 
   attackPower: 0
   attackSpeed: 0
   moveSpeed: 0
   rarity: 3
+  rarityColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
