@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170cd9a6e057f6349afef1182aa08df2, type: 3}
   m_Name: TestUnit1Common
   m_EditorClassIdentifier: 
-  unitSprite: {fileID: -1618095250, guid: b1dfe39da49bf4e4084e491388a5f0b4, type: 3}
+  unitSprite: {fileID: 4742633712888814337, guid: f1ce8b04e74bc9f4ab1abf01bfe853df, type: 3}
   unitName: Name
   attackPower: 5
+  attackSpeed: 0
   moveSpeed: 10
+  rarity: 0
+  rarityColor: {r: 1, g: 1, b: 1, a: 1}
