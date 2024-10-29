@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class Checker : MonoBehaviour
 {
+    public List<Health> myEnemys = new List<Health>();
     private int findedEnemy;
     private int FindedEnemy
     {
@@ -51,9 +52,25 @@ public class Checker : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         FindedEnemy++;
+        try
+        {
+            myEnemys.Add(collision.transform.parent.GetComponent<Health>());
+        }
+        catch (Exception)
+        {
+            print("Agent has a problem");
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         FindedEnemy--;
+        try
+        {
+            myEnemys.Remove(collision.transform.parent.GetComponent<Health>());
+        }
+        catch (Exception)
+        {
+            print("Agent has a problem");
+        }
     }
 }
