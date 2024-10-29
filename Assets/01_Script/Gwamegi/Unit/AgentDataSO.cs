@@ -10,4 +10,5 @@ public class AgentDataSO : ScriptableObject
     public float attackPower;
     public float attackSpeed;
     public float moveSpeed;
+    public float health;
 }

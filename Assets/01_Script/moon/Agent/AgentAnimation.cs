@@ -41,13 +41,13 @@ public class AgentAnimation : MonoBehaviour
     {
         OnAnimationAction?.Invoke();
     }
-    public void EndAnimaiton()
+    public void EndAttackAnimaiton()
     {
         _agent.EndAttackAnimaiton();
     }
-    public void AttackCheck()
+    public void Attack()
     {
-        _agent.AttackCheck();
+        _agent.Attack();
     }
 }
 public enum AnimationType

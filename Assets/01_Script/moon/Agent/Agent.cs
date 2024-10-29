@@ -13,9 +13,10 @@ public enum StateType
 public class Agent : MonoBehaviour
 {
     #region component region
-    public AgentAnimation AnimatorCompo { get; set; }
+    public AgentAnimation AnimatorCompo { get; protected set; }
     public Checker CheckerCompo { get; private set; }
     [field: SerializeField] public AgentDataSO DataCompo{ get; private set; }
+    public Health HealthCompo {  get; private set; } 
     #endregion
     [SerializeField] bool iAmEnemy = false;
     [SerializeField]LayerMask MyEnemy;
@@ -35,22 +36,31 @@ public class Agent : MonoBehaviour
     {
         AnimatorCompo = transform.Find("Visual").GetComponent<AgentAnimation>();
         CheckerCompo = transform.Find("Checker").Find("Grid").Find("Tilemap").GetComponent<Checker>();
+        HealthCompo = GetComponent<Health>();
         InitializeState();
+        HealthCompo.Initalize(this);
     }
     private void Start()
     {
         TransitionState(StateType.Idle);
         move = iAmEnemy ? -1 : 1;
     }
-    public void AttackCheck()
+    public void Attack()
     {
-        //AttackScript
+        List<Health> enemyTemp = new List<Health>(CheckerCompo.myEnemys);
+
+        foreach (Health health in enemyTemp)
+        {
+            health.TakeDamage(DataCompo.attackPower);
+        }
     }
     public void EndAttackAnimaiton()
     {
         canAttack = false;
         TransitionState(StateType.Idle);
     }
+    public void Dead()=>
+        Destroy(gameObject);
     public void InitializeState()
     {
         foreach (StateType stateType in Enum.GetValues(typeof(StateType)))
@@ -67,7 +77,6 @@ public class Agent : MonoBehaviour
             currentState.Exit();
         currentState = StateEnum[desireState];
         currentState.Enter();
-        print(desireState.ToString());
 
     }
     private void Update()
@@ -75,7 +84,7 @@ public class Agent : MonoBehaviour
         if (!canAttack)
         {
             lastAttackTime += Time.deltaTime;
-            if (lastAttackTime >= DataCompo.attackPower)
+            if (lastAttackTime >= DataCompo.attackSpeed)
             {
                 lastAttackTime = 0;
                 canAttack = true;
@@ -83,10 +92,8 @@ public class Agent : MonoBehaviour
         }
         currentState.StateUpdate();
     }
-    public void Move()
-    {
+    public void Move()=>
         transform.position += new Vector3(move, 0, 0);
-    }
     private void FixedUpdate()
     {
         currentState.StateFixedUpdate();
