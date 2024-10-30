@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 170cd9a6e057f6349afef1182aa08df2, type: 3}
-  m_Name: TestUnit1Common
+  m_Name: TestUnit3Rare1 1
   m_EditorClassIdentifier: 
-  unitSprite: {fileID: 4742633712888814337, guid: f1ce8b04e74bc9f4ab1abf01bfe853df, type: 3}
-  unitName: Name
-  attackPower: 5
+  agentSprite: {fileID: 21300000, guid: 9036ae077981e2b41a6e855ded4d7b50, type: 3}
+  agentName: 
+  attackPower: 0
   attackSpeed: 0
-  moveSpeed: 10
-  rarity: 0
-  rarityColor: {r: 1, g: 1, b: 1, a: 1}
+  moveSpeed: 0
+  health: 0
+  rarity: 2
+  rarityColor: {r: 204, g: 0, b: 255, a: 255}
+  levelIncreaseEnum: 0
+  unitLevel: 1
