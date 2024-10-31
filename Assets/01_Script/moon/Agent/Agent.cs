@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum StateType
@@ -16,15 +17,15 @@ public class Agent : MonoBehaviour
     public AgentAnimation AnimatorCompo { get; protected set; }
     public Checker CheckerCompo { get; private set; }
     [field: SerializeField] public AgentDataSO DataCompo{ get; private set; }
-    public Health HealthCompo {  get; private set; } 
+    public Health HealthCompo {  get; private set; }
+    public AstarAgent AstarCompo { get; private set; }
     #endregion
-    [SerializeField] bool iAmEnemy = false;
-    [SerializeField]LayerMask MyEnemy;
 
     private int move = 1;
 
     public bool canAttack;
 
+    [HideInInspector]public LayerMask myLayer;
 
     public float lastAttackTime;
 
@@ -37,13 +38,23 @@ public class Agent : MonoBehaviour
         AnimatorCompo = transform.Find("Visual").GetComponent<AgentAnimation>();
         CheckerCompo = transform.Find("Checker").Find("Grid").Find("Tilemap").GetComponent<Checker>();
         HealthCompo = GetComponent<Health>();
+        AstarCompo = GetComponent<AstarAgent>();
         InitializeState();
-        HealthCompo.Initalize(this);
+        MyLayerFind();
+        HealthCompo.Initialize(this);
     }
     private void Start()
     {
         TransitionState(StateType.Idle);
-        move = iAmEnemy ? -1 : 1;
+        AstarCompo.moveSpeed = DataCompo.moveSpeed;
+    }
+    private void MyLayerFind()
+    {
+        myLayer = 1 << gameObject.layer;
+    }
+    public void Move()
+    {
+        AstarCompo.SetDestination(MyEnemyDistanceChecker.instance.MyEnemyCheck(transform , myLayer));
     }
     public void Attack()
     {
@@ -81,6 +92,15 @@ public class Agent : MonoBehaviour
     }
     private void Update()
     {
+        AttackCheck();
+        currentState.StateUpdate();
+    }
+    private void FixedUpdate()
+    {
+        currentState.StateFixedUpdate();
+    }
+    private void AttackCheck()
+    {
         if (!canAttack)
         {
             lastAttackTime += Time.deltaTime;
@@ -90,12 +110,5 @@ public class Agent : MonoBehaviour
                 canAttack = true;
             }
         }
-        currentState.StateUpdate();
-    }
-    public void Move()=>
-        transform.position += new Vector3(move, 0, 0);
-    private void FixedUpdate()
-    {
-        currentState.StateFixedUpdate();
     }
 }
