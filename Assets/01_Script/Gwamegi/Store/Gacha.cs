@@ -16,8 +16,8 @@ public class Gacha : MonoBehaviour
     [SerializeField] private ChoiseItem _choiseItem;
     private UnitDataList _unitDataList;
 
-    public event Action OnStartGachaEvent;  
-    public event Action<List<UnitDataSO>,int> OnChoiseUnitCheckEvent;
+    public event Action OnStartGachaEvent;
+    public event Action<List<UnitDataSO>> OnChoiseUnitCheckEvent;
     public event Action OnChoiseUnitItemResetEvent;
 
     private void Start()
@@ -47,7 +47,7 @@ public class Gacha : MonoBehaviour
             AddListUnit(unitData);
             dataSOs.Add(unitData);
         }
-        OnChoiseUnitCheckEvent?.Invoke(dataSOs, count);
+        OnChoiseUnitCheckEvent?.Invoke(dataSOs);
         PlayerDataManager.Instance.RemoveCoin(coinCount);
         
     }

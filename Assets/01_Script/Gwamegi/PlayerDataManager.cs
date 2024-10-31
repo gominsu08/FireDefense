@@ -22,7 +22,7 @@ public class PlayerDataManager : MonoSingleton<PlayerDataManager>
         }
 
 
-        Coin = 30000;
+        Coin = 100;
     }
 
 
