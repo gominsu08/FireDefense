@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class ChoiseItem : MonoBehaviour
@@ -11,23 +10,30 @@ public class ChoiseItem : MonoBehaviour
     [SerializeField] private Gacha _gacha;
     [SerializeField] private Image _itemImage;
     [SerializeField] private RectTransform _1Panel, _2Panel;
-    [SerializeField] private Light2D lights;
+    [SerializeField] private Button _cardAllCheckBtn;
     public bool isSkip { get; private set; }
     public bool isUnitCheck { get; private set; }
+    public bool isUnitCardCreatSkip { get; private set; }
     private int _cardCreatCount;
+    private int _cardCount;
+    private float _creatTime = 0.35f;
 
-    private List<GameObject> ItemList = new List<GameObject>();
+    private List<GameObject> _itemList = new List<GameObject>();
+    private List<Button> _cardButtonList = new List<Button>();
 
     private void Awake()
     {
         //_gacha.OnChoiseUnitItemResetEvent += () => isSkip = true;
         _gacha.OnChoiseUnitCheckEvent += ItemCheck;
         _gacha.OnStartGachaEvent += ItemSet;
+        _cardAllCheckBtn.onClick.AddListener(CardAllCheck);
+        _cardAllCheckBtn.enabled = false;
     }
 
-    private void ItemCheck(List<UnitDataSO> list)
+    private void ItemCheck(List<UnitDataSO> list, int count)
     {
         StartCoroutine(ItemChecker(list));
+        _cardCount = count;
     }
 
     private IEnumerator ItemChecker(List<UnitDataSO> list)
@@ -37,6 +43,7 @@ public class ChoiseItem : MonoBehaviour
             Image image = _itemImage;
             image.color = list[i].rarityColor;
             Sprite sprite = list[i].agentSprite;
+            if (i > 1) isUnitCardCreatSkip = true;
 
             if (i < 5)
             {
@@ -47,12 +54,17 @@ public class ChoiseItem : MonoBehaviour
                 CreatUnitCard(image, sprite, _2Panel);
             }
 
-            yield return new WaitForSeconds(0.35f);
+            yield return new WaitForSeconds(_creatTime);
         }
+        _cardAllCheckBtn.enabled = true;
         isUnitCheck = true;
-
+        isUnitCardCreatSkip = false;
+        _creatTime = 0.35f;
 
     }
+
+
+
 
     private void CreatUnitCard(Image image, Sprite sprite, RectTransform creatPanel)
     {
@@ -61,13 +73,7 @@ public class ChoiseItem : MonoBehaviour
         {
             if (isUnitCheck)
             {
-                //unitCard.transform.DORotate(new Vector3(0, 180, 0), 0.5f).OnComplete(() =>
-                //{
-                //    unitCard.sprite = sprite;
-                //    unitCard.color = Color.white;
-                //    _cardCreatCount++;
-                //    unitCard.GetComponent<Button>().enabled = false;
-                //});
+                Button button = unitCard.GetComponent<Button>();
                 unitCard.GetComponent<Button>().enabled = false;
                 unitCard.transform.DOScaleX(0, 0.25f).OnComplete(() =>
                 {
@@ -76,20 +82,29 @@ public class ChoiseItem : MonoBehaviour
                     unitCard.transform.DOScaleX(1, 0.25f).OnComplete(() =>
                     {
                         _cardCreatCount++;
+                        Destroy(button);
+                        _cardButtonList.Remove(button);
                     });
                 });
-
             }
         });
 
-        ItemList.Add(unitCard.gameObject);
+        _cardButtonList.Add(unitCard.GetComponent<Button>());
+        _itemList.Add(unitCard.gameObject);
     }
 
-
+    public void CardAllCheck()
+    {
+        foreach (Button item in _cardButtonList)
+        {
+            item.onClick.Invoke();
+        }
+        _cardAllCheckBtn.enabled = false;
+    }
 
     private void Update()
     {
-        if (_cardCreatCount >= 10)
+        if (_cardCreatCount >= _cardCount)
         {
             isSkip = true;
         }
@@ -98,6 +113,11 @@ public class ChoiseItem : MonoBehaviour
         {
             ItemReset();
             gameObject.SetActive(false);
+        }
+
+        if (Input.GetMouseButtonDown(0) && isUnitCardCreatSkip)
+        {
+            _creatTime = 0;
         }
     }
 
@@ -111,11 +131,12 @@ public class ChoiseItem : MonoBehaviour
 
     private void ItemReset()
     {
-        foreach (GameObject item in ItemList)
+        foreach (GameObject item in _itemList)
         {
             Destroy(item);
         }
-        ItemList.Clear();
+        _itemList.Clear();
+        _cardButtonList.Clear();
     }
 
 
