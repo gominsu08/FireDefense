@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class AgentDataSO : ScriptableObject
 {
-    public Sprite unitSprite;
-    public string unitName;
+    public Sprite agentSprite;
+    public string agentName;
+    [Header("Status")]
     public float attackPower;
     public float attackSpeed;
     public float moveSpeed;

@@ -7,8 +7,30 @@ public class UnitDataSO : AgentDataSO
 {
     public UnitRarityEnum rarity;
     public Color rarityColor;
+
+    [Header("UnitLevel")]
+    public LevelIncreaseEnum levelIncreaseEnum;
+    public int unitLevel = 1;
+
     private void OnValidate()
     {
+        if (unitLevel > 5)
+        {
+            levelIncreaseEnum = LevelIncreaseEnum._1_5;
+        }
+        else if (unitLevel > 15)
+        {
+            levelIncreaseEnum = LevelIncreaseEnum._5_15;
+        }
+        else if(unitLevel > 25)
+        {
+            levelIncreaseEnum = LevelIncreaseEnum._15_25;
+        }
+        else if (unitLevel > 30)
+        {
+            levelIncreaseEnum = LevelIncreaseEnum._25_30;
+        }
+
         switch (rarity)
         {
             case UnitRarityEnum.Common:
