@@ -13,24 +13,24 @@ MonoBehaviour:
   m_Name: Unit LevelDataSO
   m_EditorClassIdentifier: 
   maxLevel: 30
-  unitLevelIncreases:
+  unitLevelIncreasesList:
   - _levelIncrease: 0
-    attackPowerIncease: 3
-    attackSpeedIncease: 1
-    moveSpeedIncease: 3
-    healthIncease: 4
-  - _levelIncrease: 1
-    attackPowerIncease: 5
-    attackSpeedIncease: 1
-    moveSpeedIncease: 4
-    healthIncease: 12
-  - _levelIncrease: 2
-    attackPowerIncease: 6
-    attackSpeedIncease: 0
-    moveSpeedIncease: 6
-    healthIncease: 16
-  - _levelIncrease: 3
     attackPowerIncease: 12
-    attackSpeedIncease: 7
-    moveSpeedIncease: 4
-    healthIncease: 20
+    attackSpeedIncease: 6
+    moveSpeedIncease: 20
+    healthIncease: 14
+  - _levelIncrease: 1
+    attackPowerIncease: 0
+    attackSpeedIncease: 0
+    moveSpeedIncease: 0
+    healthIncease: 0
+  - _levelIncrease: 2
+    attackPowerIncease: 0
+    attackSpeedIncease: 0
+    moveSpeedIncease: 0
+    healthIncease: 0
+  - _levelIncrease: 3
+    attackPowerIncease: 0
+    attackSpeedIncease: 0
+    moveSpeedIncease: 0
+    healthIncease: 0
