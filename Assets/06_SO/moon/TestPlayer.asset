@@ -17,5 +17,6 @@ MonoBehaviour:
   attackPower: 1
   attackSpeed: 10
   moveSpeed: 1.2
-  health: 10
+  health: 20
   rarity: 0
+  rarityColor: {r: 1, g: 1, b: 1, a: 1}

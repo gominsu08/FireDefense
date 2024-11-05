@@ -54,11 +54,11 @@ public class Checker : MonoBehaviour
         FindedEnemy++;
         try
         {
-            myEnemys.Add(collision.transform.parent.GetComponent<Health>());
+            myEnemys.Add(collision.transform.GetComponent<Health>());
         }
         catch (Exception)
         {
-            print("Agent has a problem");
+            print("Health has a problem");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -66,11 +66,11 @@ public class Checker : MonoBehaviour
         FindedEnemy--;
         try
         {
-            myEnemys.Remove(collision.transform.parent.GetComponent<Health>());
+            myEnemys.Remove(collision.transform.GetComponent<Health>());
         }
         catch (Exception)
         {
-            print("Agent has a problem");
+            print("Health has a problem");
         }
     }
 }

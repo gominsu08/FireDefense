@@ -9,6 +9,7 @@ public class MyEnemyDistanceChecker : MonoBehaviour
     [SerializeField] private LayerMask Player;
     private List<Transform> Enemys = new List<Transform>();
     private List<Transform> Players = new List<Transform>();
+    private bool end = false;
 
     private void Awake()
     {
@@ -23,13 +24,17 @@ public class MyEnemyDistanceChecker : MonoBehaviour
     }
     private void Start()
     {
+        Chack();
+    }
+    public void Chack()
+    {
         EnemyCheck();
         PlayerCheck();
     }
 
     private void EnemyCheck()
     {
-        Collider2D[] EnemysCollider = Physics2D.OverlapCircleAll(Vector3.zero, 100, Enemy);
+        Collider2D[] EnemysCollider = Physics2D.OverlapCircleAll(new Vector3(0,0,0), 100, Enemy);
         foreach (Collider2D collider in EnemysCollider)
         {
             Enemys.Add(collider.transform);
@@ -38,7 +43,7 @@ public class MyEnemyDistanceChecker : MonoBehaviour
     }
     private void PlayerCheck()
     {
-        Collider2D[] PlayerCollider = Physics2D.OverlapCircleAll(Vector3.zero, 100, Player);
+        Collider2D[] PlayerCollider = Physics2D.OverlapCircleAll(new Vector3(0, 0, 0), 100, Player);
         foreach (Collider2D collider in PlayerCollider)
         {
             Players.Add(collider.transform);
@@ -59,8 +64,18 @@ public class MyEnemyDistanceChecker : MonoBehaviour
                 closeEnemy = enemy;
             }
         }
-
-        return closeEnemy.position;
+        if (closeEnemy != null)
+        {
+            return closeEnemy.position;
+        }
+        else
+        {
+            if (!end)
+            {
+                GameWin();
+            }
+            return Vector3.zero;
+        }
     }
     private Vector3 FindClosePlayer(Transform myTransform)
     {
@@ -77,8 +92,18 @@ public class MyEnemyDistanceChecker : MonoBehaviour
                 closePlayer = player;
             }
         }
-
-        return closePlayer.position;
+        if(closePlayer != null)
+        {
+            return closePlayer.position;
+        }
+        else 
+        {
+            if (!end)
+            {
+                GameOver();
+            }
+            return Vector3.zero; 
+        }
     }
     public Vector3 MyEnemyCheck(Transform myTransform, LayerMask myLayer)
     {
@@ -98,6 +123,14 @@ public class MyEnemyDistanceChecker : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(Vector3.zero, 100);
+        Gizmos.DrawWireSphere(new Vector3(0, 0, 0), 100);
+    }
+    private void GameWin()
+    {
+        end = true;
+    }
+    private void GameOver()
+    {
+        end = true;
     }
 }   

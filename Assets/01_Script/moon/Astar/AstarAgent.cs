@@ -2,13 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static UnityEditor.PlayerSettings;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class AstarAgent : MonoBehaviour, IAgentComponent
 {
     public float moveSpeed;
-    public float stoppingDistance = 0.1f;
+    public float stoppingDistance = 1.5f;
     [SerializeField] private bool _cornerCheck = true;
     [SerializeField] private bool _lineDebug = true;
 
@@ -31,9 +32,16 @@ public class AstarAgent : MonoBehaviour, IAgentComponent
     private AgentMovement _movement;
     private PathLineDrawer _lineDrawer;
 
+    Vector2 _position;
+
+    private void Awake()
+    {
+        _movement = GetComponent<AgentMovement>();
+    }
     public void Initialize(Agent agent)
     {
         _agent = agent;
+        _movement.Initialize(agent);
         _lineDrawer = transform.Find("PathDrawer").GetComponent<PathLineDrawer>();
         _lineDrawer.SetActiveLine(_lineDebug);
     }
@@ -131,9 +139,7 @@ public class AstarAgent : MonoBehaviour, IAgentComponent
                 AstarNode nextNode = _closeList.Find(x => x.pos == nextPos);
                 if (nextNode != null) continue;
 
-
-
-                if(Map.CanMove(nextPos))
+                if (Map.CanMove(nextPos))
                 {
                     float g = (nextPos - nextPos).magnitude + node.G;
                     nextNode = new AstarNode
@@ -163,7 +169,6 @@ public class AstarAgent : MonoBehaviour, IAgentComponent
             }
         }
     }
-
     private float CalH(Vector3Int currentPos)
     {
         Vector3Int distance = _destination - currentPos;

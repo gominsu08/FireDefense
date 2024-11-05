@@ -19,26 +19,32 @@ public class Agent : MonoBehaviour
     [field: SerializeField] public AgentDataSO DataCompo{ get; private set; }
     public Health HealthCompo {  get; private set; }
     public AstarAgent AstarCompo { get; private set; }
+    public SpriteRenderer SpriteCompo { get; private set; }
+    public Rigidbody2D RbCompo { get; private set; }
     #endregion
 
-    private int move = 1;
 
-    public bool canAttack;
+    private float critcalRate;
+
+    [HideInInspector] public bool canAttack;
 
     [HideInInspector]public LayerMask myLayer;
 
-    public float lastAttackTime;
+    [HideInInspector]public float lastAttackTime;
 
     private Dictionary<StateType, State> StateEnum = new Dictionary<StateType, State>();
 
-    public State currentState;
+    [HideInInspector]public State currentState;
+    [field: SerializeField] public bool IsFacingRight { get; private set; } = true;
 
     protected virtual void Awake()
     {
-        AnimatorCompo = transform.Find("Visual").GetComponent<AgentAnimation>();
-        CheckerCompo = transform.Find("Checker").Find("Grid").Find("Tilemap").GetComponent<Checker>();
+        AnimatorCompo = GetComponentInChildren<AgentAnimation>();
+        CheckerCompo = GetComponentInChildren<Checker>();
         HealthCompo = GetComponent<Health>();
         AstarCompo = GetComponent<AstarAgent>();
+        RbCompo = GetComponent<Rigidbody2D>();
+        SpriteCompo = GetComponentInChildren<SpriteRenderer>();
         InitializeState();
         MyLayerFind();
         HealthCompo.Initialize(this);
@@ -46,6 +52,14 @@ public class Agent : MonoBehaviour
     private void Start()
     {
         TransitionState(StateType.Idle);
+        InitializeAstar();
+
+
+    }
+    private void InitializeAstar()
+    {
+        if (AstarCompo == null) return;
+        AstarCompo.Initialize(this);
         AstarCompo.moveSpeed = DataCompo.moveSpeed;
     }
     private void MyLayerFind()
@@ -54,7 +68,16 @@ public class Agent : MonoBehaviour
     }
     public void Move()
     {
+        if (AstarCompo == null) return;
         AstarCompo.SetDestination(MyEnemyDistanceChecker.instance.MyEnemyCheck(transform , myLayer));
+    }
+    public void Flip()
+    {
+        if (IsFacingRight)
+            transform.rotation = Quaternion.Euler(0, 180f, 0);
+        else
+            transform.rotation = Quaternion.identity;
+        IsFacingRight = !IsFacingRight;
     }
     public void Attack()
     {

@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class MoveState : State
 {
-    private float time;
-
     public MoveState(Agent agent) : base(agent)
     {
     }
@@ -37,6 +35,5 @@ public class MoveState : State
     }
     protected override void ExitState()
     {
-        time = 0;
     }
 }
