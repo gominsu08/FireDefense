@@ -1,28 +1,38 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+public class UnitLevelClass
+{
+    public LevelIncreaseEnum levelIncreaseEnum;
+    public int attackPower;
+    public int attackSpeed;
+    public int moveSpeed;
+    public int health;
+    public int level;
+}
 
 public class UnitLvUp : MonoBehaviour
 {
     public UnitLevelDataSO unitLevelDataSO;
 
 
-    public void LvUp(ref UnitDataSO LvUpUnit)
+    public void LvUp<T>(T LvUpUnit) where T : ILevelUpAgent
     {
-        foreach(UnitLevelIncrease item in unitLevelDataSO.unitLevelIncreasesList)
+
+        foreach (UnitLevelIncrease item in unitLevelDataSO.unitLevelIncreasesList)
         {
-            if(item._levelIncrease == LvUpUnit.levelIncreaseEnum)
+            if (item._levelIncrease == LvUpUnit.unitLevel.levelIncreaseEnum)
             {
-                StatUp( ref LvUpUnit, item);
+                StatUp(LvUpUnit.unitLevel, item);
             }
         }
-
-
-        LvUpUnit.unitLevel++;
+        LvUpUnit.unitLevel.level++;
     }
 
 
-    public void StatUp(ref UnitDataSO LvUpUnit, UnitLevelIncrease unitLevelIncrese)
+    public void StatUp(UnitLevelClass LvUpUnit, UnitLevelIncrease unitLevelIncrese)
     {
         LvUpUnit.attackSpeed += unitLevelIncrese.attackSpeedIncease;
         LvUpUnit.attackPower += unitLevelIncrese.attackPowerIncease;
