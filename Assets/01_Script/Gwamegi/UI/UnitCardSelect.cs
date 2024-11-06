@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
+
+
     private RectTransform _myRect;
 
     [Header("PanelInfo")]
@@ -13,11 +15,14 @@ public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     [SerializeField] private float _selectPanelStartSize;
     [SerializeField] private float _selectPanelTime;
 
-    private Action OnClickEvent;
+    public Action OnClickEvent;
+    public Action<float, bool> OnSelectPanelEvent;
+
 
     private bool _isCanMove = true;
 
     private float _starPosX;
+    private float _moveStartPosX;
     private float _moveX;
 
     private void Update()
@@ -36,28 +41,45 @@ public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(!_isCanMove) return;
+        if (!_isCanMove) return;
 
-        _moveX = _myRect.position.x;
-        _myRect.DOMoveX(_starPosX + _moveDis, _moveTime);
+        _myRect.DOScaleX(_selectPanelStartSize + 0.01f, _moveTime);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if(!_isCanMove) return ;
+        if (!_isCanMove) return;
 
-        _myRect.DOMoveX(_starPosX, _moveTime);
+        //_myRect.DOMoveX(_starPosX, _moveTime);
+        _myRect.DOScaleX(_selectPanelStartSize, _moveTime);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (!_isCanMove) return;
         _isCanMove = false;
-        _myRect.DOScaleX(1, _selectPanelTime);
+        _moveStartPosX = _myRect.position.x;
+        OnSelectPanelEvent?.Invoke(_myRect.position.x, false);
         OnClickEvent += CardSelectDelet;
+
+    }
+
+    public void ScaleX(float count)
+    {
+        if (_isCanMove == false)
+            _myRect.DOScaleX(count, _selectPanelTime);
+    }
+
+
+    public void DB<T>(T debug)
+    {
+        Debug.Log(debug);
     }
 
     private void CardSelectDelet()
     {
-        throw new NotImplementedException();
+        _myRect.DOScaleX(_selectPanelStartSize, _selectPanelTime).OnComplete(() => _isCanMove = true);
+        OnSelectPanelEvent?.Invoke(_moveStartPosX, true);
+        OnClickEvent -= CardSelectDelet;
     }
 }
