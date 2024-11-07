@@ -32,6 +32,8 @@ public class AstarAgent : MonoBehaviour, IAgentComponent
     private AgentMovement _movement;
     private PathLineDrawer _lineDrawer;
 
+    [SerializeField] private float obstacleCost = 10f;
+
     Vector2 _position;
 
     private void Awake()
@@ -135,13 +137,20 @@ public class AstarAgent : MonoBehaviour, IAgentComponent
                 if (i == 0 && j == 0) continue;
 
                 Vector3Int nextPos = node.pos + new Vector3Int(j, i);
+                Vector3 worldPos = Map.GetCellCenterToWorld(nextPos);
 
                 AstarNode nextNode = _closeList.Find(x => x.pos == nextPos);
                 if (nextNode != null) continue;
 
-                if (Map.CanMove(nextPos))
+                float cost = 0;
+                if (!Map.IsEmpty(worldPos))
                 {
-                    float g = (nextPos - nextPos).magnitude + node.G;
+                    cost = obstacleCost;
+                }
+
+                if (Map.CanMove(nextPos) && Map.IsEmpty(worldPos))
+                {
+                    float g = Vector3Int.Distance(nextPos, node.pos) + node.G + cost;
                     nextNode = new AstarNode
                     {
                         pos = nextPos,

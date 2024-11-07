@@ -51,4 +51,15 @@ public class MapInfoSO : ScriptableObject
     public Vector3Int GetTilePosFromWorldPos(Vector3 from) => _floor.WorldToCell(from);
     public Vector3 GetCellCenterToWorld(Vector3Int cellCenter)
                     => _floor.GetCellCenterWorld(cellCenter);
+    public bool IsEmpty(Vector3 position, float radius = 0.5f)
+    {
+        Collider2D collider = Physics2D.OverlapCircle(position, radius);
+
+        if (collider == null || collider.isTrigger)
+        {
+            return true;
+        }
+
+        return false;
+    }
 }
