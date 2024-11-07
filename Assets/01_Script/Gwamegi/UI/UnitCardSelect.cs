@@ -1,7 +1,9 @@
 using DG.Tweening;
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
@@ -16,7 +18,9 @@ public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     [SerializeField] private float _selectPanelTime;
 
     public Action OnClickEvent;
-    public Action<float, bool> OnSelectPanelEvent;
+    public Action<float, bool, UnitCardSelect> OnSelectPanelEvent;
+    public UnityEvent OnSelectEnterEvent;
+    public UnityEvent OnSelectExitEvent;
 
 
     private bool _isCanMove = true;
@@ -58,8 +62,12 @@ public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         if (!_isCanMove) return;
         _isCanMove = false;
+
+        UnitCardInterection(false);
+
         _moveStartPosX = _myRect.position.x;
-        OnSelectPanelEvent?.Invoke(_myRect.position.x, false);
+        OnSelectPanelEvent?.Invoke(_myRect.position.x, false, this);
+        OnSelectEnterEvent?.Invoke();
         OnClickEvent += CardSelectDelet;
 
     }
@@ -67,7 +75,9 @@ public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public void ScaleX(float count)
     {
         if (_isCanMove == false)
+        {
             _myRect.DOScaleX(count, _selectPanelTime);
+        }
     }
 
 
@@ -76,10 +86,27 @@ public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         Debug.Log(debug);
     }
 
-    private void CardSelectDelet()
+    public void CardSelectDelet()
     {
-        _myRect.DOScaleX(_selectPanelStartSize, _selectPanelTime).OnComplete(() => _isCanMove = true);
-        OnSelectPanelEvent?.Invoke(_moveStartPosX, true);
+        OnSelectExitEvent?.Invoke();
+        _myRect.DOScaleX(_selectPanelStartSize, _selectPanelTime).OnComplete(() =>
+        {
+            OnSelectPanelEvent?.Invoke(_moveStartPosX, true, this);
+            _isCanMove = true;
+            UnitCardInterection(true);
+        });
         OnClickEvent -= CardSelectDelet;
+
+    }
+
+    private void UnitCardInterection(bool isEnabled)
+    {
+        foreach (Image item in PlayerDataManager.ULUSData.currentCreatCards)
+        {
+            if (item.GetComponent<UnitCardSelect>() != this)
+            {
+                item.GetComponent<UnitCardSelect>().enabled = isEnabled;
+            }
+        }
     }
 }

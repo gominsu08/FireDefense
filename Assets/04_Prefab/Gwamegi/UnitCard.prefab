@@ -123,4 +123,4 @@ MonoBehaviour:
   _moveDis: 10
   _moveTime: 0.1
   _selectPanelStartSize: 0.185
-  _selectPanelTime: 0.25
+  _selectPanelTime: 0.4

@@ -23,7 +23,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ad4ab454f0ece3a4fa496b0744be35a7, type: 2}
   - {fileID: 11400000, guid: 8a3ddf9b8a30e2c41a6466d1be4a93c3, type: 2}
   - {fileID: 11400000, guid: 9d39010c01f640c4ba4d621a62d0862b, type: 2}
-  - {fileID: 11400000, guid: fe21202c36de4bf48b85aff45416017a, type: 2}
   commonUnitList:
   - {fileID: 11400000, guid: 772c8be07d0be5c4b875dda0688d5d00, type: 2}
   - {fileID: 11400000, guid: bbd858a28acbf0a4d8d6350f6266b48a, type: 2}
@@ -38,4 +37,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8a3ddf9b8a30e2c41a6466d1be4a93c3, type: 2}
   legendaryUnitList:
   - {fileID: 11400000, guid: 9d39010c01f640c4ba4d621a62d0862b, type: 2}
-  - {fileID: 11400000, guid: fe21202c36de4bf48b85aff45416017a, type: 2}

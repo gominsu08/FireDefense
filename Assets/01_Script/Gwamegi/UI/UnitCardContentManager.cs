@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class UnitCardContentManager : MonoBehaviour
 {
-    public Action<float> OnCompleteScaleXEvent;
+    public Action<float> OnCompleteEnterScaleXEvent;
 
     private RectTransform _myRect;
     public List<UnitCardSelect> _myUnitCards = new List<UnitCardSelect>();
 
     public void Awake()
     {
-        
+
 
     }
 
@@ -25,32 +25,32 @@ public class UnitCardContentManager : MonoBehaviour
             UnitCardSelect card = t.GetComponent<UnitCardSelect>();
             _myUnitCards.Add(card);
             card.OnSelectPanelEvent += CardSelect;
-            OnCompleteScaleXEvent += card.ScaleX;
+            OnCompleteEnterScaleXEvent += card.ScaleX;
         }
     }
 
-
-    public void CardSelect(float xMove, bool isRight = false)
+    public void CardSelect(float xMove, bool isRight = false, UnitCardSelect unitCard = null)
     {
         if (!isRight)
         {
-            _myRect.DOMove(new Vector3(_myRect.position.x - xMove, _myRect.position.y, _myRect.position.z), 0.1f).OnComplete(() =>
+            _myRect.DOMove(new Vector3(_myRect.position.x - xMove, _myRect.position.y, _myRect.position.z), 0.25f).OnComplete(() =>
             {
+                RectTransform rect = unitCard.gameObject.GetComponentInChildren<RectTransform>();
+                Debug.Log(rect.name);
+                //rect.localScale = new Vector3(1f, 1, 1);
                 Debug.Log(_myRect.position.x + " Right");
-                OnCompleteScaleXEvent?.Invoke(1.0f);
+                OnCompleteEnterScaleXEvent?.Invoke(1.0f);
             });
-            
         }
         if (isRight)
         {
-            _myRect.DOMove(new Vector3(_myRect.position.x + xMove, _myRect.position.y, _myRect.position.z), 0.1f).OnComplete(() =>
+            _myRect.DOMove(new Vector3(_myRect.position.x + xMove, _myRect.position.y, _myRect.position.z), 0.25f).OnComplete(() =>
             {
+                RectTransform rect = unitCard.gameObject.GetComponentInChildren<RectTransform>();
+                Debug.Log(rect.name);
+                //rect.localScale = new Vector3(5.405406f, 1, 1);
                 Debug.Log(_myRect.position.x + "Left");
             });
         }
-
-        
     }
-
-
 }
