@@ -23,12 +23,12 @@ public class UnitLvUp : MonoBehaviour
 
         foreach (UnitLevelIncrease item in unitLevelDataSO.unitLevelIncreasesList)
         {
-            if (item._levelIncrease == LvUpUnit.unitLevel.levelIncreaseEnum)
+            if (item._levelIncrease == LvUpUnit.UnitLevel.levelIncreaseEnum)
             {
-                StatUp(LvUpUnit.unitLevel, item);
+                StatUp(LvUpUnit.UnitLevel, item);
             }
         }
-        LvUpUnit.unitLevel.level++;
+        LvUpUnit.UnitLevel.level++;
     }
 
 

@@ -38,16 +38,23 @@ public class Gacha : MonoBehaviour
 
         OnStartGachaEvent?.Invoke();
 
-        List<UnitDataSO> dataSOs = new List<UnitDataSO>();
+        List<TestUnit> dataSOs = new List<TestUnit>();
         
         for (int i = 0; i < count; i++)
         {
-            UnitDataSO unitData = _manager.Gacha();
+            TestUnit unitData = _manager.Gacha();
             Debug.Log(unitData);
             AddListUnit(unitData);
             dataSOs.Add(unitData);
         }
-        OnChoiseUnitCheckEvent?.Invoke(dataSOs, count);
+        List<UnitDataSO> Unitdata = new();
+
+        foreach (TestUnit unitData in dataSOs)
+        {
+            Unitdata.Add(unitData.unitData);
+        }
+
+        OnChoiseUnitCheckEvent?.Invoke(Unitdata, count);
         PlayerDataManager.Instance.RemoveCoin(coinCount);
         
     }
@@ -56,7 +63,7 @@ public class Gacha : MonoBehaviour
 
     
 
-    private void AddListUnit(UnitDataSO unitData)
+    private void AddListUnit(TestUnit unitData)
     {
         if (!PlayerDataManager.Instance.haveUnit.Contains(unitData))
         {

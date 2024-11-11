@@ -9,13 +9,7 @@ public class UnitCardContentManager : MonoBehaviour
 
     private RectTransform _myRect;
     public List<UnitCardSelect> _myUnitCards = new List<UnitCardSelect>();
-
-    public void Awake()
-    {
-
-
-    }
-
+    
     private void Start()
     {
         _myRect = GetComponent<RectTransform>();
@@ -25,7 +19,7 @@ public class UnitCardContentManager : MonoBehaviour
             UnitCardSelect card = t.GetComponent<UnitCardSelect>();
             _myUnitCards.Add(card);
             card.OnSelectPanelEvent += CardSelect;
-            OnCompleteEnterScaleXEvent += card.ScaleX;
+            OnCompleteEnterScaleXEvent += card.PanelMoveX;
         }
     }
 
@@ -37,9 +31,9 @@ public class UnitCardContentManager : MonoBehaviour
             {
                 RectTransform rect = unitCard.gameObject.GetComponentInChildren<RectTransform>();
                 Debug.Log(rect.name);
-                //rect.localScale = new Vector3(1f, 1, 1);
+                unitCard.PanelSet(true);
                 Debug.Log(_myRect.position.x + " Right");
-                OnCompleteEnterScaleXEvent?.Invoke(1.0f);
+                OnCompleteEnterScaleXEvent?.Invoke(unitCard.GetComponent<RectTransform>().position.x + 1600);
             });
         }
         if (isRight)

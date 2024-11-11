@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
+    public TestUnit testUnit;
 
 
     private RectTransform _myRect;
@@ -16,6 +17,17 @@ public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     [SerializeField] private float _moveTime;
     [SerializeField] private float _selectPanelStartSize;
     [SerializeField] private float _selectPanelTime;
+    [SerializeField] private RectTransform _unitInfoPanel;
+
+    public UnitLevelClass levelClass;
+    public UnitLevelUpInfoClass unitLevelUpUIInfo;
+
+    [SerializeField] private UnitLevelUpUIInfo _unitLevelUpUIInfo;
+
+
+    public Image unitImage;
+
+    [SerializeField] private Button _backButton;
 
     public Action OnClickEvent;
     public Action<float, bool, UnitCardSelect> OnSelectPanelEvent;
@@ -43,11 +55,16 @@ public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         _starPosX = _myRect.position.x;
     }
 
+    private void Start()
+    {
+        _backButton.onClick.AddListener(CardSelectDelet);
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (!_isCanMove) return;
 
-        _myRect.DOScaleX(_selectPanelStartSize + 0.01f, _moveTime);
+        _myRect.DOScaleX(_selectPanelStartSize + 0.05f, _moveTime);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -68,15 +85,25 @@ public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         _moveStartPosX = _myRect.position.x;
         OnSelectPanelEvent?.Invoke(_myRect.position.x, false, this);
         OnSelectEnterEvent?.Invoke();
-        OnClickEvent += CardSelectDelet;
+
+        
+
+        _unitLevelUpUIInfo.InfoPanelSet(unitLevelUpUIInfo, levelClass);
 
     }
 
-    public void ScaleX(float count)
+    public void PanelSet(bool isEnable)
+    {
+        _unitInfoPanel.gameObject.SetActive(isEnable);
+        _myRect.GetComponentInParent<ScrollRect>().horizontal = !isEnable;
+        unitImage.gameObject.SetActive(!isEnable);
+    }
+
+    public void PanelMoveX(float count)
     {
         if (_isCanMove == false)
         {
-            _myRect.DOScaleX(count, _selectPanelTime);
+            _myRect.DOMoveX(count, _selectPanelTime);
         }
     }
 
@@ -89,13 +116,14 @@ public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public void CardSelectDelet()
     {
         OnSelectExitEvent?.Invoke();
-        _myRect.DOScaleX(_selectPanelStartSize, _selectPanelTime).OnComplete(() =>
+        PanelSet(false);
+        
+        _myRect.DOMoveX(_myRect.position.x - 1600, _selectPanelTime).OnComplete(() =>
         {
             OnSelectPanelEvent?.Invoke(_moveStartPosX, true, this);
             _isCanMove = true;
             UnitCardInterection(true);
         });
-        OnClickEvent -= CardSelectDelet;
 
     }
 
