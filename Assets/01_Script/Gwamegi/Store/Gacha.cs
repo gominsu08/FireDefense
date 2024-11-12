@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,7 +24,6 @@ public class Gacha : MonoBehaviour
     private void Start()
     {
         _unitDataList = _manager.unitDataList;
-        _choiseItem.gameObject.SetActive(false);
     }
 
 
