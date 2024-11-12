@@ -17,20 +17,24 @@ MonoBehaviour:
   - _levelIncrease: 0
     attackPowerIncease: 12
     attackSpeedIncease: 6
-    moveSpeedIncease: 20
+    moveSpeedIncease: 10
     healthIncease: 14
+    buyCount: 5
   - _levelIncrease: 1
     attackPowerIncease: 0
     attackSpeedIncease: 0
     moveSpeedIncease: 0
     healthIncease: 0
+    buyCount: 0
   - _levelIncrease: 2
     attackPowerIncease: 0
     attackSpeedIncease: 0
     moveSpeedIncease: 0
     healthIncease: 0
+    buyCount: 0
   - _levelIncrease: 3
     attackPowerIncease: 0
     attackSpeedIncease: 0
     moveSpeedIncease: 0
     healthIncease: 0
+    buyCount: 0

@@ -5,10 +5,14 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class UnitCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
+
+    public int count;
+
     public TestUnit testUnit;
 
+    public int myIndex;
 
     private RectTransform _myRect;
 
@@ -24,16 +28,17 @@ public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     [SerializeField] private UnitLevelUpUIInfo _unitLevelUpUIInfo;
 
+    public UnitLvUp unitLvUp;
 
     public Image unitImage;
 
     [SerializeField] private Button _backButton;
 
+    public Action<int, UnitCard> OnUnitStatValueChangedEvent;
     public Action OnClickEvent;
-    public Action<float, bool, UnitCardSelect> OnSelectPanelEvent;
+    public Action<float, bool, UnitCard> OnSelectPanelEvent;
     public UnityEvent OnSelectEnterEvent;
     public UnityEvent OnSelectExitEvent;
-
 
     private bool _isCanMove = true;
 
@@ -71,7 +76,6 @@ public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         if (!_isCanMove) return;
 
-        //_myRect.DOMoveX(_starPosX, _moveTime);
         _myRect.DOScaleX(_selectPanelStartSize, _moveTime);
     }
 
@@ -86,7 +90,7 @@ public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         OnSelectPanelEvent?.Invoke(_myRect.position.x, false, this);
         OnSelectEnterEvent?.Invoke();
 
-        
+        OnUnitStatValueChangedEvent?.Invoke(myIndex, this);
 
         _unitLevelUpUIInfo.InfoPanelSet(unitLevelUpUIInfo, levelClass);
 
@@ -117,7 +121,7 @@ public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         OnSelectExitEvent?.Invoke();
         PanelSet(false);
-        
+
         _myRect.DOMoveX(_myRect.position.x - 1600, _selectPanelTime).OnComplete(() =>
         {
             OnSelectPanelEvent?.Invoke(_moveStartPosX, true, this);
@@ -131,10 +135,25 @@ public class UnitCardSelect : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         foreach (Image item in PlayerDataManager.ULUSData.currentCreatCards)
         {
-            if (item.GetComponent<UnitCardSelect>() != this)
+            if (item.GetComponent<UnitCard>() != this)
             {
-                item.GetComponent<UnitCardSelect>().enabled = isEnabled;
+                item.GetComponent<UnitCard>().enabled = isEnabled;
             }
         }
     }
+
+    private void OnDestroy()
+    {
+        try
+        {
+            PlayerDataManager.ULUSData.currentCreatCards = new();
+
+        }
+        catch(Exception exp)
+        {
+            Debug.LogError(exp);
+        }
+
+    }
+
 }

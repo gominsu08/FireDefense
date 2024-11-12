@@ -8,7 +8,7 @@ public class UnitCardContentManager : MonoBehaviour
     public Action<float> OnCompleteEnterScaleXEvent;
 
     private RectTransform _myRect;
-    public List<UnitCardSelect> _myUnitCards = new List<UnitCardSelect>();
+    public List<UnitCard> _myUnitCards = new List<UnitCard>();
     
     private void Start()
     {
@@ -16,14 +16,14 @@ public class UnitCardContentManager : MonoBehaviour
 
         foreach (Transform t in _myRect)
         {
-            UnitCardSelect card = t.GetComponent<UnitCardSelect>();
+            UnitCard card = t.GetComponent<UnitCard>();
             _myUnitCards.Add(card);
             card.OnSelectPanelEvent += CardSelect;
             OnCompleteEnterScaleXEvent += card.PanelMoveX;
         }
     }
 
-    public void CardSelect(float xMove, bool isRight = false, UnitCardSelect unitCard = null)
+    public void CardSelect(float xMove, bool isRight = false, UnitCard unitCard = null)
     {
         if (!isRight)
         {

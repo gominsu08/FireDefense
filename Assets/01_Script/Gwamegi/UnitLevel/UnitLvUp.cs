@@ -11,6 +11,7 @@ public class UnitLevelClass
     public int moveSpeed;
     public int health;
     public int level;
+    public int buyCount;
 }
 
 public class UnitLvUp : MonoBehaviour
@@ -18,9 +19,8 @@ public class UnitLvUp : MonoBehaviour
     public UnitLevelDataSO unitLevelDataSO;
 
 
-    public void LvUp<T>(T LvUpUnit) where T : ILevelUpAgent
+    public void LvUp<T>(ref T LvUpUnit) where T : ILevelUpAgent
     {
-
         foreach (UnitLevelIncrease item in unitLevelDataSO.unitLevelIncreasesList)
         {
             if (item._levelIncrease == LvUpUnit.UnitLevel.levelIncreaseEnum)
