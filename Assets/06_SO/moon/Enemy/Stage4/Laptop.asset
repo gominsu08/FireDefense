@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitSprite: {fileID: 21300000, guid: 08ba4387bcb12a145bcddf3b60e168a3, type: 3}
   unitName: Laptop
-  attackPower: 0
-  attackSpeed: 0
-  moveSpeed: 0
-  health: 0
+  attackPower: 250
+  attackSpeed: 2
+  moveSpeed: 3
+  health: 1250
+  isRanged: 0
+  RangedAttackObject: {fileID: 0}
   enemyEnum: 4

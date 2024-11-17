@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitSprite: {fileID: 21300000, guid: ac7b0dd30493b4442826ae72ecbc3b8b, type: 3}
   unitName: GGM
-  attackPower: 0
-  attackSpeed: 0
-  moveSpeed: 0
-  health: 0
+  attackPower: 25
+  attackSpeed: 4
+  moveSpeed: 5
+  health: 250
+  isRanged: 0
+  RangedAttackObject: {fileID: 0}
   enemyEnum: 1

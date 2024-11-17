@@ -51,10 +51,13 @@ public class Checker : MonoBehaviour
     public UnityEvent OnEnemyEnter,OnEnemyAllExit;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        FindedEnemy++;
         try
         {
-            myEnemys.Add(collision.transform.GetComponent<Health>());
+            if (collision.transform.GetComponent<Health>() != null)
+            {
+                myEnemys.Add(collision.transform.GetComponent<Health>());
+                FindedEnemy++;
+            }
         }
         catch (Exception)
         {
@@ -63,10 +66,13 @@ public class Checker : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        FindedEnemy--;
         try
         {
-            myEnemys.Remove(collision.transform.GetComponent<Health>());
+            if (collision.transform.GetComponent<Health>() != null)
+            {
+                myEnemys.Remove(collision.transform.GetComponent<Health>());
+                FindedEnemy--;
+            }
         }
         catch (Exception)
         {

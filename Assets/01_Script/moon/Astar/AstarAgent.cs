@@ -30,7 +30,6 @@ public class AstarAgent : MonoBehaviour, IAgentComponent
 
     private Agent _agent;
     private AgentMovement _movement;
-    private PathLineDrawer _lineDrawer;
 
     [SerializeField] private float obstacleCost = 10f;
 
@@ -44,8 +43,6 @@ public class AstarAgent : MonoBehaviour, IAgentComponent
     {
         _agent = agent;
         _movement.Initialize(agent);
-        _lineDrawer = transform.Find("PathDrawer").GetComponent<PathLineDrawer>();
-        _lineDrawer.SetActiveLine(_lineDebug);
     }
     public bool SetDestination(Vector3 destination)
     {
@@ -55,11 +52,6 @@ public class AstarAgent : MonoBehaviour, IAgentComponent
 
         _rountePath = CalcRoute();
         _currentIndex = 0;
-
-        if(_rountePath.Count > 0 && _lineDebug)
-        {
-            _lineDrawer.DrawLine(_rountePath.ToArray());
-        }
         return _rountePath.Count > 0;
     }
     private void FixedUpdate()

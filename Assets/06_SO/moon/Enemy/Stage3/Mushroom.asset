@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitSprite: {fileID: 21300000, guid: bbfb58f8e1f2e12449354d317a54c5b6, type: 3}
   unitName: Mushroom
-  attackPower: 0
-  attackSpeed: 0
-  moveSpeed: 0
-  health: 0
+  attackPower: 125
+  attackSpeed: 5
+  moveSpeed: 3
+  health: 350
+  isRanged: 0
+  RangedAttackObject: {fileID: 1364619742638414496, guid: bbb6e4c9eb4861c4c8e3aa5d3d0a403b, type: 3}
   enemyEnum: 3

@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitSprite: {fileID: 0}
   unitName: 
-  attackPower: 2
+  attackPower: 0
   attackSpeed: 1
-  moveSpeed: 1
-  health: 10
+  moveSpeed: 5
+  health: 100000
+  isRanged: 0
+  RangedAttackObject: {fileID: 0}
   enemyEnum: 0

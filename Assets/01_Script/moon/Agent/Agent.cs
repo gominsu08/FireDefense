@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -36,6 +37,7 @@ public class Agent : MonoBehaviour
 
     [HideInInspector]public State currentState;
     [field: SerializeField] public bool IsFacingRight { get; private set; } = true;
+    private float myRangeAttackMoveX;
 
     protected virtual void Awake()
     {
@@ -47,14 +49,18 @@ public class Agent : MonoBehaviour
         SpriteCompo = GetComponentInChildren<SpriteRenderer>();
         InitializeState();
         MyLayerFind();
+        BulletSpeedReset();
         HealthCompo.Initialize(this);
+        InitializeAstar();
+    }
+    public void BulletSpeedReset()
+    {
+        myRangeAttackMoveX = DataCompo.moveSpeed * 1.5f * transform.right.x;
+        myRangeAttackMoveX *= myLayer == LayerMask.GetMask("Player") ? 1 : -1;
     }
     private void Start()
     {
         TransitionState(StateType.Idle);
-        InitializeAstar();
-
-
     }
     private void InitializeAstar()
     {
@@ -71,6 +77,11 @@ public class Agent : MonoBehaviour
         if (AstarCompo == null) return;
         AstarCompo.SetDestination(MyEnemyDistanceChecker.instance.MyEnemyCheck(transform , myLayer));
     }
+    public void Stop()
+    {
+        if (AstarCompo == null) return;
+        AstarCompo.SetDestination(Vector3.zero);
+    }
     public void Flip()
     {
         if (IsFacingRight)
@@ -81,11 +92,21 @@ public class Agent : MonoBehaviour
     }
     public void Attack()
     {
-        List<Health> enemyTemp = new List<Health>(CheckerCompo.myEnemys);
-
-        foreach (Health health in enemyTemp)
+        if (!DataCompo.isRanged)
         {
-            health.TakeDamage(DataCompo.attackPower);
+            List<Health> enemyTemp = new List<Health>(CheckerCompo.myEnemys);
+
+            foreach (Health health in enemyTemp)
+            {
+                health.TakeDamage(DataCompo.attackPower);
+            }
+        }
+        else
+        {
+            GameObject bullet = Instantiate(DataCompo.RangedAttackObject,transform.position,Quaternion.identity);
+            RangedAttack rangedAttack = bullet.GetComponent<RangedAttack>();
+            rangedAttack.moveSpeed = myRangeAttackMoveX;
+            rangedAttack.attackDamaged = DataCompo.attackPower;
         }
     }
     public void EndAttackAnimaiton()
@@ -127,7 +148,7 @@ public class Agent : MonoBehaviour
         if (!canAttack)
         {
             lastAttackTime += Time.deltaTime;
-            if (lastAttackTime >= DataCompo.attackSpeed)
+            if (lastAttackTime >= 1f / DataCompo.attackSpeed)
             {
                 lastAttackTime = 0;
                 canAttack = true;

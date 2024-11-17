@@ -74,7 +74,7 @@ public class MyEnemyDistanceChecker : MonoBehaviour
             {
                 GameWin();
             }
-            return Vector3.zero;
+            return myTransform.position;
         }
     }
     private Vector3 FindClosePlayer(Transform myTransform)
@@ -102,7 +102,7 @@ public class MyEnemyDistanceChecker : MonoBehaviour
             {
                 GameOver();
             }
-            return Vector3.zero; 
+            return myTransform.position; 
         }
     }
     public Vector3 MyEnemyCheck(Transform myTransform, LayerMask myLayer)
