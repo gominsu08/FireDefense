@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170cd9a6e057f6349afef1182aa08df2, type: 3}
   m_Name: TestUnit1-1Common
   m_EditorClassIdentifier: 
-  agentSprite: {fileID: -7636441313808698216, guid: d9d9f3da46a19e74a98a1107fb62ae4d, type: 3}
-  agentName: 
+  agentSprite: {fileID: 21300000, guid: 3a8cf7d07efc1144e9028a212304dfc0, type: 3}
+  agentName: ming
   attackPower: 5
   attackSpeed: 0
   moveSpeed: 10

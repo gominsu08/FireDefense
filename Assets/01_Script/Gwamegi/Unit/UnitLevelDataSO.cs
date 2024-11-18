@@ -16,6 +16,7 @@ public class UnitLevelIncrease
     public int attackSpeedIncease;
     public int moveSpeedIncease;
     public int healthIncease;
+    public int buyCount;
 }
 
 [CreateAssetMenu(menuName = "SO/Data/UnitData/UnitLevelDataSO")]

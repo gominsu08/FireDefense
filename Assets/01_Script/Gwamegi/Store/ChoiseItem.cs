@@ -112,7 +112,7 @@ public class ChoiseItem : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && isSkip)
         {
             ItemReset();
-            gameObject.SetActive(false);
+            gameObject.transform.DOScaleX(0, 0.2f);
         }
 
         if (Input.GetMouseButtonDown(0) && isUnitCardCreatSkip)
@@ -123,7 +123,7 @@ public class ChoiseItem : MonoBehaviour
 
     private void ItemSet()
     {
-        gameObject.SetActive(true);
+        gameObject.transform.DOScaleX(1,0.2f);
         isSkip = false;
         _cardCreatCount = 0;
         isUnitCheck = false;

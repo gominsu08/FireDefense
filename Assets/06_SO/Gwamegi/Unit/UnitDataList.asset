@@ -13,29 +13,19 @@ MonoBehaviour:
   m_Name: UnitDataList
   m_EditorClassIdentifier: 
   buyUnitAllList:
-  - {fileID: 11400000, guid: 772c8be07d0be5c4b875dda0688d5d00, type: 2}
-  - {fileID: 11400000, guid: bbd858a28acbf0a4d8d6350f6266b48a, type: 2}
-  - {fileID: 11400000, guid: 949aa6b54f994014fa15a23e0096f3c9, type: 2}
-  - {fileID: 11400000, guid: 34a2d3ac74c424d4d88fb344d6f779b3, type: 2}
-  - {fileID: 11400000, guid: ac08acd9c311cbe4b935d9ec3017415f, type: 2}
-  - {fileID: 11400000, guid: 4c323b9f6e75f384a904fed12e0e88fe, type: 2}
-  - {fileID: 11400000, guid: 2cad392ca980950489d0ccbaba617745, type: 2}
-  - {fileID: 11400000, guid: ad4ab454f0ece3a4fa496b0744be35a7, type: 2}
-  - {fileID: 11400000, guid: 8a3ddf9b8a30e2c41a6466d1be4a93c3, type: 2}
-  - {fileID: 11400000, guid: 9d39010c01f640c4ba4d621a62d0862b, type: 2}
-  - {fileID: 11400000, guid: fe21202c36de4bf48b85aff45416017a, type: 2}
+  - {fileID: 7724511528495987691, guid: 236b21be5cecc14449e5e4a18f6f836f, type: 3}
+  - {fileID: 3227982049256397453, guid: bda3165eee65e27478e2624741dacba5, type: 3}
+  - {fileID: 7092908144033613043, guid: e6007c81d836b3045b97d6104ee7a049, type: 3}
+  - {fileID: 7092908144033613043, guid: e90e3ad303b75d844810413026631ab4, type: 3}
+  - {fileID: 7092908144033613043, guid: 64644e8778ba47042aefca035cd669e0, type: 3}
+  - {fileID: 7092908144033613043, guid: 4fa40f0bbd582344db0a733a8337fa86, type: 3}
   commonUnitList:
-  - {fileID: 11400000, guid: 772c8be07d0be5c4b875dda0688d5d00, type: 2}
-  - {fileID: 11400000, guid: bbd858a28acbf0a4d8d6350f6266b48a, type: 2}
-  - {fileID: 11400000, guid: 949aa6b54f994014fa15a23e0096f3c9, type: 2}
+  - {fileID: 7724511528495987691, guid: 236b21be5cecc14449e5e4a18f6f836f, type: 3}
+  - {fileID: 3227982049256397453, guid: bda3165eee65e27478e2624741dacba5, type: 3}
   unCommonUnitList:
-  - {fileID: 11400000, guid: 34a2d3ac74c424d4d88fb344d6f779b3, type: 2}
-  - {fileID: 11400000, guid: ac08acd9c311cbe4b935d9ec3017415f, type: 2}
-  - {fileID: 11400000, guid: 4c323b9f6e75f384a904fed12e0e88fe, type: 2}
+  - {fileID: 7092908144033613043, guid: e6007c81d836b3045b97d6104ee7a049, type: 3}
   rareUnitList:
-  - {fileID: 11400000, guid: 2cad392ca980950489d0ccbaba617745, type: 2}
-  - {fileID: 11400000, guid: ad4ab454f0ece3a4fa496b0744be35a7, type: 2}
-  - {fileID: 11400000, guid: 8a3ddf9b8a30e2c41a6466d1be4a93c3, type: 2}
+  - {fileID: 7092908144033613043, guid: e90e3ad303b75d844810413026631ab4, type: 3}
+  - {fileID: 7092908144033613043, guid: 4fa40f0bbd582344db0a733a8337fa86, type: 3}
   legendaryUnitList:
-  - {fileID: 11400000, guid: 9d39010c01f640c4ba4d621a62d0862b, type: 2}
-  - {fileID: 11400000, guid: fe21202c36de4bf48b85aff45416017a, type: 2}
+  - {fileID: 7092908144033613043, guid: 64644e8778ba47042aefca035cd669e0, type: 3}
