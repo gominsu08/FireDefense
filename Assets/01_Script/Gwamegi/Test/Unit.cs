@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestUnit : MonoBehaviour, ILevelUpAgent
+public class Unit : MonoBehaviour, ILevelUpAgent
 {
-    private UnitLevelClass _unitLevel = new();
+    [SerializeField]private UnitLevelClass _unitLevel = new();
     public UnitLevelClass UnitLevel { get { return _unitLevel; } set { _unitLevel = value; } }
     public UnitDataSO unitData;
-
+    [ContextMenu("Init")]
     public void Initalize()
     {
         UnitLevel.health = (int)unitData.health;

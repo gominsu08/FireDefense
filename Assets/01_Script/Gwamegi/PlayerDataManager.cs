@@ -3,7 +3,7 @@ using System.Collections.Generic;
 public class PlayerDataManager : MonoSingleton<PlayerDataManager>
 {
 
-    public List<TestUnit> haveUnit;
+    public List<Unit> haveUnit;
 
     public int Coin { get; private set; }
 

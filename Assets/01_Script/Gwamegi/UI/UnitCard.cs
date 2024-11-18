@@ -10,7 +10,7 @@ public class UnitCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public int count;
 
-    public TestUnit testUnit;
+    public Unit testUnit;
 
     public int myIndex;
 
@@ -26,7 +26,7 @@ public class UnitCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public UnitLevelClass levelClass;
     public UnitLevelUpInfoClass unitLevelUpUIInfo;
 
-    [SerializeField] private UnitLevelUpUIInfo _unitLevelUpUIInfo;
+    public UnitLevelUpUIInfo _unitLevelUpUIInfo;
 
     public UnitLvUp unitLvUp;
 
@@ -41,6 +41,7 @@ public class UnitCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public UnityEvent OnSelectExitEvent;
 
     private bool _isCanMove = true;
+    private bool _isStart = true;
 
     private float _starPosX;
     private float _moveStartPosX;
@@ -48,6 +49,7 @@ public class UnitCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
             OnClickEvent?.Invoke();
@@ -90,7 +92,11 @@ public class UnitCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         OnSelectPanelEvent?.Invoke(_myRect.position.x, false, this);
         OnSelectEnterEvent?.Invoke();
 
-        OnUnitStatValueChangedEvent?.Invoke(myIndex, this);
+        if (_isStart)
+        {
+            OnUnitStatValueChangedEvent?.Invoke(myIndex, this);
+            _isStart = false;
+        }
 
         _unitLevelUpUIInfo.InfoPanelSet(unitLevelUpUIInfo, levelClass);
 
@@ -149,7 +155,7 @@ public class UnitCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             PlayerDataManager.ULUSData.currentCreatCards = new();
 
         }
-        catch(Exception exp)
+        catch (Exception exp)
         {
             Debug.LogError(exp);
         }

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class Gacha : MonoBehaviour
 {
-    [SerializeField] private MassegeBox _massegeWindow;
+    [SerializeField] private MessegeBox _massegeWindow;
     [SerializeField] private GachaManager _manager;
     /// <summary>
     /// 한번 가챠에 필요한 재화의 양
@@ -38,18 +38,18 @@ public class Gacha : MonoBehaviour
 
         OnStartGachaEvent?.Invoke();
 
-        List<TestUnit> dataSOs = new List<TestUnit>();
+        List<Unit> dataSOs = new List<Unit>();
         
         for (int i = 0; i < count; i++)
         {
-            TestUnit unitData = _manager.Gacha();
+            Unit unitData = _manager.Gacha();
             Debug.Log(unitData);
             AddListUnit(unitData);
             dataSOs.Add(unitData);
         }
         List<UnitDataSO> Unitdata = new();
 
-        foreach (TestUnit unitData in dataSOs)
+        foreach (Unit unitData in dataSOs)
         {
             Unitdata.Add(unitData.unitData);
         }
@@ -63,7 +63,7 @@ public class Gacha : MonoBehaviour
 
     
 
-    private void AddListUnit(TestUnit unitData)
+    private void AddListUnit(Unit unitData)
     {
         if (!PlayerDataManager.Instance.haveUnit.Contains(unitData))
         {

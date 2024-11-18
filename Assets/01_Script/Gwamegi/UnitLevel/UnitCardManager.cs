@@ -62,7 +62,7 @@ public class UnitCardManager : MonoBehaviour
 
     public void UnitStatSet(int i, UnitCard UCS)
     {
-        _playerDataManager.haveUnit[i].Initalize();
+        //_playerDataManager.haveUnit[i].Initalize();
         UnitLevelUpInfoClass unitLevelUpUIInfo = new UnitLevelUpInfoClass();
 
         foreach (var item in ULDS.unitLevelIncreasesList)

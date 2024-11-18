@@ -4,11 +4,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SO/Data/UnitData/UnitDataList")]
 public class UnitDataList : ScriptableObject
 {
-    public List<TestUnit> buyUnitAllList = new List<TestUnit>();
-    public List<TestUnit> commonUnitList = new List<TestUnit>();
-    public List<TestUnit> unCommonUnitList = new List<TestUnit>();
-    public List<TestUnit> rareUnitList = new List<TestUnit>();
-    public List<TestUnit> legendaryUnitList = new List<TestUnit>();
+    public List<Unit> buyUnitAllList = new List<Unit>();
+    public List<Unit> commonUnitList = new List<Unit>();
+    public List<Unit> unCommonUnitList = new List<Unit>();
+    public List<Unit> rareUnitList = new List<Unit>();
+    public List<Unit> legendaryUnitList = new List<Unit>();
 
     private void OnValidate()
     {
@@ -25,7 +25,7 @@ public class UnitDataList : ScriptableObject
 
 
 
-        foreach (TestUnit item in buyUnitAllList)
+        foreach (Unit item in buyUnitAllList)
         {
             switch (item.unitData.rarity)
             {

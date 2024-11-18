@@ -44,4 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa1876a0e3d308419439dc19f02c17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _unitLevel:
+    levelIncreaseEnum: 0
+    attackPower: 43
+    attackSpeed: 76
+    moveSpeed: 456
+    health: 56
+    level: 1
+    buyCount: 0
   unitData: {fileID: 11400000, guid: 0532366f5581f7f419afcd1e0ebc0a18, type: 2}
