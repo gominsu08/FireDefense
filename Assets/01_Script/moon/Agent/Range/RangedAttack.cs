@@ -21,7 +21,6 @@ public class RangedAttack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        moveSpeed = 0;
         if (collision.TryGetComponent(out Health health))
         {
             health.TakeDamage(attackDamaged);

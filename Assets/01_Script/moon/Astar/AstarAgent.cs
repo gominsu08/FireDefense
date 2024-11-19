@@ -11,6 +11,7 @@ public class AstarAgent : MonoBehaviour, IAgentComponent
     public float moveSpeed;
     public float stoppingDistance = 1.5f;
     [SerializeField] private bool _cornerCheck = true;
+    [SerializeField] private bool _lineDebug = true;
 
     private Vector3Int _currentPos, _destination;
     private Vector3 _worldDestination;
@@ -21,8 +22,8 @@ public class AstarAgent : MonoBehaviour, IAgentComponent
     #region Astar variables
     private PriorityQueue<AstarNode> _openList;
     private List<AstarNode> _closeList;
-    private List<Vector3> _routePath = new List<Vector3>();
-    public List<Vector3> RoutePath => _routePath;
+    private List<Vector3> _rountePath = new List<Vector3>();
+    public List<Vector3> RoutePath => _rountePath;
 
     private int _currentIndex;
     #endregion
@@ -49,15 +50,9 @@ public class AstarAgent : MonoBehaviour, IAgentComponent
         _currentPos = Map.GetTilePosFromWorldPos(transform.position);
         _destination = Map.GetTilePosFromWorldPos(destination);
 
-        _routePath = CalcRoute();
+        _rountePath = CalcRoute();
         _currentIndex = 0;
-
-        return _routePath.Count > 0;
-    }
-    public void Stop()
-    {
-        SetDestination(transform.position);
-        _movement.SetVelocity(Vector2.zero);
+        return _rountePath.Count > 0;
     }
     private void FixedUpdate()
     {
@@ -66,15 +61,15 @@ public class AstarAgent : MonoBehaviour, IAgentComponent
 
     private void CheckToMove()
     {
-        if(_currentIndex >= _routePath.Count)return;
+        if(_currentIndex >= _rountePath.Count)return;
 
-        Vector3 pos = _routePath[_currentIndex];
+        Vector3 pos = _rountePath[_currentIndex];
         Vector3 direction = pos - transform.position;
 
         if(direction.magnitude < stoppingDistance)
         {
             _currentIndex++;
-            if(_currentIndex >= _routePath.Count)
+            if(_currentIndex >= _rountePath.Count)
             {
                 _movement.SetVelocity(Vector2.zero);//µµÂø
                 return;
