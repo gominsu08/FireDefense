@@ -7,4 +7,5 @@ using UnityEngine;
 public class TestUnitPrefabListSO : ScriptableObject
 {
     public List<GameObject> unitPrefab = new List<GameObject>();
+
 }

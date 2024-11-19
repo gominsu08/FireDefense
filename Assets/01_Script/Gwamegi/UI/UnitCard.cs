@@ -158,6 +158,7 @@ public class UnitCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         catch (Exception exp)
         {
             Debug.LogError(exp);
+
         }
 
     }

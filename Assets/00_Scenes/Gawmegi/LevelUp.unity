@@ -265,6 +265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57355d8d12678b4e85e88c4622156f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentStageNumber: 0
+  currentStageDifficulty: 0
   haveUnit:
   - {fileID: 7724511528495987691, guid: 236b21be5cecc14449e5e4a18f6f836f, type: 3}
   - {fileID: 3227982049256397453, guid: bda3165eee65e27478e2624741dacba5, type: 3}

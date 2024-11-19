@@ -5,4 +5,5 @@ using UnityEngine;
 public interface ILevelUpAgent
 {
     UnitLevelClass UnitLevel { get; set; }
+
 }

@@ -24,6 +24,7 @@ public class UnitDataSO : AgentDataSO
         }
         else if(unitLevel > 25)
         {
+
             levelIncreaseEnum = LevelIncreaseEnum._15_25;
         }
         else if (unitLevel > 30)
