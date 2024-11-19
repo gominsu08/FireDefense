@@ -16,6 +16,7 @@ public class Unit : MonoBehaviour, ILevelUpAgent
         UnitLevel.moveSpeed = (int)unitData.moveSpeed;
         UnitLevel.level = unitData.unitLevel;
         Debug.Log(UnitLevel.health);
+
     }
 }
 

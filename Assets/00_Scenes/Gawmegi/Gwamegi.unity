@@ -289,8 +289,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb2beb73241edd4e87a2e2b8ee59b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentStageData: {fileID: 11400000, guid: 2a46a4b9b85bd684c81d9c00ba0caaf5, type: 2}
-  tileMap: {fileID: 1354050869}
+  currentStageNumber: 0
+  currentStageDifficulty: 0
+  <StageDataList>k__BackingField: {fileID: 0}
 --- !u!4 &153270734
 Transform:
   m_ObjectHideFlags: 0

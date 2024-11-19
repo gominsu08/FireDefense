@@ -6,6 +6,7 @@ using UnityEngine;
 [Serializable]
 public class UnitLevelClass
 {
+
     public LevelIncreaseEnum levelIncreaseEnum;
     public int attackPower;
     public int attackSpeed;

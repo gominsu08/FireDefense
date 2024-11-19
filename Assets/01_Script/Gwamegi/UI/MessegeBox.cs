@@ -19,6 +19,7 @@ public class MessegeBox : MonoSingleton<MessegeBox>
     }
 
 
+
     public void Confirmed()
     {
         gameObject.SetActive(false);

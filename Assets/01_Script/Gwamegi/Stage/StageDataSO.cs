@@ -43,6 +43,7 @@ public class StageDataSO : ScriptableObject
             Debug.Log($"Current Create Position {(Vector3Int)enemyArrangement[i].position}");
             yield return new WaitForSeconds(0.1f);
         }
+
     }
 
     private void EnemyCreate(StageEnemyData stageEnemyData)

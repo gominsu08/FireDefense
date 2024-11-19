@@ -11,6 +11,7 @@ public class UnitLevelUpBtn : MonoBehaviour
     public void Awake()
     {
         BuyCoinTextSet(_unitCard.count);
+
     }
 
     public void BuyCoinTextSet(int item)

@@ -45,6 +45,7 @@ public class UnitDataList : ScriptableObject
                     legendaryUnitList.Add(item);
                     break;
 
+
                 default: break;
             }
         }

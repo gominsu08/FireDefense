@@ -14,5 +14,6 @@ public class CabinetUI : MonoBehaviour
 
 
         _isCanMove = !_isCanMove;
+
     }
 }

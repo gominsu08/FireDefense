@@ -52,6 +52,7 @@ public class Gacha : MonoBehaviour
         foreach (Unit unitData in dataSOs)
         {
             Unitdata.Add(unitData.unitData);
+
         }
 
         OnChoiseUnitCheckEvent?.Invoke(Unitdata, count);

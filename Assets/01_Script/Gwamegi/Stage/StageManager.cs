@@ -12,6 +12,7 @@ public class StageManager : MonoBehaviour
 
     [field: SerializeField] public StageDataListSO StageDataList { get; protected set;}
 
+
     public void Awake()
     {
         currentStageDifficulty = PlayerDataManager.Instance.currentStageDifficulty;

@@ -15,6 +15,7 @@ public class PanelMove : MonoBehaviour
     {
         _1.DOMoveY(_posYMax + 540, 0.5f);
         _2.DOMoveY(0 + 540, 0.5f);
+
     }
 
     public void Down()

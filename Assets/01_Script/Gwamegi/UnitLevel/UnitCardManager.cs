@@ -67,6 +67,7 @@ public class UnitCardManager : MonoBehaviour
 
         foreach (var item in ULDS.unitLevelIncreasesList)
         {
+
             if (item._levelIncrease == _playerDataManager.haveUnit[i].unitData.levelIncreaseEnum)
             {
                 unitLevelUpUIInfo.unitName = _playerDataManager.haveUnit[i].unitData.agentName;

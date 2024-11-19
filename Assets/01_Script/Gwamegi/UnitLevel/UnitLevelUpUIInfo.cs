@@ -40,5 +40,6 @@ public class UnitLevelUpUIInfo : MonoBehaviour
             $"이동속도 : {unitLevel.moveSpeed}<size=30>(<#60D671>+{moveSpeed}</color>)</size>";
 
         return info;
+
     }
 }

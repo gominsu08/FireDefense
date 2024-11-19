@@ -38,6 +38,7 @@ public class UnitCardContentManager : MonoBehaviour
         }
         if (isRight)
         {
+
             _myRect.DOMove(new Vector3(_myRect.position.x + xMove, _myRect.position.y, _myRect.position.z), 0.25f).OnComplete(() =>
             {
                 RectTransform rect = unitCard.gameObject.GetComponentInChildren<RectTransform>();

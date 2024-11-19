@@ -16,6 +16,7 @@ public class EventPanel : MonoBehaviour
         }
         else if (isPanel_1)
         {
+
             _eventPanel_2.DOScale(1.0f, 0.35f);
             _eventPanel_1.DOScale(0.5f, 0.35f);
         }
