@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd7f4945b853310419bd3259048f7865, type: 3}
   m_Name: UnitDataList
   m_EditorClassIdentifier: 
-  unitAllList:
-  - {fileID: 11400000, guid: bbd858a28acbf0a4d8d6350f6266b48a, type: 2}
-  - {fileID: 11400000, guid: 34a2d3ac74c424d4d88fb344d6f779b3, type: 2}
-  - {fileID: 11400000, guid: 2cad392ca980950489d0ccbaba617745, type: 2}
-  - {fileID: 11400000, guid: 9d39010c01f640c4ba4d621a62d0862b, type: 2}
-  - {fileID: 11400000, guid: 772c8be07d0be5c4b875dda0688d5d00, type: 2}
+  buyUnitAllList:
+  - {fileID: 7724511528495987691, guid: 236b21be5cecc14449e5e4a18f6f836f, type: 3}
+  - {fileID: 3227982049256397453, guid: bda3165eee65e27478e2624741dacba5, type: 3}
+  - {fileID: 7092908144033613043, guid: e6007c81d836b3045b97d6104ee7a049, type: 3}
+  - {fileID: 7092908144033613043, guid: e90e3ad303b75d844810413026631ab4, type: 3}
+  - {fileID: 7092908144033613043, guid: 64644e8778ba47042aefca035cd669e0, type: 3}
+  - {fileID: 7092908144033613043, guid: 4fa40f0bbd582344db0a733a8337fa86, type: 3}
   commonUnitList:
-  - {fileID: 11400000, guid: bbd858a28acbf0a4d8d6350f6266b48a, type: 2}
-  - {fileID: 11400000, guid: 772c8be07d0be5c4b875dda0688d5d00, type: 2}
+  - {fileID: 7724511528495987691, guid: 236b21be5cecc14449e5e4a18f6f836f, type: 3}
+  - {fileID: 3227982049256397453, guid: bda3165eee65e27478e2624741dacba5, type: 3}
   unCommonUnitList:
-  - {fileID: 11400000, guid: 34a2d3ac74c424d4d88fb344d6f779b3, type: 2}
+  - {fileID: 7092908144033613043, guid: e6007c81d836b3045b97d6104ee7a049, type: 3}
   rareUnitList:
-  - {fileID: 11400000, guid: 2cad392ca980950489d0ccbaba617745, type: 2}
+  - {fileID: 7092908144033613043, guid: e90e3ad303b75d844810413026631ab4, type: 3}
+  - {fileID: 7092908144033613043, guid: 4fa40f0bbd582344db0a733a8337fa86, type: 3}
   legendaryUnitList:
-  - {fileID: 11400000, guid: 9d39010c01f640c4ba4d621a62d0862b, type: 2}
+  - {fileID: 7092908144033613043, guid: 64644e8778ba47042aefca035cd669e0, type: 3}

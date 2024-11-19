@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170cd9a6e057f6349afef1182aa08df2, type: 3}
   m_Name: TestUnit1Common
   m_EditorClassIdentifier: 
-  unitSprite: {fileID: 4742633712888814337, guid: f1ce8b04e74bc9f4ab1abf01bfe853df, type: 3}
-  unitName: Name
+  agentSprite: {fileID: 21300000, guid: 7027de66ff456bd4c96e06950ae2938c, type: 3}
+  agentName: "\uC548\uB155\uD558\uC138"
   attackPower: 5
   attackSpeed: 0
   moveSpeed: 10
+  health: 0
   rarity: 0
   rarityColor: {r: 1, g: 1, b: 1, a: 1}
+  levelIncreaseEnum: 0
+  unitLevel: 1

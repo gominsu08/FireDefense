@@ -66,13 +66,13 @@ public class ChoiseItem : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && isSkip)
         {
             ItemReset();
-            gameObject.SetActive(false);
+            gameObject.transform.DOScaleX(0, 0.2f);
         }
     }
 
     private void ItemSet()
     {
-        gameObject.SetActive(true);
+        gameObject.transform.DOScaleX(1,0.2f);
         isSkip = false;
     }
 

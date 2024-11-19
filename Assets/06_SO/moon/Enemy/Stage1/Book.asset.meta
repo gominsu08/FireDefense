@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/06_SO/moon/Enemy/Stage1/Book.asset.meta
 guid: 13c656d5e851c684b90ea543462472b1
+========
+guid: b77d798c7845fdc47945d618166412bd
+>>>>>>>> base:Assets/06_SO/Gwamegi/Unit/TestUnit1Common 2.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

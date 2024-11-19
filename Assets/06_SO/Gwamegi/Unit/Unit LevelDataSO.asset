@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7427350ec4875d848b75c074537346f3, type: 3}
+  m_Name: Unit LevelDataSO
+  m_EditorClassIdentifier: 
+  maxLevel: 30
+  unitLevelIncreasesList:
+  - _levelIncrease: 0
+    attackPowerIncease: 12
+    attackSpeedIncease: 6
+    moveSpeedIncease: 10
+    healthIncease: 14
+    buyCount: 5
+  - _levelIncrease: 1
+    attackPowerIncease: 0
+    attackSpeedIncease: 0
+    moveSpeedIncease: 0
+    healthIncease: 0
+    buyCount: 0
+  - _levelIncrease: 2
+    attackPowerIncease: 0
+    attackSpeedIncease: 0
+    moveSpeedIncease: 0
+    healthIncease: 0
+    buyCount: 0
+  - _levelIncrease: 3
+    attackPowerIncease: 0
+    attackSpeedIncease: 0
+    moveSpeedIncease: 0
+    healthIncease: 0
+    buyCount: 0
