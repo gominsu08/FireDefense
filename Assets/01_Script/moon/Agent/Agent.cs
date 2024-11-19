@@ -95,7 +95,6 @@ public class Agent : MonoBehaviour
     }
     public void Attack()
     {
-        Debug.Log("hihi");
         if (!DataCompo.isRanged)
         {
             List<Health> enemyTemp = new List<Health>(CheckerCompo.myEnemys);
@@ -115,7 +114,6 @@ public class Agent : MonoBehaviour
     }
     public void EndAttackAnimaiton()
     {
-        Debug.Log("hihihi");
         canAttack = false;
         TransitionState(StateType.Idle);
     }

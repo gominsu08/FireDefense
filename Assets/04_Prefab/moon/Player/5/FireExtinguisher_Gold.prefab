@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1150865405677811699}
   - component: {fileID: 3202092161055863246}
   m_Layer: 7
-  m_Name: Player
+  m_Name: FireExtinguisher_Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14f5cb44f22e361458593f59bfeacc11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <DataCompo>k__BackingField: {fileID: 11400000, guid: 1f4b238480c59af4aaa12a87f34e3712, type: 2}
+  <DataCompo>k__BackingField: {fileID: 11400000, guid: eafc49f1a27c84140bcd2f0a14286de9, type: 2}
   canAttack: 1
   myLayer:
     serializedVersion: 2
@@ -79,7 +79,7 @@ MonoBehaviour:
     health: 0
     level: 0
     buyCount: 0
-  unitData: {fileID: 0}
+  unitData: {fileID: 11400000, guid: eafc49f1a27c84140bcd2f0a14286de9, type: 2}
 --- !u!114 &7867132366420717542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +350,7 @@ Animator:
   m_GameObject: {fileID: 5452965433009624913}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 04dbd5526e0892f44892acc3acb68f50, type: 2}
+  m_Controller: {fileID: 9100000, guid: 48bff93ae300575409c175f17ab0d906, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
