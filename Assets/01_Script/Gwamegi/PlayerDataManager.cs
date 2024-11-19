@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerDataManager : MonoSingleton<PlayerDataManager>
 {
+    public int currentStageNumber;
+    public int currentStageDifficulty;
 
     public List<UnitDataSO> haveUnit;
 
