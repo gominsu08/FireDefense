@@ -17,7 +17,6 @@ public class PlayerDataUI : MonoBehaviour
         _playerDataManager = PlayerDataManager.Instance;
     }
 
-
     private void Update()
     {
         _coinText.SetText($":  {_playerDataManager.Coin}");

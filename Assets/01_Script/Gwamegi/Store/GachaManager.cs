@@ -19,7 +19,6 @@ public class GachaManager : MonoBehaviour
         //{
         //    Debug.Log(Gacha());
         //}
-
     }
 
 

@@ -12,7 +12,6 @@ public class StageDataListSO : ScriptableObject
     public List<Stage> stage_4_PrefabList = new List<Stage>();
 
 
-
     public List<Stage> this[int index]
     {
         get

@@ -2334,8 +2334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57355d8d12678b4e85e88c4622156f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentStageNumber: 0
-  currentStageDifficulty: 0
   haveUnit: []
 --- !u!224 &2102113055 stripped
 RectTransform:

@@ -20,7 +20,6 @@ public class CameraMoving : MonoBehaviour
 
     private void Start()
     {
-
         _orthoSize = _vCam.m_Lens.OrthographicSize;
     }
     private void Update()

@@ -14,7 +14,6 @@ public class ChoiseItem : MonoBehaviour
 
     private void Awake()
     {
-
         //_gacha.OnChoiseUnitItemResetEvent += () => isSkip = true;
         _gacha.OnChoiseUnitCheckEvent += ItemCheck;
         _gacha.OnStartGachaEvent += ItemSet;

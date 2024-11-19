@@ -1,4 +1,3 @@
-using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,7 +7,7 @@ using UnityEngine.UI;
 
 public class Gacha : MonoBehaviour
 {
-    [SerializeField] private MessegeBox _massegeWindow;
+    [SerializeField] private MassegeBox _massegeWindow;
     [SerializeField] private GachaManager _manager;
     /// <summary>
     /// 한번 가챠에 필요한 재화의 양
@@ -17,13 +16,14 @@ public class Gacha : MonoBehaviour
     [SerializeField] private ChoiseItem _choiseItem;
     private UnitDataList _unitDataList;
 
-    public event Action OnStartGachaEvent;  
-    public event Action<List<UnitDataSO>,int> OnChoiseUnitCheckEvent;
+    public event Action OnStartGachaEvent;
+    public event Action<List<UnitDataSO>> OnChoiseUnitCheckEvent;
     public event Action OnChoiseUnitItemResetEvent;
 
     private void Start()
     {
         _unitDataList = _manager.unitDataList;
+        _choiseItem.gameObject.SetActive(false);
     }
 
 
@@ -38,24 +38,16 @@ public class Gacha : MonoBehaviour
 
         OnStartGachaEvent?.Invoke();
 
-        List<Unit> dataSOs = new List<Unit>();
+        List<UnitDataSO> dataSOs = new List<UnitDataSO>();
         
         for (int i = 0; i < count; i++)
         {
-            Unit unitData = _manager.Gacha();
+            UnitDataSO unitData = _manager.Gacha();
             Debug.Log(unitData);
             AddListUnit(unitData);
             dataSOs.Add(unitData);
         }
-        List<UnitDataSO> Unitdata = new();
-
-        foreach (Unit unitData in dataSOs)
-        {
-            Unitdata.Add(unitData.unitData);
-
-        }
-
-        OnChoiseUnitCheckEvent?.Invoke(Unitdata, count);
+        OnChoiseUnitCheckEvent?.Invoke(dataSOs);
         PlayerDataManager.Instance.RemoveCoin(coinCount);
         
     }
@@ -64,7 +56,7 @@ public class Gacha : MonoBehaviour
 
     
 
-    private void AddListUnit(Unit unitData)
+    private void AddListUnit(UnitDataSO unitData)
     {
         if (!PlayerDataManager.Instance.haveUnit.Contains(unitData))
         {
