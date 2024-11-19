@@ -5,13 +5,30 @@ using UnityEngine.Tilemaps;
 
 public class StageManager : MonoBehaviour
 {
-    public StageDataSO currentStageData;
-    public Tilemap tileMap;
+    public int currentStageNumber;
+    public int currentStageDifficulty;
 
-    private void Start()
+    public Stage CurrrentStage { get; private set; }
+
+    [field: SerializeField] public StageDataListSO StageDataList { get; protected set;}
+
+    public void Awake()
     {
+        currentStageDifficulty = PlayerDataManager.Instance.currentStageDifficulty;
+        currentStageNumber = PlayerDataManager.Instance.currentStageNumber;
 
-        currentStageData.tileMap = tileMap;
-        StartCoroutine(currentStageData.StageCreate());
+        StageCreate(StageDataList[currentStageNumber]);
+    }
+
+    public void StageCreate(List<Stage> stageList)
+    {
+        foreach (Stage stage in stageList)
+        {
+            if(stage.StageDifficulty == currentStageDifficulty)
+            {
+                Stage currentStage = Instantiate(stage);
+                CurrrentStage = currentStage;
+            }
+        }
     }
 }
