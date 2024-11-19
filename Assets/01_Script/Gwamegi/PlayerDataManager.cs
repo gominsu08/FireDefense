@@ -5,6 +5,8 @@ public class PlayerDataManager : MonoSingleton<PlayerDataManager>
     public int currentStageNumber;
     public int currentStageDifficulty;
 
+    public Stage currentStage;
+
     public List<Unit> haveUnit;
 
     public int Coin { get; private set; }
