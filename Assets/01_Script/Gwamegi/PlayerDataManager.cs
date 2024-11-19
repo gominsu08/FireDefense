@@ -1,11 +1,13 @@
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerDataManager : MonoSingleton<PlayerDataManager>
 {
 
-    public List<Unit> haveUnit;
+    public List<UnitDataSO> haveUnit;
 
-    public int Coin { get; private set; }
+    public int Coin {  get; private set; }
 
     private void Awake()
     {
@@ -28,7 +30,4 @@ public class PlayerDataManager : MonoSingleton<PlayerDataManager>
     {
         Coin -= count;
     }
-
-    private UnitLevelUpSceneData _ulusData = new UnitLevelUpSceneData();
-    public static UnitLevelUpSceneData ULUSData { get { return Instance._ulusData; } }
 }

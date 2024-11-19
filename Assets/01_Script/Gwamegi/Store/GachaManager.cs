@@ -23,7 +23,7 @@ public class GachaManager : MonoBehaviour
 
 
 
-    public Unit Gacha()
+    public UnitDataSO Gacha()
     {
         float random = Random.Range(0.0f, 100.1f);
 
@@ -45,7 +45,7 @@ public class GachaManager : MonoBehaviour
         }
     }
 
-    public Unit GetUnitByRarity(UnitRarityEnum rarityEnum)
+    public UnitDataSO GetUnitByRarity(UnitRarityEnum rarityEnum)
     {
         switch (rarityEnum)
         {
