@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IAgentComponent
+public interface ILevelUpAgent
 {
-    public void Initialize(Agent agent);
+    UnitLevelClass UnitLevel { get; set; }
+
 }

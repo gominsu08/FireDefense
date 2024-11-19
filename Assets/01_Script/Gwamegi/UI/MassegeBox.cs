@@ -13,6 +13,7 @@ public class MassegeBox : MonoBehaviour
     }
 
 
+
     public void Confirmed()
     {
         gameObject.SetActive(false);
