@@ -11,9 +11,6 @@ public class MapSetting : MonoBehaviour
     {
         _floor = transform.Find("FloorTile").GetComponent<Tilemap>();
         _collider = transform.Find("ColliderTile").GetComponent<Tilemap>();
-    }
-    private void Start()
-    {
         _mapInfoSO.Initialize(_floor, _collider);
     }
 }

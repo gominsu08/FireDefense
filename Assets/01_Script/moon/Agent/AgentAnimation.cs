@@ -21,7 +21,7 @@ public class AgentAnimation : MonoBehaviour
                 Play("Idle");
                 break;
             case AnimationType.Move:
-                Play("Move");
+                Play("Idle");
                 break;
             case AnimationType.Attack:
                 Play("Attack");

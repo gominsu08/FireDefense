@@ -39,6 +39,9 @@ public class Agent : MonoBehaviour
     [field: SerializeField] public bool IsFacingRight { get; private set; } = true;
     private float myRangeAttackMoveX;
 
+
+    
+
     protected virtual void Awake()
     {
         AnimatorCompo = GetComponentInChildren<AgentAnimation>();
@@ -66,7 +69,7 @@ public class Agent : MonoBehaviour
     {
         if (AstarCompo == null) return;
         AstarCompo.Initialize(this);
-        AstarCompo.moveSpeed = DataCompo.moveSpeed;
+        AstarCompo.moveSpeed = DataCompo.moveSpeed/3f;
     }
     private void MyLayerFind()
     {
@@ -80,7 +83,7 @@ public class Agent : MonoBehaviour
     public void Stop()
     {
         if (AstarCompo == null) return;
-        AstarCompo.SetDestination(Vector3.zero);
+        AstarCompo.Stop();
     }
     public void Flip()
     {
@@ -92,6 +95,7 @@ public class Agent : MonoBehaviour
     }
     public void Attack()
     {
+        Debug.Log("hihi");
         if (!DataCompo.isRanged)
         {
             List<Health> enemyTemp = new List<Health>(CheckerCompo.myEnemys);
@@ -111,6 +115,7 @@ public class Agent : MonoBehaviour
     }
     public void EndAttackAnimaiton()
     {
+        Debug.Log("hihihi");
         canAttack = false;
         TransitionState(StateType.Idle);
     }
@@ -148,7 +153,7 @@ public class Agent : MonoBehaviour
         if (!canAttack)
         {
             lastAttackTime += Time.deltaTime;
-            if (lastAttackTime >= 1f / DataCompo.attackSpeed)
+            if (lastAttackTime >=  3f / DataCompo.attackSpeed )
             {
                 lastAttackTime = 0;
                 canAttack = true;
