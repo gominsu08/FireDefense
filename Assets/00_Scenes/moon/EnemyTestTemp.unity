@@ -3262,7 +3262,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 749553788053642138, guid: 26af943a4d451b540b256cd75f84d723, type: 3}
       propertyPath: <IsFacingRight>k__BackingField
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2766464659515206854, guid: 26af943a4d451b540b256cd75f84d723, type: 3}
       propertyPath: _lineDrawer
@@ -3316,6 +3316,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5336901639287407966, guid: 26af943a4d451b540b256cd75f84d723, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: db28384b1dd8a8a498626e78b5bcac3a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 996679108086698849, guid: 26af943a4d451b540b256cd75f84d723, type: 3}
