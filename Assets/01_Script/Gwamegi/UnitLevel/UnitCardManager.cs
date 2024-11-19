@@ -39,7 +39,7 @@ public class UnitCardManager : MonoBehaviour
             rect.sizeDelta = new Vector2(300, 400);
 
             Image rectImage = GO.AddComponent<Image>();
-            rectImage.sprite = _playerDataManager.haveUnit[i].unitData.agentSprite;
+            rectImage.sprite = _playerDataManager.haveUnit[i].unitData.unitSprite;
             rectImage.rectTransform.localPosition = new Vector3(-500, 100, 0);
             UnitCard UCS = image.GetComponent<UnitCard>();
             UCS.unitImage = rectImage;
@@ -70,12 +70,12 @@ public class UnitCardManager : MonoBehaviour
 
             if (item._levelIncrease == _playerDataManager.haveUnit[i].unitData.levelIncreaseEnum)
             {
-                unitLevelUpUIInfo.unitName = _playerDataManager.haveUnit[i].unitData.agentName;
+                unitLevelUpUIInfo.unitName = _playerDataManager.haveUnit[i].unitData.unitName;
                 unitLevelUpUIInfo.attackPower = item.attackPowerIncease;
                 unitLevelUpUIInfo.attackSpeed = item.attackSpeedIncease;
                 unitLevelUpUIInfo.moveSpeed = item.moveSpeedIncease;
                 unitLevelUpUIInfo.health = item.healthIncease;
-                unitLevelUpUIInfo.unitSprite = _playerDataManager.haveUnit[i].unitData.agentSprite;
+                unitLevelUpUIInfo.unitSprite = _playerDataManager.haveUnit[i].unitData.unitSprite;
                 UCS.count = item.buyCount;
             }
         }

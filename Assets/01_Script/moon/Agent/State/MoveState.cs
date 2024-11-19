@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class MoveState : State
 {
-    private float time;
-    private float moveTime = 1;
-
     public MoveState(Agent agent) : base(agent)
     {
     }
@@ -14,7 +12,6 @@ public class MoveState : State
     protected override void EnterState()
     {
         _agent.AnimatorCompo.PlayAnimation(AnimationType.Move);
-        moveTime = _agent.DataCompo.moveSpeed;
     }
     public override void StateUpdate()
     {
@@ -30,15 +27,13 @@ public class MoveState : State
                 _agent.TransitionState(StateType.Idle);
             }
         }
-        time += Time.deltaTime;
-        if (time >= moveTime)
+        else
         {
             _agent.Move();
-            time = 0;
         }
+
     }
     protected override void ExitState()
     {
-        time = 0;
     }
 }

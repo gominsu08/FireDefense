@@ -11,5 +11,7 @@ public class AttackState : State
     protected override void EnterState()
     {
         _agent.AnimatorCompo.PlayAnimation(AnimationType.Attack);
+        _agent.BulletSpeedReset();
+        _agent.Stop();
     }
 }

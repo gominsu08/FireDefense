@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class Health : MonoBehaviour, IAgentComponent
 {
     public float _maxHealth = 3;
     private float _currentHealth;
@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
             return _currentHealth;
         }
     }
-    public void Initalize(Agent agent)
+    public void Initialize(Agent agent)
     {
         _agent = agent;
     }

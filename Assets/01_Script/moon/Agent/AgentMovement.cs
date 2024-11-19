@@ -1,18 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AgentMovement : MonoBehaviour
+public class AgentMovement : MonoBehaviour, IAgentComponent
 {
-    // Start is called before the first frame update
-    void Start()
+    private Agent _agnet;
+    private Vector2 _velocity;
+    public void SetVelocity(Vector2 velocity)
     {
-        
+        _velocity = velocity;
+
+        FlipCheck();
+    }
+    private void FlipCheck()
+    {
+        bool isFlipToLeft = _velocity.x > 0 && _agnet.IsFacingRight == false;
+        bool isFlipRight = _velocity.x < 0 && _agnet.IsFacingRight;
+
+        if (isFlipRight || isFlipToLeft)
+        {
+            _agnet.Flip();
+        }
+    }
+    private void FixedUpdate()
+    {
+        _agnet.RbCompo.velocity = _velocity;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Initialize(Agent agent)
     {
-        
+        _agnet = agent;
     }
 }

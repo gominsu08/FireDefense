@@ -51,26 +51,32 @@ public class Checker : MonoBehaviour
     public UnityEvent OnEnemyEnter,OnEnemyAllExit;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        FindedEnemy++;
         try
         {
-            myEnemys.Add(collision.transform.parent.GetComponent<Health>());
+            if (collision.transform.GetComponent<Health>() != null)
+            {
+                myEnemys.Add(collision.transform.GetComponent<Health>());
+                FindedEnemy++;
+            }
         }
         catch (Exception)
         {
-            print("Agent has a problem");
+            print("Health has a problem");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        FindedEnemy--;
         try
         {
-            myEnemys.Remove(collision.transform.parent.GetComponent<Health>());
+            if (collision.transform.GetComponent<Health>() != null)
+            {
+                myEnemys.Remove(collision.transform.GetComponent<Health>());
+                FindedEnemy--;
+            }
         }
         catch (Exception)
         {
-            print("Agent has a problem");
+            print("Health has a problem");
         }
     }
 }
