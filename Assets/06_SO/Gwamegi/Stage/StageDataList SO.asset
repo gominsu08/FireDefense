@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e958f87556d30bd40a1233196154f821, type: 3}
+  m_Name: StageDataList SO
+  m_EditorClassIdentifier: 
+  stagePrefabList:
+  - {fileID: 9005963640926410919, guid: 72432ece9d3dfb84d9975e63b1b8af66, type: 3}
+  - {fileID: 7838575011673707665, guid: 8382271e830c91e4a8b015d3b8f64185, type: 3}
+  - {fileID: 5405265893755419113, guid: 5414893e36ba52f44a902a82d3f7ce4c, type: 3}
+  - {fileID: 6838700270827387241, guid: 9d19c6d480cc16c45aa7da259ab0df34, type: 3}
+  - {fileID: 6693755629527738906, guid: a80922977e5d4894f9ee8b7cc9db31f7, type: 3}
+  - {fileID: 5120829705674712698, guid: 6ef7cd4f3c6a48e42bb0dc993e279da1, type: 3}
+  - {fileID: 8655863831213003163, guid: 5777b65662ea4744c8c04b8ebb520ee8, type: 3}
+  - {fileID: 4615321684884976874, guid: 0a3dbdf4ece215140bdef7f459c34eaa, type: 3}
+  - {fileID: 7509375287775309732, guid: af480b6421c5a5644827e7b025c7ad17, type: 3}
+  - {fileID: 7539384734561604463, guid: 7ae8de2373892a94cb0a3da1439b6925, type: 3}
+  - {fileID: 8632438862940069500, guid: aa48db21addfbd44b993a7964cdde68f, type: 3}
+  - {fileID: 7023256422923187037, guid: 02b789cef1d4ca3489846c17113b0f25, type: 3}
+  - {fileID: 5934659456393876973, guid: 82b745c411879f44ba682bee0b28dbc7, type: 3}
+  - {fileID: 579265881976045257, guid: b545713b74da386408de44177174cfc7, type: 3}
+  - {fileID: 4081471029934593701, guid: e1ad7ffd938258d44bbfa5910a7db70e, type: 3}
+  - {fileID: 7660915391080803626, guid: 78d6ae28e02088f43bd14b34319feed6, type: 3}
+  stage_1_PrefabList:
+  - {fileID: 9005963640926410919, guid: 72432ece9d3dfb84d9975e63b1b8af66, type: 3}
+  - {fileID: 7838575011673707665, guid: 8382271e830c91e4a8b015d3b8f64185, type: 3}
+  - {fileID: 5405265893755419113, guid: 5414893e36ba52f44a902a82d3f7ce4c, type: 3}
+  - {fileID: 6838700270827387241, guid: 9d19c6d480cc16c45aa7da259ab0df34, type: 3}
+  stage_2_PrefabList:
+  - {fileID: 6693755629527738906, guid: a80922977e5d4894f9ee8b7cc9db31f7, type: 3}
+  - {fileID: 5120829705674712698, guid: 6ef7cd4f3c6a48e42bb0dc993e279da1, type: 3}
+  - {fileID: 8655863831213003163, guid: 5777b65662ea4744c8c04b8ebb520ee8, type: 3}
+  - {fileID: 4615321684884976874, guid: 0a3dbdf4ece215140bdef7f459c34eaa, type: 3}
+  stage_3_PrefabList:
+  - {fileID: 7509375287775309732, guid: af480b6421c5a5644827e7b025c7ad17, type: 3}
+  - {fileID: 7539384734561604463, guid: 7ae8de2373892a94cb0a3da1439b6925, type: 3}
+  - {fileID: 8632438862940069500, guid: aa48db21addfbd44b993a7964cdde68f, type: 3}
+  - {fileID: 7023256422923187037, guid: 02b789cef1d4ca3489846c17113b0f25, type: 3}
+  stage_4_PrefabList:
+  - {fileID: 5934659456393876973, guid: 82b745c411879f44ba682bee0b28dbc7, type: 3}
+  - {fileID: 579265881976045257, guid: b545713b74da386408de44177174cfc7, type: 3}
+  - {fileID: 4081471029934593701, guid: e1ad7ffd938258d44bbfa5910a7db70e, type: 3}
+  - {fileID: 7660915391080803626, guid: 78d6ae28e02088f43bd14b34319feed6, type: 3}
