@@ -20,6 +20,7 @@ MonoBehaviour:
   health: 130
   isRanged: 0
   RangedAttackObject: {fileID: 0}
+  prefab: {fileID: 3812116783126895921, guid: de5c15c7c591bd348b6a38c10e96d4a4, type: 3}
   rarity: 0
   rarityColor: {r: 1, g: 1, b: 1, a: 1}
   levelIncreaseEnum: 0

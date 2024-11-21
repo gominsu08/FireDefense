@@ -54,7 +54,6 @@ public class Agent : MonoBehaviour
         MyLayerFind();
         BulletSpeedReset();
         HealthCompo.Initialize(this);
-        InitializeAstar();
     }
     public void BulletSpeedReset()
     {
@@ -63,6 +62,7 @@ public class Agent : MonoBehaviour
     }
     private void Start()
     {
+        InitializeAstar();
         TransitionState(StateType.Idle);
     }
     private void InitializeAstar()
