@@ -11,6 +11,10 @@ public class Stage : MonoBehaviour
 
     [field: SerializeField] public int StageCost { get; private set; }
 
+    public void SpendCost(int cost)
+    {
+        StageCost -= cost;
+    }
 
 }
 

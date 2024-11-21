@@ -58,7 +58,6 @@ public class GachaManager : MonoBehaviour
                 return unitDataList.rareUnitList[Random.Range(0, unitDataList.rareUnitList.Count)];
             case UnitRarityEnum.Legendary:
                 return unitDataList.legendaryUnitList[Random.Range(0, unitDataList.legendaryUnitList.Count)];
-
         }
 
         return null;
