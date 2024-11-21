@@ -2915,7 +2915,7 @@ GameObject:
   - component: {fileID: 1798582587}
   - component: {fileID: 1798582586}
   - component: {fileID: 1798582585}
-  m_Layer: 11
+  m_Layer: 7
   m_Name: ColliderTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
