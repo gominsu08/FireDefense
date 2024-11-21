@@ -15,37 +15,32 @@ public class MainMenuBtnClick : MonoBehaviour
         SetText(false);
     }
 
-    public bool IsCanInterection { get; private set; } = true;
+    public bool IsCanInterection = true;
 
     public void SetText(bool isTrue)
     {
-        //_myText.gameObject.SetActive(isTrue);
-        _myText.DOFade(Convert.ToInt32(isTrue),0.15f);
+        _myText.DOFade(Convert.ToInt32(isTrue), 0.25f);
 
     }
 
 
     public void ScaleX(float scale)
     {
-            _myRect.DOScaleX(scale, 0.15f).OnComplete(() =>
-            {
-                IsCanInterection = true;
-            });
+        if (IsCanInterection)
+            _myRect.DOScaleX(scale, 0.15f);
     }
 
     public void ScaleY(float scale)
     {
-            _myRect.DOScaleY(scale, 0.15f).OnComplete(() =>
-            {
-                IsCanInterection = true;
-            });
+        if (IsCanInterection)
+            _myRect.DOScaleY(scale, 0.15f);
     }
 
     public void ImageArpha(float a)
     {
-            Color color = _myImage.color;
-            color.a = a;
-            _myImage.color = color;
+        Color color = _myImage.color;
+        color.a = a;
+        _myImage.color = color;
     }
 
     public void MoveY(float moveY)
