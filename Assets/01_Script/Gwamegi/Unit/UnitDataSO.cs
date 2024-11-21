@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SO/Data/UnitData/UnitDataSO")]
 public class UnitDataSO : AgentDataSO
 {
+    public GameObject prefab;
+    public int UnitCost;
     public UnitRarityEnum rarity;
     public Color rarityColor;
 
