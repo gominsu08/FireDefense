@@ -127,10 +127,12 @@ public class MyEnemyDistanceChecker : MonoBehaviour
     }
     private void GameWin()
     {
+        print("win");
         end = true;
     }
     private void GameOver()
     {
+        print("gameover");
         end = true;
     }
 }   

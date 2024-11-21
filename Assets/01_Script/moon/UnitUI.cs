@@ -29,12 +29,18 @@ public class UnitUI : MonoBehaviour
 
             template.Find("Image").GetComponent<Image>().sprite = item.unitData.unitSprite;
 
-
-            template.GetComponent<Button>().onClick.AddListener(() =>
+            if (PlayerDataManager.Instance.haveUnit.Contains(item))
             {
-                UnitManager.Instance.SetBuildingType(item.unitData);
-                SelectBtn(item);
-            });
+                template.GetComponent<Button>().onClick.AddListener(() =>
+                {
+                    UnitManager.Instance.SetBuildingType(item.unitData);
+                    SelectBtn(item);
+                });
+            }
+            else
+            {
+                template.GetComponent<Button>().enabled = false;
+            }
             //MouseEnterExit mouseEnterExit = template.GetComponent<MouseEnterExit>();
             //mouseEnterExit.OnMouseEnter += () => TooltipUI.Instance.Show(item.name + "\n" + item.GetCose());
             //mouseEnterExit.OnMouseExit += () => TooltipUI.Instance.Hide();
