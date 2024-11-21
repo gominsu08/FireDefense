@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170cd9a6e057f6349afef1182aa08df2, type: 3}
   m_Name: FishKing
   m_EditorClassIdentifier: 
-  unitSprite: {fileID: 0}
+  unitSprite: {fileID: 21300000, guid: c8449d15b56ad1942841b3a11125ed93, type: 3}
   unitName: FishKing
   attackPower: 5
   attackSpeed: 2
@@ -20,6 +20,7 @@ MonoBehaviour:
   health: 50
   isRanged: 0
   RangedAttackObject: {fileID: 0}
+  prefab: {fileID: 3812116783126895921, guid: 7b874d72cae8d594facf8c8bae939bbb, type: 3}
   rarity: 0
   rarityColor: {r: 1, g: 1, b: 1, a: 1}
   levelIncreaseEnum: 0

@@ -4,6 +4,10 @@ public class AgentMovement : MonoBehaviour, IAgentComponent
 {
     private Agent _agnet;
     private Vector2 _velocity;
+    private void Awake()
+    {
+        _velocity = Vector2.zero;
+    }
     public void SetVelocity(Vector2 velocity)
     {
         _velocity = velocity;

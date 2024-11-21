@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7f4945b853310419bd3259048f7865, type: 3}
+  m_Name: Units
+  m_EditorClassIdentifier: 
+  buyUnitAllList:
+  - {fileID: 7477723058197722524, guid: fc60590931dcc4443848bd8a125523eb, type: 3}
+  - {fileID: 7477723058197722524, guid: 7b874d72cae8d594facf8c8bae939bbb, type: 3}
+  - {fileID: 7477723058197722524, guid: de5c15c7c591bd348b6a38c10e96d4a4, type: 3}
+  - {fileID: 7477723058197722524, guid: 949042333ca081a4985b75d32d68c838, type: 3}
+  - {fileID: 7477723058197722524, guid: dcd8008434c1f3e45a1f50ffd98ca814, type: 3}
+  - {fileID: 7477723058197722524, guid: adee0d207449c6842a9b214b7e3468fe, type: 3}
+  - {fileID: 7477723058197722524, guid: b142d96ed74c39040b0fb4b37d482f11, type: 3}
+  - {fileID: 7477723058197722524, guid: 57bd85795d263d949a81a64a99bb34fa, type: 3}
+  - {fileID: 7477723058197722524, guid: 51428fffd043a2d40b85f354ed762d6b, type: 3}
+  - {fileID: 7477723058197722524, guid: aec7091ba2fc51142a559e0ac3807a1b, type: 3}
+  - {fileID: 7477723058197722524, guid: f30e93d65de45004fa9208f2baaad6e5, type: 3}
+  commonUnitList:
+  - {fileID: 7477723058197722524, guid: fc60590931dcc4443848bd8a125523eb, type: 3}
+  - {fileID: 7477723058197722524, guid: 7b874d72cae8d594facf8c8bae939bbb, type: 3}
+  - {fileID: 7477723058197722524, guid: de5c15c7c591bd348b6a38c10e96d4a4, type: 3}
+  - {fileID: 7477723058197722524, guid: 949042333ca081a4985b75d32d68c838, type: 3}
+  unCommonUnitList:
+  - {fileID: 7477723058197722524, guid: dcd8008434c1f3e45a1f50ffd98ca814, type: 3}
+  - {fileID: 7477723058197722524, guid: adee0d207449c6842a9b214b7e3468fe, type: 3}
+  - {fileID: 7477723058197722524, guid: b142d96ed74c39040b0fb4b37d482f11, type: 3}
+  rareUnitList:
+  - {fileID: 7477723058197722524, guid: 57bd85795d263d949a81a64a99bb34fa, type: 3}
+  - {fileID: 7477723058197722524, guid: 51428fffd043a2d40b85f354ed762d6b, type: 3}
+  legendaryUnitList:
+  - {fileID: 7477723058197722524, guid: aec7091ba2fc51142a559e0ac3807a1b, type: 3}
+  - {fileID: 7477723058197722524, guid: f30e93d65de45004fa9208f2baaad6e5, type: 3}
