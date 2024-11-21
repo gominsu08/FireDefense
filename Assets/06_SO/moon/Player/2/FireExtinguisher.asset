@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170cd9a6e057f6349afef1182aa08df2, type: 3}
+  m_Name: FireExtinguisher
+  m_EditorClassIdentifier: 
+  unitSprite: {fileID: 0}
+  unitName: FireExtinguisher
+  attackPower: 40
+  attackSpeed: 5
+  moveSpeed: 6
+  health: 300
+  isRanged: 0
+  RangedAttackObject: {fileID: 0}
+  prefab: {fileID: 3812116783126895921, guid: dcd8008434c1f3e45a1f50ffd98ca814, type: 3}
+  rarity: 1
+  rarityColor: {r: 0, g: 1, b: 1, a: 1}
+  levelIncreaseEnum: 0
+  unitLevel: 1

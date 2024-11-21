@@ -43,7 +43,7 @@ public class ChoiseItem : MonoBehaviour
         {
             Image image = _itemImage;
             image.color = list[i].rarityColor;
-            Sprite sprite = list[i].agentSprite;
+            Sprite sprite = list[i].unitSprite;
             if (i > 1) isUnitCardCreatSkip = true;
 
             if (i < 5)

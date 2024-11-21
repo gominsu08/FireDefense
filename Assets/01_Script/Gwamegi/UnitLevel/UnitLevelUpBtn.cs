@@ -26,7 +26,7 @@ public class UnitLevelUpBtn : MonoBehaviour
         {
             _unitCard.unitLvUp.LvUp(ref _unitCard.testUnit);
             _unitCard._unitLevelUpUIInfo.InfoPanelSet(_unitCard.unitLevelUpUIInfo, _unitCard.levelClass);
-            Debug.Log($"{_unitCard.testUnit.unitData.agentName}의 체력 : {_unitCard.testUnit.UnitLevel.health}");
+            Debug.Log($"{_unitCard.testUnit.unitData.unitName}의 체력 : {_unitCard.testUnit.UnitLevel.health}");
             PlayerDataManager.Instance.RemoveCoin(_unitCard.count);
         }
         else

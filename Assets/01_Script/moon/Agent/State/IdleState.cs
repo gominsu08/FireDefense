@@ -11,6 +11,7 @@ public class IdleState : State
     protected override void EnterState()
     {
         _agent.AnimatorCompo.PlayAnimation(AnimationType.Idle);
+        _agent.Stop();
     }
     public override void StateUpdate()
     {
