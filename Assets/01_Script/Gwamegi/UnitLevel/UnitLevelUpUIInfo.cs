@@ -28,7 +28,7 @@ public class UnitLevelUpUIInfo : MonoBehaviour
         _unitImage.sprite = ULUI.unitSprite;
 
 
-        _unitStatInfoText.SetText(StatTextSet(ULUI.attackPower, ULUI.attackSpeed, ULUI.moveSpeed, ULUI.moveSpeed, unitLevel));
+        _unitStatInfoText.SetText(StatTextSet(ULUI.attackPower, ULUI.attackSpeed, ULUI.moveSpeed, ULUI.health, unitLevel));
     }
 
     public string StatTextSet(int attackPower, int attackSpeed, int moveSpeed, int health, UnitLevelClass unitLevel)

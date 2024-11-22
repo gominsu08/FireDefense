@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170cd9a6e057f6349afef1182aa08df2, type: 3}
   m_Name: FireExtinguisher_Speak
   m_EditorClassIdentifier: 
-  unitSprite: {fileID: 0}
-  unitName: FireExtinguisher_Speak
+  unitSprite: {fileID: 21300000, guid: 09a8ea94aaf22d249b016720b963f74b, type: 3}
+  unitName: "\uB9D0\uD558\uB294 \uC18C\uD654\uAE30"
   attackPower: 80
   attackSpeed: 7
   moveSpeed: 7
@@ -21,7 +21,9 @@ MonoBehaviour:
   isRanged: 0
   RangedAttackObject: {fileID: 0}
   prefab: {fileID: 3812116783126895921, guid: 57bd85795d263d949a81a64a99bb34fa, type: 3}
+  UnitCost: 0
   rarity: 2
-  rarityColor: {r: 204, g: 0, b: 255, a: 255}
+  unitCardData: {fileID: 11400000, guid: f47e24375d63e23448ff076b7dfd44d0, type: 2}
+  rarityColor: {fileID: 21300000, guid: 20ba1e494003103478567836f096e96c, type: 3}
   levelIncreaseEnum: 0
   unitLevel: 1

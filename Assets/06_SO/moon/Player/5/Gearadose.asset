@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170cd9a6e057f6349afef1182aa08df2, type: 3}
   m_Name: Gearadose
   m_EditorClassIdentifier: 
-  unitSprite: {fileID: 0}
-  unitName: FireExtinguisher_Gold
+  unitSprite: {fileID: 21300000, guid: da0a20045c0dafd42a9ac240a211e3f8, type: 3}
+  unitName: "\uAC38\uB77C\uB3C4\uC2A4"
   attackPower: 40
   attackSpeed: 25
   moveSpeed: 8
@@ -21,7 +21,9 @@ MonoBehaviour:
   isRanged: 0
   RangedAttackObject: {fileID: 0}
   prefab: {fileID: 3812116783126895921, guid: f30e93d65de45004fa9208f2baaad6e5, type: 3}
+  UnitCost: 0
   rarity: 3
-  rarityColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  unitCardData: {fileID: 11400000, guid: f47e24375d63e23448ff076b7dfd44d0, type: 2}
+  rarityColor: {fileID: 21300000, guid: 28ada3fd573231d479cd918aaac4c900, type: 3}
   levelIncreaseEnum: 0
   unitLevel: 1

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170cd9a6e057f6349afef1182aa08df2, type: 3}
   m_Name: Fireplug
   m_EditorClassIdentifier: 
-  unitSprite: {fileID: 0}
-  unitName: Fireplug
+  unitSprite: {fileID: 21300000, guid: 2e4dd535df87ba649ac335ece799284c, type: 3}
+  unitName: "\uC18C\uD654\uC804"
   attackPower: 65
   attackSpeed: 6
   moveSpeed: 6
@@ -21,7 +21,9 @@ MonoBehaviour:
   isRanged: 0
   RangedAttackObject: {fileID: 0}
   prefab: {fileID: 3812116783126895921, guid: 51428fffd043a2d40b85f354ed762d6b, type: 3}
+  UnitCost: 0
   rarity: 2
-  rarityColor: {r: 204, g: 0, b: 255, a: 255}
+  unitCardData: {fileID: 11400000, guid: f47e24375d63e23448ff076b7dfd44d0, type: 2}
+  rarityColor: {fileID: 21300000, guid: 20ba1e494003103478567836f096e96c, type: 3}
   levelIncreaseEnum: 0
   unitLevel: 1
