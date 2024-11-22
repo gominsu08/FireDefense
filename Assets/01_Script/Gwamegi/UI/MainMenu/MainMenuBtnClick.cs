@@ -19,7 +19,7 @@ public class MainMenuBtnClick : MonoBehaviour
 
     public void SetText(bool isTrue)
     {
-        _myText.DOFade(Convert.ToInt32(isTrue), 0.25f);
+        _myText.DOFade(Convert.ToInt32(isTrue), 0.15f);
 
     }
 

@@ -74,7 +74,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 2.8, y: 2.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3250838307759111849}
@@ -282,7 +282,6 @@ MonoBehaviour:
   _cornerCheck: 1
   _map: {fileID: 11400000, guid: 3e0c4d65890c0684fba8e209a0990950, type: 2}
   obstacleCost: 5
-  _lineDrawer: {fileID: 0}
 --- !u!114 &2379016378511610019
 MonoBehaviour:
   m_ObjectHideFlags: 0

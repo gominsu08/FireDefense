@@ -12,13 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170cd9a6e057f6349afef1182aa08df2, type: 3}
   m_Name: TestUnit1-1Common 3
   m_EditorClassIdentifier: 
-  agentSprite: {fileID: 21300000, guid: 77024379558675547a0c93b325ae6e71, type: 3}
-  agentName: ming
+  unitSprite: {fileID: 21300000, guid: 77024379558675547a0c93b325ae6e71, type: 3}
+  unitName: 
   attackPower: 43
   attackSpeed: 76
   moveSpeed: 456
   health: 56
+  isRanged: 0
+  RangedAttackObject: {fileID: 0}
+  prefab: {fileID: 0}
+  UnitCost: 0
   rarity: 2
-  rarityColor: {r: 204, g: 0, b: 255, a: 255}
+  unitCardData: {fileID: 11400000, guid: f47e24375d63e23448ff076b7dfd44d0, type: 2}
+  rarityColor: {fileID: 21300000, guid: 20ba1e494003103478567836f096e96c, type: 3}
   levelIncreaseEnum: 0
   unitLevel: 1

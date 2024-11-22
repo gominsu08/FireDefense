@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170cd9a6e057f6349afef1182aa08df2, type: 3}
   m_Name: WaterGun
   m_EditorClassIdentifier: 
-  unitSprite: {fileID: 0}
-  unitName: WaterGun
+  unitSprite: {fileID: 21300000, guid: a87228e21e6912b4fa37de08e51dcb36, type: 3}
+  unitName: "\uBB3C\uCD1D"
   attackPower: 375
   attackSpeed: 45
   moveSpeed: 6
@@ -21,7 +21,9 @@ MonoBehaviour:
   isRanged: 0
   RangedAttackObject: {fileID: 0}
   prefab: {fileID: 3812116783126895921, guid: adee0d207449c6842a9b214b7e3468fe, type: 3}
+  UnitCost: 0
   rarity: 1
-  rarityColor: {r: 0, g: 1, b: 1, a: 1}
+  unitCardData: {fileID: 11400000, guid: f47e24375d63e23448ff076b7dfd44d0, type: 2}
+  rarityColor: {fileID: 21300000, guid: f097fa16010c74241bffaafc5bf438cd, type: 3}
   levelIncreaseEnum: 0
   unitLevel: 1
