@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,8 +18,14 @@ public class StageSelectBtn : MonoBehaviour
     {
         _mapInfoPanel = MapInfoPanel.Instance;
         GetComponent<Button>().onClick.AddListener(CurrentStageSet);
+        SetText();
     }
 
+    public void SetText()
+    {
+        TextMeshProUGUI text = GetComponentInChildren<TextMeshProUGUI>();
+        text.SetText($"{stageNumber} - {stageDifficulty}");
+    }
 
 
     public void CurrentStageSet()
@@ -31,7 +38,15 @@ public class StageSelectBtn : MonoBehaviour
 
         _mapInfoPanel.RectMove(1930,0.3f);
         _mapInfoPanel.SetText(_stageInfoData.stageName, $"≥≠¿Ãµµ : {_stageInfoData.difficult}", _stageInfoData.stageDesc, _stageInfoData.stageSprite);
-
-
     }   
+
+    public int GetStageNumber()
+    {
+        return stageNumber;
+    }
+
+    public int GetStageDifficulty()
+    {
+        return stageDifficulty;
+    }
 }
