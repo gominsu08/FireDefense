@@ -26,36 +26,43 @@ public class UnitCardManager : MonoBehaviour
 
         for (int i = 0; i < _playerDataManager.haveUnit.Count; i++)
         {
-            _cardCreatPosX -= 500;
-            Image image = Instantiate(_unitCard, _parentPanel);
-            PlayerDataManager.ULUSData.currentCreatCards.Add(image);
-            image.transform.position = new Vector3(_cardCreatPosX + 750, image.rectTransform.position.y, image.rectTransform.position.z);
-
-
-            GameObject GO = new GameObject();
-            GO.name = $"UnitImage {i + 1}";
-            RectTransform rect = GO.AddComponent<RectTransform>();
-            GO.transform.parent = image.transform;
-            rect.sizeDelta = new Vector2(300, 400);
-
-            Image rectImage = GO.AddComponent<Image>();
-            rectImage.sprite = _playerDataManager.haveUnit[i].unitData.unitSprite;
-            rectImage.rectTransform.localPosition = new Vector3(-500, 100, 0);
-            UnitCard UCS = image.GetComponent<UnitCard>();
-            UCS.unitImage = rectImage;
-            UCS.testUnit = _playerDataManager.haveUnit[i];
-            UCS.myIndex = i;
-            UCS.unitLvUp = _unitLvUp;
-            
-
-            UCS.OnUnitStatValueChangedEvent += (myIndex, SelecCard) =>
+            try
             {
-                UnitStatSet(myIndex, SelecCard);
-            };
-            UnitStatSet(i, UCS);
+                _cardCreatPosX -= 500;
+                Image image = Instantiate(_unitCard, _parentPanel);
+                PlayerDataManager.ULUSData.currentCreatCards.Add(image);
+                image.transform.position = new Vector3(_cardCreatPosX + 750, image.rectTransform.position.y, image.rectTransform.position.z);
 
-            Button btn = image.AddComponent<Button>();
-            btn.transition = Selectable.Transition.None;
+
+                GameObject GO = new GameObject();
+                GO.name = $"UnitImage {i + 1}";
+                RectTransform rect = GO.AddComponent<RectTransform>();
+                GO.transform.parent = image.transform;
+                rect.sizeDelta = new Vector2(300, 400);
+
+                Image rectImage = GO.AddComponent<Image>();
+                rectImage.sprite = _playerDataManager.haveUnit[i].unitData.unitSprite;
+                rectImage.rectTransform.localPosition = new Vector3(-500, 100, 0);
+                UnitCard UCS = image.GetComponent<UnitCard>();
+                UCS.unitImage = rectImage;
+                UCS.testUnit = _playerDataManager.haveUnit[i];
+                UCS.myIndex = i;
+                UCS.unitLvUp = _unitLvUp;
+
+
+                UCS.OnUnitStatValueChangedEvent += (myIndex, SelecCard) =>
+                {
+                    UnitStatSet(myIndex, SelecCard);
+                };
+                UnitStatSet(i, UCS);
+
+                Button btn = image.AddComponent<Button>();
+                btn.transition = Selectable.Transition.None;
+            }
+            catch
+            {
+
+            }
 
         }
     }

@@ -1,13 +1,19 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerDataManager : MonoSingleton<PlayerDataManager>
 {
+
     public int currentStageNumber;
     public int currentStageDifficulty;
 
+    public int clearStageNumber;
+    public int clearStageDifficulty;
+    public List<Unit> haveUnit;
+    public List<GameObject> haveUnitObject;
+
     public Stage currentStage;
 
-    public List<Unit> haveUnit;
 
     public int Coin { get; private set; }
 
@@ -31,6 +37,11 @@ public class PlayerDataManager : MonoSingleton<PlayerDataManager>
     public void RemoveCoin(int count)
     {
         Coin -= count;
+    }
+
+    public void SetCoin(int count)
+    {
+        Coin = count;
     }
 
     private UnitLevelUpSceneData _ulusData = new UnitLevelUpSceneData();

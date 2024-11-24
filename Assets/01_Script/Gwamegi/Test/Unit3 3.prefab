@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitLevel:
     levelIncreaseEnum: 0
+    unitId: 6
     attackPower: 76
     attackSpeed: 56
     moveSpeed: 544
