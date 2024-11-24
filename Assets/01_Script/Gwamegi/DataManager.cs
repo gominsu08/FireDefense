@@ -5,8 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class SaveData
 {
-    public List<GameObject> HaveUnitList = new List<GameObject>();
-    public List<Unit> HaveUnitCompoList = new List<Unit>();
+    public List<UnitLevelClass> HaveUnitLevelClassList = new List<UnitLevelClass>();
+    public List<int> HaveUnitIdList = new List<int>();
 
     public int clearStageNumber;
     public int clearStageDifficulty;
@@ -16,6 +16,9 @@ public class SaveData
 
 public class DataManager : MonoBehaviour
 {
+
+    public UnitDataList unitDataList;
+
     string path;
 
     private void Awake()
@@ -56,8 +59,41 @@ public class DataManager : MonoBehaviour
 
             if (saveData != null)
             {
-                PlayerDataManager.Instance.haveUnit = saveData.HaveUnitCompoList;
-                PlayerDataManager.Instance.haveUnitObject = saveData.HaveUnitList;
+                //유닛 데이터를 UnitLevelClass에서 직렬화 시켜서 가지고 온다.
+                foreach (UnitLevelClass item in saveData.HaveUnitLevelClassList)
+                {
+                    for (int i = 0; i < unitDataList.buyUnitAllList.Count; i++)
+                    {
+
+                        if (unitDataList.buyUnitAllList[i].unitData.unitId == item.unitId)
+                        {
+                            unitDataList.buyUnitAllList[i].Initalize();
+                            PlayerDataManager.Instance.haveUnit.Add(unitDataList.buyUnitAllList[i]);
+                        }
+                    }
+                }
+
+
+                foreach (UnitLevelClass item in saveData.HaveUnitLevelClassList)
+                {
+                    for (int i = 0; i < PlayerDataManager.Instance.haveUnit.Count;i++ )
+                    {
+                        Unit itemUnit = PlayerDataManager.Instance.haveUnit[i];
+
+                        if (itemUnit.UnitLevel.unitId == item.unitId)
+                        {
+                            itemUnit.UnitLevel.health = item.health;
+                            itemUnit.UnitLevel.unitId = item.unitId;
+                            itemUnit.UnitLevel.attackSpeed = item.attackSpeed;
+                            itemUnit.UnitLevel.attackPower = item.attackPower;
+                            itemUnit.UnitLevel.buyCount = item.buyCount;
+                            itemUnit.UnitLevel.moveSpeed = item.moveSpeed;
+                            itemUnit.UnitLevel.level = item.level;
+                            itemUnit.UnitLevel.levelIncreaseEnum = item.levelIncreaseEnum;
+                        }
+                    }
+                }
+
                 PlayerDataManager.Instance.clearStageNumber = saveData.clearStageNumber;
                 PlayerDataManager.Instance.clearStageDifficulty = saveData.clearStageDifficulty;
                 PlayerDataManager.Instance.SetCoin(saveData.coin);
@@ -73,8 +109,13 @@ public class DataManager : MonoBehaviour
     {
         SaveData saveData = new SaveData();
 
-        saveData.HaveUnitCompoList = PlayerDataManager.Instance.haveUnit;
-        saveData.HaveUnitList = PlayerDataManager.Instance.haveUnitObject;
+        //유닛 데이터를 UnitLevelClass에서 직렬화 시켜서 가지고 온다.
+
+        foreach (Unit item in PlayerDataManager.Instance.haveUnit)
+        {
+            saveData.HaveUnitLevelClassList.Add(item.UnitLevel);
+        }
+
         saveData.clearStageNumber = PlayerDataManager.Instance.clearStageNumber;
         saveData.clearStageDifficulty = PlayerDataManager.Instance.clearStageDifficulty;
         saveData.coin = PlayerDataManager.Instance.Coin;

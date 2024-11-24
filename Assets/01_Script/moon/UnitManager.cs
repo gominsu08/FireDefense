@@ -14,8 +14,8 @@ public class UnitManager : MonoBehaviour
     [SerializeField] private UnitDataList _unitDataList;
     private UnitDataSO _unitData;
     [SerializeField] private LayerMask _playerLayer;
-    [SerializeField] Tilemap _floor;
-    [SerializeField]private Stage _stage;
+    private Tilemap _floor;
+    private Stage _stage;
 
     public event Action<UnitDataSO> OnBuildingTypeChanged;
     private void Awake()
@@ -28,7 +28,7 @@ public class UnitManager : MonoBehaviour
         {
             Destroy(this);
         }
-        //Time.timeScale = 0;
+        Time.timeScale = 0;
     }
     private void Update()
     {
@@ -61,14 +61,14 @@ public class UnitManager : MonoBehaviour
     {
         if (!CanSpawnUnit())
         {
-            errormessage = "You don't have enough to cover the cost";
+            errormessage = "코스트 부족";
             return false;
         }
 
         bool isSomething = Physics2D.OverlapBox(Camera.main.ScreenToWorldPoint(Input.mousePosition), _unitData.prefab.GetComponent<BoxCollider2D>().size, 0, _playerLayer);
         if (isSomething)
         {
-            errormessage = "There is already a unit in the location you are trying to place it";
+            errormessage = "설치불가";
             return false;
         }
         errormessage = null;
@@ -78,5 +78,10 @@ public class UnitManager : MonoBehaviour
     {
         return (_stage.StageCost - _unitData.UnitCost) >= 0;
     }
-    
+
+    internal void Initialized(Stage currrentStage, Tilemap myTileMap)
+    {
+        _stage = currrentStage;
+        _floor = myTileMap;
+    }
 }

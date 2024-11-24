@@ -348,6 +348,26 @@ PrefabInstance:
       propertyPath: m_text
       value: Hello,world!
       objectReference: {fileID: 0}
+    - target: {fileID: 5246757019092411957, guid: faf6dc72386ca994f8ceacd7b43c58ee, type: 3}
+      propertyPath: m_fontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5246757019092411957, guid: faf6dc72386ca994f8ceacd7b43c58ee, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 54ab223b384d9de4a939d15200c7851b, type: 2}
+    - target: {fileID: 5246757019092411957, guid: faf6dc72386ca994f8ceacd7b43c58ee, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5246757019092411957, guid: faf6dc72386ca994f8ceacd7b43c58ee, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8452577581791319333, guid: 54ab223b384d9de4a939d15200c7851b, type: 2}
+    - target: {fileID: 5246757019092411957, guid: faf6dc72386ca994f8ceacd7b43c58ee, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7724284377608113374, guid: faf6dc72386ca994f8ceacd7b43c58ee, type: 3}
       propertyPath: m_Name
       value: ToolTipCanvas
@@ -397,7 +417,7 @@ MonoBehaviour:
   _tooltip: {fileID: 232571150}
   _text: {fileID: 232571149}
   _offset: {x: 8, y: 8}
-  _timer: 0
+  _timer: 1
 --- !u!1 &239528032
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +463,58 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &400772304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400772306}
+  - component: {fileID: 400772305}
+  m_Layer: 0
+  m_Name: PlayerDataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &400772305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400772304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e57355d8d12678b4e85e88c4622156f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentStageNumber: 0
+  currentStageDifficulty: 0
+  clearStageNumber: 0
+  clearStageDifficulty: 0
+  haveUnit:
+  - {fileID: 7477723058197722524, guid: fc60590931dcc4443848bd8a125523eb, type: 3}
+  haveUnitObject: []
+  currentStage: {fileID: 0}
+--- !u!4 &400772306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400772304}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 853.35474, y: 366.51532, z: 10.049133}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -579,8 +651,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6603f0bd6e4fb240a16c7870c89976f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <StageNumber>k__BackingField: 0
-  <StageDifficulty>k__BackingField: 0
+  StageNumber: 1
+  StageDifficulty: 1
   <StageCost>k__BackingField: 1
 --- !u!4 &608080857
 Transform:
@@ -3999,3 +4071,4 @@ SceneRoots:
   - {fileID: 239528034}
   - {fileID: 232571147}
   - {fileID: 608080857}
+  - {fileID: 400772306}

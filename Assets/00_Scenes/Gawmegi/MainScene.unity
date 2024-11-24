@@ -1719,7 +1719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentStageNumber: 0
   currentStageDifficulty: 0
-  clearStageNumber: 1
+  clearStageNumber: 4
   clearStageDifficulty: 1
   haveUnit: []
   haveUnitObject: []
@@ -1768,6 +1768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74043e533a9b3a14c8cd72f77e927843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitDataList: {fileID: 11400000, guid: 9461219b1e5946d428dc9ff6f249cb4c, type: 2}
 --- !u!4 &1161039032
 Transform:
   m_ObjectHideFlags: 0

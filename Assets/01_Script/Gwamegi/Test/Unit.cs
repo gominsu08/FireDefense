@@ -10,13 +10,13 @@ public class Unit : MonoBehaviour, ILevelUpAgent
     [ContextMenu("Init")]
     public void Initalize()
     {
+        UnitLevel.unitId = unitData.unitId;
         UnitLevel.health = (int)unitData.health;
         UnitLevel.attackPower = (int)unitData.attackPower;
         UnitLevel.attackSpeed = (int)unitData.attackSpeed;
         UnitLevel.moveSpeed = (int)unitData.moveSpeed;
         UnitLevel.level = unitData.unitLevel;
         Debug.Log(UnitLevel.health);
-
     }
 }
 

@@ -7,6 +7,7 @@ public class UnitDataSO : AgentDataSO
 {
     public GameObject prefab;
     public int UnitCost;
+    public int unitId;
     public UnitRarityEnum rarity;
     public UnitCardColorData unitCardData;
     public Sprite rarityColor;
