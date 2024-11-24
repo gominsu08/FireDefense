@@ -10,7 +10,7 @@ public class TooltipUI : MonoBehaviour
     [SerializeField]private RectTransform _tooltip;
     [SerializeField]private TextMeshProUGUI _text;
     [SerializeField] private Vector2 _offset = new Vector2(8, 8);
-    [SerializeField]private float _timer = 1f;
+    [SerializeField] private float _timer = 1f;
 
     public static TooltipUI Instance { get; private set; }
 
@@ -26,9 +26,9 @@ public class TooltipUI : MonoBehaviour
     {
         _tooltip.position = Input.mousePosition;
         _timer -= Time.deltaTime;
-        if(_timer < 0)
+        if(_timer <= 0)
         {
-            _timer = 100;
+            Debug.Log("ÅøÆÁ ¼û±è");
             Hide();
         }
     }
@@ -40,6 +40,8 @@ public class TooltipUI : MonoBehaviour
 
     public void Show(string message)
     {
+        Debug.Log("ÅøÆÁ ³ªÅ¸³²");
+
         _timer = 1f;
         _tooltip.gameObject.SetActive(true);
         _text.text = message;

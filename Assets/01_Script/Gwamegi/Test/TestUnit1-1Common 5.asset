@@ -12,13 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170cd9a6e057f6349afef1182aa08df2, type: 3}
   m_Name: TestUnit1-1Common 5
   m_EditorClassIdentifier: 
-  agentSprite: {fileID: 21300000, guid: 7027de66ff456bd4c96e06950ae2938c, type: 3}
-  agentName: sjdks
+  unitSprite: {fileID: 21300000, guid: a87228e21e6912b4fa37de08e51dcb36, type: 3}
+  unitName: 
   attackPower: 76
   attackSpeed: 56
   moveSpeed: 544
   health: 56
+  isRanged: 0
+  RangedAttackObject: {fileID: 0}
+  prefab: {fileID: 0}
+  UnitCost: 0
+  unitId: 6
   rarity: 2
-  rarityColor: {r: 204, g: 0, b: 255, a: 255}
+  unitCardData: {fileID: 11400000, guid: f47e24375d63e23448ff076b7dfd44d0, type: 2}
+  rarityColor: {fileID: 21300000, guid: 20ba1e494003103478567836f096e96c, type: 3}
   levelIncreaseEnum: 0
   unitLevel: 1

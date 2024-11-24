@@ -13,16 +13,16 @@ public class StageDataListSO : ScriptableObject
 
 
 
-    public List<Stage> this[int index]
+    public Stage this[int index, int index2]
     {
         get
         {
             switch (index)
             {
-                case 1: return stage_1_PrefabList;
-                case 2: return stage_2_PrefabList;
-                case 3: return stage_3_PrefabList;
-                case 4: return stage_4_PrefabList;
+                case 1: return stage_1_PrefabList[index2 - 1];
+                case 2: return stage_2_PrefabList[index2 - 1];
+                case 3: return stage_3_PrefabList[index2 - 1];
+                case 4: return stage_4_PrefabList[index2 - 1];
                 default: return null;
             }
         }

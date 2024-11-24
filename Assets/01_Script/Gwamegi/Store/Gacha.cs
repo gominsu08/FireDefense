@@ -70,5 +70,9 @@ public class Gacha : MonoBehaviour
         {
             PlayerDataManager.Instance.haveUnit.Add(unitData);
         }
+        else if (PlayerDataManager.Instance.haveUnit.Contains(unitData))
+        {
+            PlayerDataManager.Instance.RemoveCoin(-1);
+        }
     }
 }

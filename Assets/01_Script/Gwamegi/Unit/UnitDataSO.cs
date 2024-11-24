@@ -7,8 +7,10 @@ public class UnitDataSO : AgentDataSO
 {
     public GameObject prefab;
     public int UnitCost;
+    public int unitId;
     public UnitRarityEnum rarity;
-    public Color rarityColor;
+    public UnitCardColorData unitCardData;
+    public Sprite rarityColor;
 
     [Header("UnitLevel")]
     public LevelIncreaseEnum levelIncreaseEnum;
@@ -37,14 +39,15 @@ public class UnitDataSO : AgentDataSO
         switch (rarity)
         {
             case UnitRarityEnum.Common:
-                rarityColor = Color.white; break;
+                rarityColor = unitCardData.commonUnitCardSprite; break;
             case UnitRarityEnum.UnCommon:
-                rarityColor = Color.cyan; break;
+                rarityColor = unitCardData.unCommonUnitCardSprite; break;
             case UnitRarityEnum.Rare:
-                rarityColor = new Color(204,0,255,255); break;
+                rarityColor = unitCardData.rareUnitCardSprite; break;
             case UnitRarityEnum.Legendary:
-                rarityColor = Color.yellow; break;
+                rarityColor = unitCardData.legendaryUnitCardSprite; break;
                 default: break;
         }
+
     }
 }

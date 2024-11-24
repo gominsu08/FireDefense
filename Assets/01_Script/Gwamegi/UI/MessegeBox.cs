@@ -24,4 +24,10 @@ public class MessegeBox : MonoSingleton<MessegeBox>
     {
         gameObject.SetActive(false);
     }
+
+    public void GameExit() 
+    {
+        Application.Quit();
+    }
+
 }

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72927083b2627fe4b8a1cb87b87d3fae, type: 3}
+  m_Name: Unit Card Color Data
+  m_EditorClassIdentifier: 
+  commonUnitCardSprite: {fileID: 21300000, guid: 2c60766cbf6536d448d0e572b811a350, type: 3}
+  unCommonUnitCardSprite: {fileID: 21300000, guid: f097fa16010c74241bffaafc5bf438cd, type: 3}
+  rareUnitCardSprite: {fileID: 21300000, guid: 20ba1e494003103478567836f096e96c, type: 3}
+  legendaryUnitCardSprite: {fileID: 21300000, guid: 28ada3fd573231d479cd918aaac4c900, type: 3}
