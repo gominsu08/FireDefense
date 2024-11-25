@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00f2e38936caa74a894382eb14fdbf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitDataList: {fileID: 11400000, guid: 9461219b1e5946d428dc9ff6f249cb4c, type: 2}
+  unitDataList: {fileID: 11400000, guid: 5a728df59239c7f41a010e09375aa325, type: 2}
 --- !u!4 &1120742713
 Transform:
   m_ObjectHideFlags: 0
@@ -2412,8 +2412,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentStageNumber: 0
   currentStageDifficulty: 0
-  currentStage: {fileID: 0}
+  clearStageNumber: 0
+  clearStageDifficulty: 0
   haveUnit: []
+  haveUnitObject: []
+  currentStage: {fileID: 0}
 --- !u!224 &2102113055 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8131724340572318160, guid: dcfccb402b3a36c4aac4223dea5c607c, type: 3}

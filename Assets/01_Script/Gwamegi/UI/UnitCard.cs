@@ -16,6 +16,8 @@ public class UnitCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private RectTransform _myRect;
 
+    [SerializeField] private Vector3 _startMyPosition;
+
     [Header("PanelInfo")]
     [SerializeField] private int _moveDis;
     [SerializeField] private float _moveTime;
@@ -128,8 +130,10 @@ public class UnitCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         OnSelectExitEvent?.Invoke();
         PanelSet(false);
 
-        _myRect.DOMoveX(_myRect.position.x - 1600, _selectPanelTime).OnComplete(() =>
+        //다시 되돌아가는 코드
+        _myRect.DOAnchorPosX(_startMyPosition.x, _selectPanelTime).OnComplete(() =>
         {
+            Debug.Log( $"{gameObject.name} 나 돌아감");
             OnSelectPanelEvent?.Invoke(_moveStartPosX, true, this);
             _isCanMove = true;
             UnitCardInterection(true);
@@ -163,4 +167,8 @@ public class UnitCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     }
 
+    internal void Initalized()
+    {
+        _startMyPosition = _myRect.anchoredPosition;
+    }
 }
