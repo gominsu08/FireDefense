@@ -18,6 +18,6 @@ MonoBehaviour:
   attackSpeed: 10
   moveSpeed: 7
   health: 750
-  isRanged: 1
+  isRanged: 0
   RangedAttackObject: {fileID: 0}
   enemyEnum: 4

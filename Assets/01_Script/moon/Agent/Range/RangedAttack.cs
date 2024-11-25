@@ -13,7 +13,10 @@ public class RangedAttack : MonoBehaviour
     }
     public void Start()
     {
-        Play("Attack");
+        if(_animator != null)
+        {
+            Play("Attack");
+        }
     }
     private void Update()
     {
