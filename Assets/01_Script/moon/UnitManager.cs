@@ -45,7 +45,7 @@ public class UnitManager : MonoBehaviour
             }
             else
             {
-                TooltipUI.Instance.Show(errormessage);
+
             }
         }
     }
