@@ -24,6 +24,7 @@ public class UnitCardManager : MonoBehaviour
         _cardCreatPosX = _playerDataManager.haveUnit.Count * 500;
         _parentPanel.sizeDelta = new Vector2(-(1920 - (_cardCreatPosX + 1800)), 1080);
 
+
         for (int i = 0; i < _playerDataManager.haveUnit.Count; i++)
         {
             try
@@ -58,6 +59,8 @@ public class UnitCardManager : MonoBehaviour
 
                 Button btn = image.AddComponent<Button>();
                 btn.transition = Selectable.Transition.None;
+
+                UCS.Initalized();
             }
             catch
             {

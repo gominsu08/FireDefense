@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
@@ -23,14 +21,39 @@ public class UnitLvUp : MonoBehaviour
 
     public void LvUp<T>(ref T LvUpUnit) where T : ILevelUpAgent
     {
-        foreach (UnitLevelIncrease item in unitLevelDataSO.unitLevelIncreasesList)
+        if (typeof(T) == typeof(Unit))
         {
-            if (item._levelIncrease == LvUpUnit.UnitLevel.levelIncreaseEnum)
+            Unit unit = LvUpUnit as Unit;
+
+            foreach (UnitLevelIncrease item in unitLevelDataSO.unitLevelIncreasesList)
             {
-                StatUp(LvUpUnit.UnitLevel, item);
+                if (item._levelIncrease == LvUpUnit.UnitLevel.levelIncreaseEnum)
+                {
+                    StatUp(LvUpUnit.UnitLevel, item);
+                }
             }
+            LvUpUnit.UnitLevel.level++;
+
+            if (LvUpUnit.UnitLevel.level >= 5)
+            {
+                LvUpUnit.UnitLevel.levelIncreaseEnum = LevelIncreaseEnum._1_5;
+            }
+            else if (LvUpUnit.UnitLevel.level >= 15)
+            {
+                LvUpUnit.UnitLevel.levelIncreaseEnum = LevelIncreaseEnum._5_15;
+            }
+            else if (LvUpUnit.UnitLevel.level >= 25)
+            {
+                LvUpUnit.UnitLevel.levelIncreaseEnum = LevelIncreaseEnum._15_25;
+            }
+            else if (LvUpUnit.UnitLevel.level >= 30)
+            {
+                LvUpUnit.UnitLevel.levelIncreaseEnum = LevelIncreaseEnum._25_30;
+            }
+
+            Debug.Log($"{unit.unitData.name} : {LvUpUnit.UnitLevel.levelIncreaseEnum}");
         }
-        LvUpUnit.UnitLevel.level++;
+
     }
 
 

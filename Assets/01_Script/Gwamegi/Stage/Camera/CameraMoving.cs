@@ -31,13 +31,10 @@ public class CameraMoving : MonoBehaviour
 
     private void Move()
     {
-        Debug.Log("Ming");
-
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
         Vector2 moveDir = new Vector2(x, y).normalized;
-        print(Time.unscaledDeltaTime);
         transform.position += (Vector3)moveDir * _moveSpeed * Time.unscaledDeltaTime;
 
         transform.position = new Vector2(Mathf.Clamp(transform.position.x, minTransform.position.x, maxTransform.position.x),

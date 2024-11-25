@@ -18,6 +18,7 @@ public class UnitLevelUpUIInfo : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _unitNameText_B, _unitNameText_F;
     [SerializeField] private TextMeshProUGUI _unitStatInfoText;
+    [SerializeField] private TextMeshProUGUI _unitLevelText;
     [SerializeField] private Image _unitImage;
     [SerializeField] private Button _unitLevelUpBtn;
 
@@ -25,6 +26,7 @@ public class UnitLevelUpUIInfo : MonoBehaviour
     {
         _unitNameText_B.SetText(ULUI.unitName);
         _unitNameText_F.SetText(ULUI.unitName);
+        _unitLevelText.SetText($"·¹º§ : {unitLevel.level}");
         _unitImage.sprite = ULUI.unitSprite;
 
 

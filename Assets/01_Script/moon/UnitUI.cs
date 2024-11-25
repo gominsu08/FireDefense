@@ -26,11 +26,15 @@ public class UnitUI : MonoBehaviour
 
             unitTransformDictionary[item] = template.Find("Selected");
 
-            template.Find("Image").GetComponent<Image>().sprite = item.unitData.unitSprite;
+            Image image = template.Find("Image").GetComponent<Image>();
+            Button button = template.GetComponent<Button>();
+
+            image.sprite = item.unitData.unitSprite;
 
             if (PlayerDataManager.Instance.haveUnit.Contains(item))
             {
-                template.GetComponent<Button>().onClick.AddListener(() =>
+                button.enabled = true;
+                button.onClick.AddListener(() =>
                 {
                     UnitManager.Instance.SetBuildingType(item.unitData);
                     SelectBtn(item);
@@ -38,7 +42,8 @@ public class UnitUI : MonoBehaviour
             }
             else
             {
-                template.GetComponent<Button>().enabled = false;
+                button.enabled = false;
+                button.GetComponent<Image>().color = Color.red;
             }
             //MouseEnterExit mouseEnterExit = template.GetComponent<MouseEnterExit>();
             //mouseEnterExit.OnMouseEnter += () => TooltipUI.Instance.Show(item.name + "\n" + item.GetCose());
