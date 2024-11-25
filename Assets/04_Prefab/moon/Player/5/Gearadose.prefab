@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitLevel:
     levelIncreaseEnum: 0
+    unitId: 0
     attackPower: 0
     attackSpeed: 0
     moveSpeed: 0
@@ -350,7 +351,7 @@ Animator:
   m_GameObject: {fileID: 5452965433009624913}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 48bff93ae300575409c175f17ab0d906, type: 2}
+  m_Controller: {fileID: 9100000, guid: a9e291db1044fb24789100d66b9e8728, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
