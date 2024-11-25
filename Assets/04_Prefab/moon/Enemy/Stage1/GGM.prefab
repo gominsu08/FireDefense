@@ -74,7 +74,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.8, y: 2.8, z: 1.4}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3250838307759111849}
@@ -225,6 +225,7 @@ MonoBehaviour:
     m_Bits: 0
   lastAttackTime: 0
   <IsFacingRight>k__BackingField: 0
+  <IsCanMove>k__BackingField: 1
 --- !u!114 &4168349452772491738
 MonoBehaviour:
   m_ObjectHideFlags: 0
