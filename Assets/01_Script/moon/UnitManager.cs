@@ -40,7 +40,7 @@ public class UnitManager : MonoBehaviour
                 Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Vector3Int cellPosition = _floor.WorldToCell(mouseWorldPosition);
                 Vector3 cellCenterWorld = _floor.GetCellCenterWorld(cellPosition);
-                //_stage.SpendCost(_unitData.UnitCost);
+                _stage.SpendCost(_unitData.UnitCost);
                 Instantiate(_unitData.prefab, cellCenterWorld, Quaternion.identity);
             }
             else
