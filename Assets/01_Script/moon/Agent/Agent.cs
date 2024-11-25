@@ -37,6 +37,7 @@ public class Agent : MonoBehaviour
 
     [HideInInspector]public State currentState;
     [field: SerializeField] public bool IsFacingRight { get; private set; } = true;
+    [field: SerializeField] public bool IsCanMove { get; private set; } = true;
     private float myRangeAttackMoveX;
 
 
