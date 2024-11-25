@@ -70,7 +70,7 @@ public class MyEnemyDistanceChecker : MonoBehaviour
         }
         else
         {
-            if (!end)
+            if (!end&& Time.timeScale != 0)
             {
                 GameWin();
             }
@@ -98,7 +98,7 @@ public class MyEnemyDistanceChecker : MonoBehaviour
         }
         else 
         {
-            if (!end)
+            if (!end && Time.timeScale!=0)
             {
                 GameOver();
             }

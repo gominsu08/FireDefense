@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 800664423945034227}
   - component: {fileID: 4973537803626409500}
   - component: {fileID: 7031054932613711925}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2389,6 +2389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3061914895798996722}
   - component: {fileID: 7952779555140693623}
+  - component: {fileID: 7293624548237737604}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -2404,7 +2405,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5820846316398728527}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.444653, y: 5.1245914, z: -0.08325486}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2425,6 +2426,19 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &7293624548237737604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5820846316398728527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22fdb8d1ec028a4880e9bab884e0a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mapInfoSO: {fileID: 11400000, guid: 3e0c4d65890c0684fba8e209a0990950, type: 2}
 --- !u!1 &8311891366890254767
 GameObject:
   m_ObjectHideFlags: 0

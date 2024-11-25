@@ -9,8 +9,8 @@ public class MapSetting : MonoBehaviour
     [SerializeField]MapInfoSO _mapInfoSO;
     private void Awake()
     {
-        _floor = transform.Find("FloorTile").GetComponent<Tilemap>();
-        _collider = transform.Find("ColliderTile").GetComponent<Tilemap>();
+        _floor = transform.Find("MainTile").GetComponent<Tilemap>();
+        _collider = transform.Find("Wall").GetComponent<Tilemap>();
         _mapInfoSO.Initialize(_floor, _collider);
     }
 }
