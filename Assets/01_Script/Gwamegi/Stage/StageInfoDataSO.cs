@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "SO/Map/MapInfoDataSO")]
@@ -9,6 +10,8 @@ public class StageInfoDataSO : ScriptableObject
     [HideInInspector] public string difficult;
     public Sprite stageSprite;
     public string stageDesc;
+
+    public List<Sprite> _enemySpriteList = new List<Sprite>();
 
     private void OnValidate()
     {

@@ -19,6 +19,7 @@ public class StageSelectBtn : MonoBehaviour
         _mapInfoPanel = MapInfoPanel.Instance;
         GetComponent<Button>().onClick.AddListener(CurrentStageSet);
         SetText();
+
     }
 
     public void SetText()
@@ -38,6 +39,9 @@ public class StageSelectBtn : MonoBehaviour
 
         _mapInfoPanel.RectMove(1930,0.3f);
         _mapInfoPanel.SetText(_stageInfoData.stageName, $"≥≠¿Ãµµ : {_stageInfoData.difficult}", _stageInfoData.stageDesc, _stageInfoData.stageSprite);
+        _mapInfoPanel.EnemySpriteSet(_stageInfoData._enemySpriteList);
+
+
     }   
 
     public int GetStageNumber()
