@@ -19,5 +19,5 @@ MonoBehaviour:
   moveSpeed: 4
   health: 1650
   isRanged: 1
-  RangedAttackObject: {fileID: 0}
+  RangedAttackObject: {fileID: 1364619742638414496, guid: c73388c10f6276b4e8be1744de01fb38, type: 3}
   enemyEnum: 2

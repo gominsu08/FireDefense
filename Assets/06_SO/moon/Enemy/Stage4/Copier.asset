@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitSprite: {fileID: 21300000, guid: 5c1d1e4019ea9264493a46879d241548, type: 3}
   unitName: Copier
-  attackPower: 1250
-  attackSpeed: 7.5
+  attackPower: 1255
+  attackSpeed: 12
   moveSpeed: 1
-  health: 4500
+  health: 5555
   isRanged: 1
   RangedAttackObject: {fileID: 1364619742638414496, guid: 62a02b87a4c591d4ba8bb7d1816c363f, type: 3}
   enemyEnum: 4
