@@ -34,21 +34,27 @@ public class UnitLvUp : MonoBehaviour
             }
             LvUpUnit.UnitLevel.level++;
 
-            if (LvUpUnit.UnitLevel.level >= 5)
+            //여기서 뭐 해야함 제발 기억해라 
+
+            if (LvUpUnit.UnitLevel.level <= 5)
             {
                 LvUpUnit.UnitLevel.levelIncreaseEnum = LevelIncreaseEnum._1_5;
+                Debug.Log("1 ~ 5");
             }
-            else if (LvUpUnit.UnitLevel.level >= 15)
+            else if (LvUpUnit.UnitLevel.level <= 15)
             {
                 LvUpUnit.UnitLevel.levelIncreaseEnum = LevelIncreaseEnum._5_15;
+                Debug.Log("5 ~ 15");
             }
-            else if (LvUpUnit.UnitLevel.level >= 25)
+            else if (LvUpUnit.UnitLevel.level <= 25)
             {
                 LvUpUnit.UnitLevel.levelIncreaseEnum = LevelIncreaseEnum._15_25;
+                Debug.Log("15 ~ 25");
             }
-            else if (LvUpUnit.UnitLevel.level >= 30)
+            else if (LvUpUnit.UnitLevel.level <= 30)
             {
                 LvUpUnit.UnitLevel.levelIncreaseEnum = LevelIncreaseEnum._25_30;
+                Debug.Log("25 ~ 30");
             }
 
             Debug.Log($"{unit.unitData.name} : {LvUpUnit.UnitLevel.levelIncreaseEnum}");

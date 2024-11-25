@@ -41,6 +41,8 @@ public class UnitCardManager : MonoBehaviour
                 GO.transform.parent = image.transform;
                 rect.sizeDelta = new Vector2(300, 400);
 
+
+
                 Image rectImage = GO.AddComponent<Image>();
                 rectImage.sprite = _playerDataManager.haveUnit[i].unitData.unitSprite;
                 rectImage.rectTransform.localPosition = new Vector3(-500, 100, 0);

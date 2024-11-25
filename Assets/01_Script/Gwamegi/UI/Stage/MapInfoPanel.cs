@@ -1,5 +1,7 @@
 using DG.Tweening;
+using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +14,17 @@ public class MapInfoPanel : MonoSingleton<MapInfoPanel>
     [SerializeField] private TextMeshProUGUI _stageDesc;
     [SerializeField] private Image _stageImage;
 
+    [SerializeField] private List<Image> buttonList = new List<Image>();
+
     private bool isCanMove = true;
+
+    public void EnemySpriteSet(List<Sprite> enemySpriteList)
+    {
+        for (int i = 0; i < enemySpriteList.Count; i++)
+        {
+            buttonList[i].sprite = enemySpriteList[i];
+        }
+    }
 
     public void SetText(string name, string difficulty, string desc, Sprite image)
     {

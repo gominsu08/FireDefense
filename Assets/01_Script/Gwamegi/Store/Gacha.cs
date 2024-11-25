@@ -43,7 +43,6 @@ public class Gacha : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             Unit unitData = _manager.Gacha();
-            Debug.Log(unitData);
             AddListUnit(unitData);
             dataSOs.Add(unitData);
         }
