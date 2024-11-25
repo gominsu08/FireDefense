@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1712170723675851007}
   - component: {fileID: 576875030583237924}
+  - component: {fileID: 1481563054391737294}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -46,6 +47,19 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &1481563054391737294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69079345984333000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22fdb8d1ec028a4880e9bab884e0a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mapInfoSO: {fileID: 11400000, guid: 3e0c4d65890c0684fba8e209a0990950, type: 2}
 --- !u!1 &160098772414140488
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +74,7 @@ GameObject:
   - component: {fileID: 1715428131773111986}
   - component: {fileID: 4813340558901662033}
   - component: {fileID: 1161078901139037796}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
