@@ -14,50 +14,168 @@ AnimationClip:
   m_RotationCurves: []
   m_CompressedRotationCurves: []
   m_EulerCurves: []
-  m_PositionCurves: []
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 2.73, y: 0.11, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: GameObject
   m_ScaleCurves: []
-  m_FloatCurves: []
+  m_FloatCurves:
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 4
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Size.x
+    path: GameObject
+    classID: 212
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.78125
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Size.y
+    path: GameObject
+    classID: 212
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_SortingOrder
+    path: GameObject
+    classID: 212
+    script: {fileID: 0}
+    flags: 0
   m_PPtrCurves:
   - serializedVersion: 2
     curve:
     - time: 0
       value: {fileID: 21300000, guid: 5566fcd3a919f80458061074ca4bee04, type: 3}
-    - time: 0.083333336
+    - time: 0.055555556
       value: {fileID: 21300000, guid: 70b42633a8202c24e9baef60af92a37f, type: 3}
-    - time: 0.16666667
+    - time: 0.11111111
       value: {fileID: 21300000, guid: e55f33e0b6c9e6d4ba8a0a59b689e01e, type: 3}
-    - time: 0.25
+    - time: 0.16666667
       value: {fileID: 21300000, guid: 06c106042d8321f448838e6c91fc235c, type: 3}
-    - time: 0.33333334
+    - time: 0.22222222
       value: {fileID: 21300000, guid: 0cc35b42f71913244882efcfffdbc44d, type: 3}
-    - time: 0.41666666
+    - time: 0.2777778
       value: {fileID: 21300000, guid: cfdfb0fbac4f0e3498db3d2b6cba26cd, type: 3}
-    - time: 0.5
+    - time: 0.33333334
       value: {fileID: 21300000, guid: 0d0e829f6b1717e48b5c6c8153edd74c, type: 3}
-    - time: 0.5833333
+    - time: 0.3888889
       value: {fileID: 21300000, guid: 4a00ea164869a464294ed1b14d49bd55, type: 3}
-    - time: 0.6666667
+    - time: 0.44444445
       value: {fileID: 21300000, guid: d4503706ac1784049b63d2a8bfc6e5d2, type: 3}
-    - time: 0.75
+    - time: 0.5
       value: {fileID: 21300000, guid: 73f892ddb373cfd4183da7d5266f47e3, type: 3}
-    - time: 0.8333333
+    - time: 0.5555556
       value: {fileID: 21300000, guid: 490a8d38534099948bf79fb799eb99c8, type: 3}
-    - time: 0.9166667
+    - time: 0.6111111
       value: {fileID: 21300000, guid: 31203c6906535a84e8dd038dfa64d041, type: 3}
-    - time: 1
+    - time: 0.6666667
       value: {fileID: 21300000, guid: 64cee978b76a2a144a91aa39b2a47276, type: 3}
-    - time: 1.0833334
+    - time: 0.7222222
       value: {fileID: 21300000, guid: 6d2dc8bf71b620b4fb53e4b92e3e24dd, type: 3}
-    - time: 1.1666666
+    - time: 0.7777778
       value: {fileID: 21300000, guid: ee7f76e54f9b43445bd9fccec634bb63, type: 3}
-    - time: 1.25
+    - time: 0.8333333
       value: {fileID: 21300000, guid: 07b43cc2c93d5da4ab6946d03ca1449d, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 12
+  - serializedVersion: 2
+    curve:
+    - time: 0
+      value: {fileID: 0}
+    - time: 0.055555556
+      value: {fileID: 21300000, guid: e7e63e0831a4f6848a8ffde6e1092c81, type: 3}
+    - time: 0.11111111
+      value: {fileID: 21300000, guid: 73769cb3caade114488b09acb0a5ff72, type: 3}
+    - time: 0.16666667
+      value: {fileID: 21300000, guid: b8ebee91def8c074396bc02b1595f550, type: 3}
+    - time: 0.22222222
+      value: {fileID: 21300000, guid: 26d6dadfdd99b494d8ae821e62c18f0e, type: 3}
+    - time: 0.2777778
+      value: {fileID: 21300000, guid: 9404f8b1aa4b5a6478d5b067e1ca99cd, type: 3}
+    - time: 0.33333334
+      value: {fileID: 21300000, guid: 83ad41ada6b739340a822ce348b7a283, type: 3}
+    - time: 0.3888889
+      value: {fileID: 21300000, guid: d6209454550904644be6fff14cbaabf3, type: 3}
+    - time: 0.44444445
+      value: {fileID: 21300000, guid: 5624c703921f4e34091024d008c2e0d4, type: 3}
+    - time: 0.5
+      value: {fileID: 21300000, guid: 0ebd91a9f0b3695428a3319dd183b25a, type: 3}
+    - time: 0.5555556
+      value: {fileID: 21300000, guid: cc73ac3b1164e6543affedd735cbee0f, type: 3}
+    - time: 0.6111111
+      value: {fileID: 21300000, guid: 72e5ec3e644bed84481a6241b767edec, type: 3}
+    - time: 0.6666667
+      value: {fileID: 21300000, guid: 4d87b63eb9b6e4046908f882f992a063, type: 3}
+    - time: 0.7222222
+      value: {fileID: 21300000, guid: 0fb7555c5e293d041a1fae487f70c654, type: 3}
+    - time: 0.7777778
+      value: {fileID: 21300000, guid: 3be85f9c302b8c348aaf8b71b69b220b, type: 3}
+    - time: 0.8333333
+      value: {fileID: 21300000, guid: 81b1bede3982b2d459f92f891ab2a342, type: 3}
+    attribute: m_Sprite
+    path: GameObject
+    classID: 212
+    script: {fileID: 0}
+    flags: 2
+  m_SampleRate: 18
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -71,6 +189,51 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 1482111001
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 1482111001
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 1482111001
+      attribute: 4197328169
+      script: {fileID: 0}
+      typeID: 212
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 1482111001
+      attribute: 2368279999
+      script: {fileID: 0}
+      typeID: 212
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 1482111001
+      attribute: 3762991556
+      script: {fileID: 0}
+      typeID: 212
+      customType: 26
+      isPPtrCurve: 0
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
@@ -90,12 +253,28 @@ AnimationClip:
     - {fileID: 21300000, guid: 6d2dc8bf71b620b4fb53e4b92e3e24dd, type: 3}
     - {fileID: 21300000, guid: ee7f76e54f9b43445bd9fccec634bb63, type: 3}
     - {fileID: 21300000, guid: 07b43cc2c93d5da4ab6946d03ca1449d, type: 3}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: e7e63e0831a4f6848a8ffde6e1092c81, type: 3}
+    - {fileID: 21300000, guid: 73769cb3caade114488b09acb0a5ff72, type: 3}
+    - {fileID: 21300000, guid: b8ebee91def8c074396bc02b1595f550, type: 3}
+    - {fileID: 21300000, guid: 26d6dadfdd99b494d8ae821e62c18f0e, type: 3}
+    - {fileID: 21300000, guid: 9404f8b1aa4b5a6478d5b067e1ca99cd, type: 3}
+    - {fileID: 21300000, guid: 83ad41ada6b739340a822ce348b7a283, type: 3}
+    - {fileID: 21300000, guid: d6209454550904644be6fff14cbaabf3, type: 3}
+    - {fileID: 21300000, guid: 5624c703921f4e34091024d008c2e0d4, type: 3}
+    - {fileID: 21300000, guid: 0ebd91a9f0b3695428a3319dd183b25a, type: 3}
+    - {fileID: 21300000, guid: cc73ac3b1164e6543affedd735cbee0f, type: 3}
+    - {fileID: 21300000, guid: 72e5ec3e644bed84481a6241b767edec, type: 3}
+    - {fileID: 21300000, guid: 4d87b63eb9b6e4046908f882f992a063, type: 3}
+    - {fileID: 21300000, guid: 0fb7555c5e293d041a1fae487f70c654, type: 3}
+    - {fileID: 21300000, guid: 3be85f9c302b8c348aaf8b71b69b220b, type: 3}
+    - {fileID: 21300000, guid: 81b1bede3982b2d459f92f891ab2a342, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.3333334
+    m_StopTime: 0.8888889
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -110,12 +289,145 @@ AnimationClip:
     m_KeepOriginalPositionXZ: 0
     m_HeightFromFeet: 0
     m_Mirror: 0
-  m_EditorCurves: []
+  m_EditorCurves:
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 4
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Size.x
+    path: GameObject
+    classID: 212
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.78125
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Size.y
+    path: GameObject
+    classID: 212
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 2.73
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: GameObject
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.11
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: GameObject
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: GameObject
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_SortingOrder
+    path: GameObject
+    classID: 212
+    script: {fileID: 0}
+    flags: 0
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.5
+  - time: 0.33333334
+    functionName: EndAttackAnimaiton
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.8888889
     functionName: EndAttackAnimaiton
     data: 
     objectReferenceParameter: {fileID: 0}
