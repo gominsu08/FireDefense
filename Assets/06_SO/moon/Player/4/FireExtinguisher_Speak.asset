@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170cd9a6e057f6349afef1182aa08df2, type: 3}
   m_Name: FireExtinguisher_Speak
   m_EditorClassIdentifier: 
-  unitSprite: {fileID: 21300000, guid: 09a8ea94aaf22d249b016720b963f74b, type: 3}
+  unitSprite: {fileID: 21300000, guid: 10628b3da391b3349ace17b398bac2d0, type: 3}
   unitName: "\uB9D0\uD558\uB294 \uC18C\uD654\uAE30"
   attackPower: 80
   attackSpeed: 7

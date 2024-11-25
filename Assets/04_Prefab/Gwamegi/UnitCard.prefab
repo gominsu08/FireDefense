@@ -488,11 +488,13 @@ MonoBehaviour:
   count: 0
   testUnit: {fileID: 0}
   myIndex: 0
+  _startMyPosition: {x: 0, y: 0, z: 0}
   _moveDis: 10
   _moveTime: 0.1
   _selectPanelStartSize: 1
   _selectPanelTime: 0.4
   _unitInfoPanel: {fileID: 5020448722859975362}
+  ULDS: {fileID: 0}
   levelClass:
     levelIncreaseEnum: 0
     unitId: 0

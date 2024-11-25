@@ -158,12 +158,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitLevel:
     levelIncreaseEnum: 0
-    unitId: 0
-    attackPower: 0
-    attackSpeed: 0
-    moveSpeed: 0
-    health: 0
-    level: 0
+    unitId: 8
+    attackPower: 110
+    attackSpeed: 7
+    moveSpeed: 7
+    health: 1500
+    level: 1
     buyCount: 0
   unitData: {fileID: 11400000, guid: eafc49f1a27c84140bcd2f0a14286de9, type: 2}
 --- !u!114 &7867132366420717542

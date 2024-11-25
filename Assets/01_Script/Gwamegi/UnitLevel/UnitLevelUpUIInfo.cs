@@ -26,7 +26,7 @@ public class UnitLevelUpUIInfo : MonoBehaviour
     {
         _unitNameText_B.SetText(ULUI.unitName);
         _unitNameText_F.SetText(ULUI.unitName);
-        _unitLevelText.SetText($"레벨 : {unitLevel.level}");
+        _unitLevelText.SetText($"레벨 : {ULUI.level}");
         _unitImage.sprite = ULUI.unitSprite;
 
 

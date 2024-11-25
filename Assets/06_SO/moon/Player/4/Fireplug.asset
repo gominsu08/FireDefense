@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170cd9a6e057f6349afef1182aa08df2, type: 3}
   m_Name: Fireplug
   m_EditorClassIdentifier: 
-  unitSprite: {fileID: 21300000, guid: 2e4dd535df87ba649ac335ece799284c, type: 3}
+  unitSprite: {fileID: 21300000, guid: 38686bc94479c7343873fb1a96e34f8d, type: 3}
   unitName: "\uC18C\uD654\uC804"
   attackPower: 65
   attackSpeed: 6
