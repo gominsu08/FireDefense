@@ -59,9 +59,9 @@ public class Checker : MonoBehaviour
                 FindedEnemy++;
             }
         }
-        catch (Exception)
+        catch (NullReferenceException)
         {
-            print("Health has a problem");
+            print("no have Health");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -74,9 +74,9 @@ public class Checker : MonoBehaviour
                 FindedEnemy--;
             }
         }
-        catch (Exception)
+        catch (NullReferenceException)
         {
-            print("Health has a problem");
+            print("no have Health");
         }
     }
 }
