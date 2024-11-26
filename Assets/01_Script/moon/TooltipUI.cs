@@ -28,7 +28,6 @@ public class TooltipUI : MonoBehaviour
         _timer -= Time.deltaTime;
         if(_timer <= 0)
         {
-            Debug.Log("ÅøÆÁ ¼û±è");
             Hide();
         }
     }
@@ -36,11 +35,11 @@ public class TooltipUI : MonoBehaviour
     public void Hide()
     {
         _tooltip.gameObject.SetActive(false);
+        _timer = 0;
     }
 
     public void Show(string message)
     {
-        Debug.Log("ÅøÆÁ ³ªÅ¸³²");
 
         _timer = 1f;
         _tooltip.gameObject.SetActive(true);

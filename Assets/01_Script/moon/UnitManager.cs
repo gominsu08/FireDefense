@@ -31,6 +31,10 @@ public class UnitManager : MonoBehaviour
         }
         Time.timeScale = 0;
     }
+    private void Start()
+    {
+        _scoreTxt.text = $"ÄÚ½ºÆ®:{_stage.StageCost}";
+    }
     private void Update()
     {
         if (_unitData == null) return;

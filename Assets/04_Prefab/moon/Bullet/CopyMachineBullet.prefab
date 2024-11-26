@@ -103,7 +103,7 @@ MonoBehaviour:
   moveSpeed: 0
   attackDamaged: 0
   moveSpeedX: 6
-  canAttackCount: 2
+  canAttackCount: 3
 --- !u!58 &3270932328239491162
 CircleCollider2D:
   m_ObjectHideFlags: 0
