@@ -293,7 +293,8 @@ MonoBehaviour:
   StageNumber: 3
   StageDifficulty: 2
   myTileMap: {fileID: 3742080746450008282}
-  <StageCost>k__BackingField: 0
+  <StageCost>k__BackingField: 11
+  coinCount: 30
 --- !u!1 &5470338525223104199
 GameObject:
   m_ObjectHideFlags: 0
