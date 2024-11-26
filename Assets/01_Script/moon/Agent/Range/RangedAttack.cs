@@ -7,6 +7,7 @@ public class RangedAttack : MonoBehaviour
     private Animator _animator;
     public float moveSpeed;
     public float attackDamaged;
+    public float moveSpeedX = 1;
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -20,7 +21,7 @@ public class RangedAttack : MonoBehaviour
     }
     private void Update()
     {
-        transform.position += new Vector3(moveSpeed, 0) * Time.deltaTime;
+        transform.position += new Vector3(moveSpeed* moveSpeedX, 0) * Time.deltaTime;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
