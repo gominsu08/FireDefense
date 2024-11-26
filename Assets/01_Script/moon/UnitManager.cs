@@ -14,6 +14,7 @@ public class UnitManager : MonoBehaviour
     [SerializeField] private UnitDataList _unitDataList;
     private UnitDataSO _unitData;
     [SerializeField] private LayerMask _playerLayer;
+    [SerializeField] private TextMeshProUGUI _scoreTxt;
     private Tilemap _floor;
     private Stage _stage;
 
@@ -30,6 +31,10 @@ public class UnitManager : MonoBehaviour
         }
         Time.timeScale = 0;
     }
+    private void Start()
+    {
+        _scoreTxt.text = $"코스트:{_stage.StageCost}";
+    }
     private void Update()
     {
         if (_unitData == null) return;
@@ -42,6 +47,7 @@ public class UnitManager : MonoBehaviour
                 Vector3 cellCenterWorld = _floor.GetCellCenterWorld(cellPosition);
                 _stage.SpendCost(_unitData.UnitCost);
                 Instantiate(_unitData.prefab, cellCenterWorld, Quaternion.identity);
+                _scoreTxt.text = $"코스트:{_stage.StageCost}";
             }
             else
             {

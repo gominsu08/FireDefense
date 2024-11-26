@@ -21,7 +21,7 @@ MonoBehaviour:
   isRanged: 0
   RangedAttackObject: {fileID: 0}
   prefab: {fileID: 3812116783126895921, guid: aec7091ba2fc51142a559e0ac3807a1b, type: 3}
-  UnitCost: 0
+  UnitCost: 8
   unitId: 8
   rarity: 3
   unitCardData: {fileID: 11400000, guid: f47e24375d63e23448ff076b7dfd44d0, type: 2}
