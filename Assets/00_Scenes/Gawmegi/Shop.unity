@@ -609,7 +609,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1\uBC88 \uBF51\uAE30\n<size=16>4\uCF54\uC778</size>"
+  m_text: "1\uD68C \uBF51\uAE30\n<size=16>5\uCF54\uC778</size>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d083de4ff869e04383ed2963e6c7ed6, type: 2}
   m_sharedMaterial: {fileID: 2461589939628508803, guid: 3d083de4ff869e04383ed2963e6c7ed6, type: 2}
@@ -743,7 +743,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD55C\uBC88\uC5D0 \uC5F4\uAE30"
+  m_text: "\uD655\uC778"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d083de4ff869e04383ed2963e6c7ed6, type: 2}
   m_sharedMaterial: {fileID: 2461589939628508803, guid: 3d083de4ff869e04383ed2963e6c7ed6, type: 2}
@@ -1481,7 +1481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _massegeWindow: {fileID: 566847168}
   _manager: {fileID: 1120742712}
-  _tryCoinCount: 4
+  _tryCoinCount: 5
   _choiseItem: {fileID: 1468271767}
 --- !u!1 &1409695225
 GameObject:
@@ -1853,7 +1853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "10\uBC88 \uBF51\uAE30\n<size=16>40\uCF54\uC778</size>"
+  m_text: "10\uD68C \uBF51\uAE30\n<size=16>50\uCF54\uC778</size>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d083de4ff869e04383ed2963e6c7ed6, type: 2}
   m_sharedMaterial: {fileID: 2461589939628508803, guid: 3d083de4ff869e04383ed2963e6c7ed6, type: 2}
