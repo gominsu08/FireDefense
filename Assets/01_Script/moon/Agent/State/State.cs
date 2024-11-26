@@ -7,7 +7,6 @@ public abstract class State
 {
     public UnityEvent OnEnter, OnExit;
     protected Agent _agent;
-    private bool boom = true;
     public State(Agent agent)
     {
         _agent = agent;
@@ -24,11 +23,7 @@ public abstract class State
 
     public virtual void StateUpdate()
     {
-        if (boom == true && Time.timeScale != 0)
-        {
-            boom = false;
-            _agent.Move();
-        }
+
     }
 
     public virtual void StateFixedUpdate()

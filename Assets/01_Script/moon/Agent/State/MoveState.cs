@@ -29,6 +29,7 @@ public class MoveState : State
         }
         else
         {
+            Debug.Log("Move" + _agent.name);
             _agent.Move();
         }
 
