@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unitLevel:
-    levelIncreaseEnum: 2
+    levelIncreaseEnum: 0
     unitId: 11
     attackPower: 65
     attackSpeed: 6
