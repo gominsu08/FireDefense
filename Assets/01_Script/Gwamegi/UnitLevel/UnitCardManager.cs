@@ -80,7 +80,7 @@ public class UnitCardManager : MonoBehaviour
         foreach (var item in ULDS.unitLevelIncreasesList)
         {
 
-            if (item._levelIncrease == _playerDataManager.haveUnit[i].unitData.levelIncreaseEnum)
+            if (item._levelIncrease == _playerDataManager.haveUnit[i].UnitLevel.levelIncreaseEnum)
             {
                 unitLevelUpUIInfo.unitName = _playerDataManager.haveUnit[i].unitData.unitName;
                 unitLevelUpUIInfo.attackPower = item.attackPowerIncease;
@@ -93,7 +93,7 @@ public class UnitCardManager : MonoBehaviour
         }
 
 
-
+        UCS.ULDS = ULDS;
         UCS.unitLevelUpUIInfo = unitLevelUpUIInfo;
         UCS.levelClass = _playerDataManager.haveUnit[i].UnitLevel;
     }

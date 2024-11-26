@@ -25,6 +25,7 @@ public class UnitCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] private float _selectPanelTime;
     [SerializeField] private RectTransform _unitInfoPanel;
 
+    public UnitLevelDataSO ULDS;
     public UnitLevelClass levelClass;
     public UnitLevelUpInfoClass unitLevelUpUIInfo;
 
@@ -49,11 +50,37 @@ public class UnitCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     private float _moveStartPosX;
     private float _moveX;
 
+    public void UnitStatSet(int i)
+    {
+        //_playerDataManager.haveUnit[i].Initalize();
+        UnitLevelUpInfoClass unitLevelUpUIInfo = new UnitLevelUpInfoClass();
+
+        foreach (var item in ULDS.unitLevelIncreasesList)
+        {
+
+            if (item._levelIncrease == PlayerDataManager.Instance.haveUnit[i].UnitLevel.levelIncreaseEnum)
+            {
+                unitLevelUpUIInfo.unitName = PlayerDataManager.Instance.haveUnit[i].unitData.unitName;
+                unitLevelUpUIInfo.attackPower = item.attackPowerIncease;
+                unitLevelUpUIInfo.attackSpeed = item.attackSpeedIncease;
+                unitLevelUpUIInfo.moveSpeed = item.moveSpeedIncease;
+                unitLevelUpUIInfo.health = item.healthIncease;
+                unitLevelUpUIInfo.unitSprite = PlayerDataManager.Instance.haveUnit[i].unitData.unitSprite;
+                unitLevelUpUIInfo.level = PlayerDataManager.Instance.haveUnit[i].UnitLevel.level;
+                count = item.buyCount;
+            }
+        }
+
+        this.unitLevelUpUIInfo = unitLevelUpUIInfo;
+        levelClass = testUnit.UnitLevel;
+    }
+
     private void Update()
     {
 
         if (Input.GetMouseButtonDown(0))
         {
+            UnitStatSet(myIndex);
             OnClickEvent?.Invoke();
         }
     }
@@ -89,6 +116,7 @@ public class UnitCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         _isCanMove = false;
 
         UnitCardInterection(false);
+        UnitStatSet(myIndex);
 
         _moveStartPosX = _myRect.position.x;
         OnSelectPanelEvent?.Invoke(_myRect.position.x, false, this);
@@ -99,9 +127,7 @@ public class UnitCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             OnUnitStatValueChangedEvent?.Invoke(myIndex, this);
             _isStart = false;
         }
-
         _unitLevelUpUIInfo.InfoPanelSet(unitLevelUpUIInfo, levelClass);
-
     }
 
     public void PanelSet(bool isEnable)

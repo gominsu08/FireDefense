@@ -10,6 +10,7 @@ public class Unit : MonoBehaviour, ILevelUpAgent
     [ContextMenu("Init")]
     public void Initalize()
     {
+        UnitLevel.levelIncreaseEnum = unitData.levelIncreaseEnum;
         UnitLevel.unitId = unitData.unitId;
         UnitLevel.health = (int)unitData.health;
         UnitLevel.attackPower = (int)unitData.attackPower;

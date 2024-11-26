@@ -1,5 +1,4 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class UnitLevelUpBtn : MonoBehaviour
@@ -19,14 +18,15 @@ public class UnitLevelUpBtn : MonoBehaviour
         _buyCoinCount.SetText($"{item} 코인");
     }
 
+
     public void UnitLevelUp()
     {
+        BuyCoinTextSet(_unitCard.count);
 
         if (PlayerDataManager.Instance.Coin >= _unitCard.count)
         {
             _unitCard.unitLvUp.LvUp(ref _unitCard.testUnit);
             _unitCard._unitLevelUpUIInfo.InfoPanelSet(_unitCard.unitLevelUpUIInfo, _unitCard.levelClass);
-            Debug.Log($"{_unitCard.testUnit.unitData.unitName}의 체력 : {_unitCard.testUnit.UnitLevel.health}");
             PlayerDataManager.Instance.RemoveCoin(_unitCard.count);
         }
         else
