@@ -44,7 +44,6 @@ public class AstarAgent : MonoBehaviour, IAgentComponent
     }
     public bool SetDestination(Vector3 destination)
     {
-        Debug.Log(destination + " Å¸°ÙÁÂÇ¥");
         _worldDestination = destination;
         _currentPos = Map.GetTilePosFromWorldPos(transform.position);
         _destination = Map.GetTilePosFromWorldPos(destination);
