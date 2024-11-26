@@ -370,9 +370,9 @@ MonoBehaviour:
   _moveSpeed: 10
   _zoomAmount: 2
   _vCam: {fileID: 5656150897198788488}
-  _minOrthoSize: 4
+  _minOrthoSize: 7
   _maxOrthoSize: 10
-  _orthoSize: 0
+  _orthoSize: 7
   _targetOrthoSize: 0
   _camereScrollSpeed: 20
 --- !u!1 &5738214487542517661
@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Follow: {fileID: 8861907225576607143}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 4
+    OrthographicSize: 7
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
