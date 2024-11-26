@@ -25,11 +25,26 @@ public class GameClearUI : MonoBehaviour
 
     public void SetText(int count)
     {
+        PlayerDataManager.Instance.RemoveCoin(-count);
         _clearReward.SetText($"클리어 보상 : 코인 {count}개");
     }
 
     public void Show()
     {
+        if (PlayerDataManager.Instance.currentStage.StageNumber > PlayerDataManager.Instance.clearStageNumber)
+        {
+            PlayerDataManager.Instance.clearStageNumber = PlayerDataManager.Instance.currentStage.StageNumber;
+            PlayerDataManager.Instance.clearStageDifficulty = PlayerDataManager.Instance.currentStage.StageDifficulty;
+
+        }
+        else if (PlayerDataManager.Instance.currentStage.StageNumber == PlayerDataManager.Instance.clearStageNumber)
+        {
+            if (PlayerDataManager.Instance.currentStage.StageDifficulty >= PlayerDataManager.Instance.clearStageDifficulty)
+            {
+                PlayerDataManager.Instance.clearStageDifficulty = PlayerDataManager.Instance.currentStage.StageDifficulty;
+            }
+        }
+
         Debug.Log("Show");
         IsGameClearTrigger = true;
         _panelUIRect.gameObject.SetActive(true);
