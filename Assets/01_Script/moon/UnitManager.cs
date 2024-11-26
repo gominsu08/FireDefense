@@ -14,6 +14,7 @@ public class UnitManager : MonoBehaviour
     [SerializeField] private UnitDataList _unitDataList;
     private UnitDataSO _unitData;
     [SerializeField] private LayerMask _playerLayer;
+    [SerializeField] private TextMeshProUGUI _scoreTxt;
     private Tilemap _floor;
     private Stage _stage;
 
@@ -42,6 +43,7 @@ public class UnitManager : MonoBehaviour
                 Vector3 cellCenterWorld = _floor.GetCellCenterWorld(cellPosition);
                 _stage.SpendCost(_unitData.UnitCost);
                 Instantiate(_unitData.prefab, cellCenterWorld, Quaternion.identity);
+                _scoreTxt.text = $"ÄÚ½ºÆ®:{_stage.StageCost}";
             }
             else
             {
