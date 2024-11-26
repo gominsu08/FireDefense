@@ -657,6 +657,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e71d745e13e2cc4c8050f98ff33ef85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hideThing:
+  - {fileID: 781600584}
+  - {fileID: 1653388442}
+  - {fileID: 1810883331}
+  _enemyDistanceChecker: {fileID: 1369441263}
 --- !u!4 &1452236097
 Transform:
   m_ObjectHideFlags: 0
@@ -733,6 +738,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95513fa84cae0d047a67bc545266d00a, type: 3}
+--- !u!1 &1653388442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1328740796300162770, guid: 95513fa84cae0d047a67bc545266d00a, type: 3}
+  m_PrefabInstance: {fileID: 1653388441}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1786554242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -823,6 +833,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1016332695610468831, guid: d19cf043d66205542a0fbcc28337ba15, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894270675432688761, guid: d19cf043d66205542a0fbcc28337ba15, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894270675432688761, guid: d19cf043d66205542a0fbcc28337ba15, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894270675432688761, guid: d19cf043d66205542a0fbcc28337ba15, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894270675432688761, guid: d19cf043d66205542a0fbcc28337ba15, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -968,7 +994,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1452236096}
         m_TargetAssemblyTypeName: DeploymentNextButton, Assembly-CSharp
-        m_MethodName: CanNext
+        m_MethodName: Next
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
