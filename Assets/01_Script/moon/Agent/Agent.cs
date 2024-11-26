@@ -22,6 +22,7 @@ public class Agent : MonoBehaviour
     public AstarAgent AstarCompo { get; private set; }
     public SpriteRenderer SpriteCompo { get; private set; }
     public Rigidbody2D RbCompo { get; private set; }
+    public Unit UnitCompo { get; private set; }
     #endregion
 
 
@@ -40,6 +41,8 @@ public class Agent : MonoBehaviour
     [field: SerializeField] public bool IsCanMove { get; private set; } = true;
     private float myRangeAttackMoveX;
 
+    public bool isUnit = false;
+
 
     
 
@@ -51,6 +54,10 @@ public class Agent : MonoBehaviour
         AstarCompo = GetComponent<AstarAgent>();
         RbCompo = GetComponent<Rigidbody2D>();
         SpriteCompo = GetComponentInChildren<SpriteRenderer>();
+        if (isUnit)
+        {
+            UnitCompo = GetComponent<Unit>();
+        }
         InitializeState();
         MyLayerFind();
         BulletSpeedReset();
@@ -102,7 +109,7 @@ public class Agent : MonoBehaviour
 
             foreach (Health health in enemyTemp)
             {
-                health.TakeDamage(DataCompo.attackPower);
+                health.TakeDamage(isUnit ? UnitCompo.UnitLevel.attackPower : DataCompo.attackPower);
             }
         }
         else
@@ -110,7 +117,7 @@ public class Agent : MonoBehaviour
             GameObject bullet = Instantiate(DataCompo.RangedAttackObject,transform.position,Quaternion.identity);
             RangedAttack rangedAttack = bullet.GetComponent<RangedAttack>();
             rangedAttack.moveSpeed = myRangeAttackMoveX;
-            rangedAttack.attackDamaged = DataCompo.attackPower;
+            rangedAttack.attackDamaged = isUnit ? UnitCompo.UnitLevel.attackPower : DataCompo.attackPower;
         }
     }
     public void EndAttackAnimaiton()

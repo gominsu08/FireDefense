@@ -24,7 +24,7 @@ public class Health : MonoBehaviour, IAgentComponent
     }
     public void ResetHealth()
     {
-        _maxHealth = _agent.DataCompo.health;
+        _maxHealth = _agent.isUnit ? _agent.UnitCompo.UnitLevel.attackPower : _agent.DataCompo.attackPower;
         _currentHealth = _maxHealth;
     }
     public void TakeDamage(float amount)
