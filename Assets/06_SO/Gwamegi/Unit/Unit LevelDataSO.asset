@@ -15,22 +15,22 @@ MonoBehaviour:
   maxLevel: 30
   unitLevelIncreasesList:
   - _levelIncrease: 0
-    attackPowerIncease: 12
-    attackSpeedIncease: 6
-    moveSpeedIncease: 10
-    healthIncease: 14
+    attackPowerIncease: 15
+    attackSpeedIncease: 0
+    moveSpeedIncease: 0
+    healthIncease: 20
     buyCount: 5
   - _levelIncrease: 1
-    attackPowerIncease: 12
-    attackSpeedIncease: 12
-    moveSpeedIncease: 12
-    healthIncease: 12
+    attackPowerIncease: 15
+    attackSpeedIncease: 0
+    moveSpeedIncease: 0
+    healthIncease: 22
     buyCount: 12
   - _levelIncrease: 2
-    attackPowerIncease: 23
-    attackSpeedIncease: 23
-    moveSpeedIncease: 23
-    healthIncease: 23
+    attackPowerIncease: 25
+    attackSpeedIncease: 0
+    moveSpeedIncease: 0
+    healthIncease: 25
     buyCount: 32
   - _levelIncrease: 3
     attackPowerIncease: 34
