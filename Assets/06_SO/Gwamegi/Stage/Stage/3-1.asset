@@ -18,6 +18,8 @@ MonoBehaviour:
   difficult: "\uC26C\uC6C0"
   stageSprite: {fileID: 21300000, guid: a64c7e04068ae0744b8e1e8f7f21814f, type: 3}
   stageDesc: "\uC5EC\uAE34\uC5B4\uB514? \uB098\uB294\uB204\uAD6C? "
+  stageCost: 10
+  stageClearBossang: 24
   _enemySpriteList:
   - {fileID: 21300000, guid: 54e519922a4b84e4ba2bdd21f44bf912, type: 3}
   - {fileID: 21300000, guid: 92aa69a0d959d6d4a8ccd3cd8b54dca7, type: 3}
