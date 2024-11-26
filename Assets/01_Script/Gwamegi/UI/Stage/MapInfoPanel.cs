@@ -12,6 +12,8 @@ public class MapInfoPanel : MonoSingleton<MapInfoPanel>
     [SerializeField] private TextMeshProUGUI _stageName;
     [SerializeField] private TextMeshProUGUI _stageDifficulty;
     [SerializeField] private TextMeshProUGUI _stageDesc;
+    [SerializeField] private TextMeshProUGUI _stageClearBossang;
+    [SerializeField] private TextMeshProUGUI _stageCost;
     [SerializeField] private Image _stageImage;
 
     [SerializeField] private List<Image> buttonList = new List<Image>();
@@ -26,11 +28,13 @@ public class MapInfoPanel : MonoSingleton<MapInfoPanel>
         }
     }
 
-    public void SetText(string name, string difficulty, string desc, Sprite image)
+    public void SetText(string name, string difficulty, string desc, Sprite image, int coin,int cost)
     {
         _stageName.SetText(name);
         _stageDifficulty.SetText(difficulty);
         _stageDesc.SetText(desc);
+        _stageClearBossang.SetText($"클리어 시 보상 \n{coin}개");
+        _stageCost.SetText($"{cost}코스트");
         _stageImage.sprite = image;
     }
 

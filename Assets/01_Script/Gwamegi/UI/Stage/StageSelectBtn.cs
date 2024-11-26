@@ -38,7 +38,7 @@ public class StageSelectBtn : MonoBehaviour
         Debug.Log($"현재 스테이지 넘버 : {PlayerDataManager.Instance.currentStageNumber}\n현재 스테이지 난이도 : {PlayerDataManager.Instance.currentStageDifficulty}");
 
         _mapInfoPanel.RectMove(1930,0.3f);
-        _mapInfoPanel.SetText(_stageInfoData.stageName, $"난이도 : {_stageInfoData.difficult}", _stageInfoData.stageDesc, _stageInfoData.stageSprite);
+        _mapInfoPanel.SetText(_stageInfoData.stageName, $"난이도 : {_stageInfoData.difficult}", _stageInfoData.stageDesc, _stageInfoData.stageSprite, _stageInfoData.stageClearBossang, _stageInfoData.stageCost);
         _mapInfoPanel.EnemySpriteSet(_stageInfoData._enemySpriteList);
 
 
