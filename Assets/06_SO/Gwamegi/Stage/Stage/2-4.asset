@@ -18,3 +18,8 @@ MonoBehaviour:
   difficult: "\uC9C0\uC625"
   stageSprite: {fileID: 21300000, guid: a64c7e04068ae0744b8e1e8f7f21814f, type: 3}
   stageDesc: "\uC5EC\uAE34\uC5B4\uB514? \uB098\uB294\uB204\uAD6C? "
+  _enemySpriteList:
+  - {fileID: 21300000, guid: de847c1b223ef1246bb5d0164a658bad, type: 3}
+  - {fileID: 21300000, guid: e1e4f1968c17bec4e86bed33edec2e5c, type: 3}
+  - {fileID: 21300000, guid: d7eab2eb11065a245b75ca0cd9d16522, type: 3}
+  - {fileID: 21300000, guid: ef9f03ad08b4cc54faa5d0448710d62a, type: 3}
