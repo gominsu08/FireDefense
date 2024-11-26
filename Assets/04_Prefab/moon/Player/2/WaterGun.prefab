@@ -144,6 +144,7 @@ MonoBehaviour:
   lastAttackTime: 0
   <IsFacingRight>k__BackingField: 0
   <IsCanMove>k__BackingField: 1
+  isUnit: 1
 --- !u!114 &7477723058197722524
 MonoBehaviour:
   m_ObjectHideFlags: 0
