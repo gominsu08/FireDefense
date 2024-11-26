@@ -44,3 +44,6 @@ TagManager:
   - name: Agent
     uniqueID: 1210188777
     locked: 0
+  - name: VFX
+    uniqueID: 3182798057
+    locked: 0
