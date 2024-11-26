@@ -10,6 +10,8 @@ public class StageInfoDataSO : ScriptableObject
     [HideInInspector] public string difficult;
     public Sprite stageSprite;
     public string stageDesc;
+    public int stageCost;
+    public int stageClearBossang;
 
     public List<Sprite> _enemySpriteList = new List<Sprite>();
 
