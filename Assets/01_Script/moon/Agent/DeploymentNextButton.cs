@@ -5,10 +5,9 @@ using UnityEngine;
 public class DeploymentNextButton : MonoBehaviour
 {
     [SerializeField] GameObject[] _hideThing;
-    [SerializeField]MyEnemyDistanceChecker _enemyDistanceChecker;
     public void Next()
     {
-        _enemyDistanceChecker.Chack();
+        MyEnemyDistanceChecker.instance.Chack();
         Time.timeScale = 1.0f;
         foreach (var thing in _hideThing)
         {
