@@ -45,9 +45,9 @@ public class UnitUI : MonoBehaviour
                 button.enabled = false;
                 button.GetComponent<Image>().color = Color.red;
             }
-            //MouseEnterExit mouseEnterExit = template.GetComponent<MouseEnterExit>();
-            //mouseEnterExit.OnMouseEnter += () => TooltipUI.Instance.Show(item.name + "\n" + item.GetCose());
-            //mouseEnterExit.OnMouseExit += () => TooltipUI.Instance.Hide();
+            MouseEnterExit mouseEnterExit = template.GetComponent<MouseEnterExit>();
+            mouseEnterExit.OnMouseEnter += () => TooltipUI.Instance.Show(item.unitData.unitName + "\n" + $"<color=\"yellow\">Cost:{item.unitData.UnitCost}</color>");
+            mouseEnterExit.OnMouseExit += () => TooltipUI.Instance.Hide();
 
         }
         _UnitTemplate.Find("Image").localScale = new Vector3(1, 1, 1);

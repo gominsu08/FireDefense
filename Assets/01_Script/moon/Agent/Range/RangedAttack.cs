@@ -8,6 +8,7 @@ public class RangedAttack : MonoBehaviour
     public float moveSpeed;
     public float attackDamaged;
     public float moveSpeedX = 1;
+    public int canAttackCount = 1;
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -29,8 +30,12 @@ public class RangedAttack : MonoBehaviour
         if (collision.TryGetComponent(out Health health))
         {
             health.TakeDamage(attackDamaged);
+            canAttackCount--;
         }
-        PlayDestroy();
+        if(canAttackCount <= 0)
+        {
+            PlayDestroy();
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
