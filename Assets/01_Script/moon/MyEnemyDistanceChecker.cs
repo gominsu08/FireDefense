@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MyEnemyDistanceChecker : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class MyEnemyDistanceChecker : MonoBehaviour
     [SerializeField] private LayerMask Player;
     private List<Transform> Enemys = new List<Transform>();
     private List<Transform> Players = new List<Transform>();
+
+    public UnityEvent OnGameClearEvent;
+    public UnityEvent OnGameOverEvent;
+
     private bool end = false;
 
     private void Awake()
@@ -130,11 +135,13 @@ public class MyEnemyDistanceChecker : MonoBehaviour
     private void GameWin()
     {
         print("win");
+        OnGameClearEvent?.Invoke();
         end = true;
     }
     private void GameOver()
     {
         print("gameover");
+        OnGameOverEvent?.Invoke();
         end = true;
     }
 }   

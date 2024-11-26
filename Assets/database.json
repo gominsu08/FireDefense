@@ -43,11 +43,11 @@
         {
             "levelIncreaseEnum": 1,
             "unitId": 6,
-            "attackPower": 483,
-            "attackSpeed": 123,
-            "moveSpeed": 104,
-            "health": 125,
-            "level": 10,
+            "attackPower": 495,
+            "attackSpeed": 135,
+            "moveSpeed": 116,
+            "health": 137,
+            "level": 11,
             "buyCount": 0
         },
         {
@@ -103,16 +103,16 @@
         {
             "levelIncreaseEnum": 3,
             "unitId": 9,
-            "attackPower": 1606,
-            "attackSpeed": 1867,
-            "moveSpeed": 1564,
-            "health": 2826,
-            "level": 60,
+            "attackPower": 1300,
+            "attackSpeed": 1480,
+            "moveSpeed": 1258,
+            "health": 2520,
+            "level": 51,
             "buyCount": 0
         }
     ],
     "HaveUnitIdList": [],
     "clearStageNumber": 4,
     "clearStageDifficulty": 1,
-    "coin": 15
+    "coin": 6
 }
