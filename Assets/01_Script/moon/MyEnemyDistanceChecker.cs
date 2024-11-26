@@ -34,6 +34,7 @@ public class MyEnemyDistanceChecker : MonoBehaviour
 
     private void EnemyCheck()
     {
+        Enemys.Clear();
         Collider2D[] EnemysCollider = Physics2D.OverlapCircleAll(new Vector3(0,0,0), 250, Enemy);
         foreach (Collider2D collider in EnemysCollider)
         {
@@ -43,6 +44,7 @@ public class MyEnemyDistanceChecker : MonoBehaviour
     }
     private void PlayerCheck()
     {
+        Players.Clear();
         Collider2D[] PlayerCollider = Physics2D.OverlapCircleAll(new Vector3(0, 0, 0), 250, Player);
         foreach (Collider2D collider in PlayerCollider)
         {
