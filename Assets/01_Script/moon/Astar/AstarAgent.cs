@@ -44,6 +44,7 @@ public class AstarAgent : MonoBehaviour, IAgentComponent
     }
     public bool SetDestination(Vector3 destination)
     {
+        Debug.Log(destination + " ≈∏∞Ÿ¡¬«•");
         _worldDestination = destination;
         _currentPos = Map.GetTilePosFromWorldPos(transform.position);
         _destination = Map.GetTilePosFromWorldPos(destination);
@@ -65,7 +66,12 @@ public class AstarAgent : MonoBehaviour, IAgentComponent
 
     private void CheckToMove()
     {
-        if(_currentIndex >= _routePath.Count)return;
+        if (_currentIndex >= _routePath.Count)
+        {
+            Debug.Log("∞Ì¿Â");
+            return;
+        }
+        
 
         Vector3 pos = _routePath[_currentIndex];
         Vector3 direction = pos - transform.position;
