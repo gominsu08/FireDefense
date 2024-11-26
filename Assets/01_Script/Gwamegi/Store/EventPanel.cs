@@ -6,17 +6,19 @@ using UnityEngine;
 public class EventPanel : MonoBehaviour
 {
     [SerializeField] private RectTransform _eventPanel_1, _eventPanel_2;
+    [SerializeField] private GachaManager _gachaManager;
 
     public void PanelSize(bool isPanel_1 = false)
     {
         if (!isPanel_1)
         {
+            _gachaManager.PickupGacahGyarados();
             _eventPanel_1.DOScale(1.0f,0.35f);
             _eventPanel_2.DOScale(0.5f,0.35f);
         }
         else if (isPanel_1)
         {
-
+            _gachaManager.PickupGacahGoldFire();
             _eventPanel_2.DOScale(1.0f, 0.35f);
             _eventPanel_1.DOScale(0.5f, 0.35f);
         }

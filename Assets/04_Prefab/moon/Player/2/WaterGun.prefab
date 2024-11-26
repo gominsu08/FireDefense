@@ -160,10 +160,10 @@ MonoBehaviour:
   _unitLevel:
     levelIncreaseEnum: 0
     unitId: 6
-    attackPower: 375
-    attackSpeed: 45
+    attackPower: 45
+    attackSpeed: 7
     moveSpeed: 6
-    health: 7
+    health: 375
     level: 1
     buyCount: 0
   unitData: {fileID: 11400000, guid: 9f9b0c29e70a070458d19e7d5180fa88, type: 2}

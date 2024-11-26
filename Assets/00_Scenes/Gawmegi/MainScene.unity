@@ -1895,7 +1895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentStageNumber: 0
   currentStageDifficulty: 0
-  clearStageNumber: 4
+  clearStageNumber: 1
   clearStageDifficulty: 1
   haveUnit: []
   haveUnitObject: []

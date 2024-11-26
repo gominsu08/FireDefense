@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -31,19 +29,32 @@ public class GameClearUI : MonoBehaviour
 
     public void Show()
     {
-        if (PlayerDataManager.Instance.currentStage.StageNumber > PlayerDataManager.Instance.clearStageNumber)
-        {
-            PlayerDataManager.Instance.clearStageNumber = PlayerDataManager.Instance.currentStage.StageNumber;
-            PlayerDataManager.Instance.clearStageDifficulty = PlayerDataManager.Instance.currentStage.StageDifficulty;
+        Stage currentStage = PlayerDataManager.Instance.currentStage;
+        int clearNumber = PlayerDataManager.Instance.clearStageNumber;
+        int clearDifficulty = PlayerDataManager.Instance.clearStageDifficulty;
 
-        }
-        else if (PlayerDataManager.Instance.currentStage.StageNumber == PlayerDataManager.Instance.clearStageNumber)
+        if (currentStage.StageNumber==clearNumber && currentStage.StageDifficulty== clearDifficulty) 
         {
-            if (PlayerDataManager.Instance.currentStage.StageDifficulty >= PlayerDataManager.Instance.clearStageDifficulty)
+            if (currentStage.StageDifficulty == 4)
             {
-                PlayerDataManager.Instance.clearStageDifficulty = PlayerDataManager.Instance.currentStage.StageDifficulty;
+                PlayerDataManager.Instance.clearStageNumber += 1;
+                PlayerDataManager.Instance.clearStageDifficulty = 1;
+
+            }
+            else
+            {
+                PlayerDataManager.Instance.clearStageDifficulty = currentStage.StageDifficulty + 1;
+            }
+
+            if (PlayerDataManager.Instance.clearStageNumber > 4)
+            {
+                PlayerDataManager.Instance.clearStageNumber = 4;
+                PlayerDataManager.Instance.clearStageDifficulty = 4;
             }
         }
+
+
+
 
         Debug.Log("Show");
         IsGameClearTrigger = true;
