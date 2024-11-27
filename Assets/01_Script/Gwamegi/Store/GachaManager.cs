@@ -13,6 +13,11 @@ public class GachaManager : MonoBehaviour
     public bool isPickupGyarados;
 
 
+    private void Awake()
+    {
+        PickupGacahGyarados();
+    }
+
     private void Update()
     {
 

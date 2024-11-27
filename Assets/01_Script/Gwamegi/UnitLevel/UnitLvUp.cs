@@ -34,11 +34,6 @@ public class UnitLvUp : MonoBehaviour
             }
             LvUpUnit.UnitLevel.level++;
 
-            //여기서 뭐 해야함 제발 기억해라 
-            //제발 기억해라 민수ㅠ야 좀 
-            //아니 뭘 까먹은걸까
-
-
 
             if (LvUpUnit.UnitLevel.level <= 5)
             {
