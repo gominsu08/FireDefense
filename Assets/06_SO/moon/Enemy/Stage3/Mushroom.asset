@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a12ea7edab04ff4f9c302cb32b58448, type: 3}
+  m_Name: Mushroom
+  m_EditorClassIdentifier: 
+  unitSprite: {fileID: 21300000, guid: bbfb58f8e1f2e12449354d317a54c5b6, type: 3}
+  unitName: Mushroom
+  attackPower: 125
+  attackSpeed: 5
+  moveSpeed: 3
+  health: 450
+  isRanged: 1
+  RangedAttackObject: {fileID: 1364619742638414496, guid: bbb6e4c9eb4861c4c8e3aa5d3d0a403b, type: 3}
+  enemyEnum: 3
