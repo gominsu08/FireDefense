@@ -21,7 +21,4 @@ MonoBehaviour:
   stageCost: 8
   stageClearBossang: 16
   _enemySpriteList:
-  - {fileID: 21300000, guid: 45b890234e2962d48b02d6fcd8b7828f, type: 3}
-  - {fileID: 21300000, guid: 3fec1a5c66963ab4cb4f58186fd57cd2, type: 3}
-  - {fileID: 21300000, guid: c57fdd31e1f1b074fa5029f67dc1548a, type: 3}
-  - {fileID: 21300000, guid: c1c665c1aa9ea9a4d89c85e433deb9ce, type: 3}
+  - {fileID: 21300000, guid: 1a04cb6afe2d04e4c9601ef9949264e2, type: 3}

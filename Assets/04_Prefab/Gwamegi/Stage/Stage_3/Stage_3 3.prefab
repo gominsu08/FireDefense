@@ -205,7 +205,7 @@ Transform:
   m_GameObject: {fileID: 2828701490347538906}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.050802, y: 2.7343767, z: -0.08325486}
+  m_LocalPosition: {x: 7.050802, y: 5.4, z: -0.08325486}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -229,9 +229,9 @@ MonoBehaviour:
   _moveSpeed: 10
   _zoomAmount: 2
   _vCam: {fileID: 2580104659938998030}
-  _minOrthoSize: 4
+  _minOrthoSize: 7
   _maxOrthoSize: 10
-  _orthoSize: 0
+  _orthoSize: 7
   _targetOrthoSize: 0
   _camereScrollSpeed: 20
 --- !u!1 &4771601689461432489
@@ -291,10 +291,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StageNumber: 3
-  StageDifficulty: 2
+  StageDifficulty: 3
   myTileMap: {fileID: 3742080746450008282}
   <StageCost>k__BackingField: 11
-  coinCount: 30
+  coinCount: 50
 --- !u!1 &5470338525223104199
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Follow: {fileID: 5134249629493270969}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 4
+    OrthographicSize: 7
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0

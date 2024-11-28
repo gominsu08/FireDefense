@@ -38,7 +38,7 @@ public class UnitLevelUpUIInfo : MonoBehaviour
         string info = $"" +
             $"체력 : {unitLevel.health}<size=30>(<#60D671>+{health}</color>)</size>\n" +
             $"공격력 : {unitLevel.attackPower}<size=30>(<#60D671>+{attackPower}</color>)</size>\n" +
-            $"공격력 : {unitLevel.attackSpeed}<size=30>(<#60D671>+{attackSpeed}</color>)</size>\n" +
+            $"공격속도 : {unitLevel.attackSpeed}<size=30>(<#60D671>+{attackSpeed}</color>)</size>\n" +
             $"이동속도 : {unitLevel.moveSpeed}<size=30>(<#60D671>+{moveSpeed}</color>)</size>";
 
         return info;

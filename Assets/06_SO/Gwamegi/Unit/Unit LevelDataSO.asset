@@ -25,7 +25,7 @@ MonoBehaviour:
     attackSpeedIncease: 0
     moveSpeedIncease: 0
     healthIncease: 22
-    buyCount: 12
+    buyCount: 20
   - _levelIncrease: 2
     attackPowerIncease: 25
     attackSpeedIncease: 0
@@ -34,7 +34,7 @@ MonoBehaviour:
     buyCount: 32
   - _levelIncrease: 3
     attackPowerIncease: 34
-    attackSpeedIncease: 43
-    moveSpeedIncease: 34
+    attackSpeedIncease: 0
+    moveSpeedIncease: 0
     healthIncease: 34
-    buyCount: 67
+    buyCount: 65

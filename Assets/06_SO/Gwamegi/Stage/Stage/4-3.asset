@@ -19,7 +19,6 @@ MonoBehaviour:
   stageSprite: {fileID: 21300000, guid: a64c7e04068ae0744b8e1e8f7f21814f, type: 3}
   stageDesc: "\uC5EC\uAE34\uC5B4\uB514? \uB098\uB294\uB204\uAD6C? "
   stageCost: 13
-  stageClearBossang: 55
+  stageClearBossang: 80
   _enemySpriteList:
-  - {fileID: 21300000, guid: 0cdbbac736200e04fad25999aae3801b, type: 3}
-  - {fileID: 21300000, guid: 28288d5d09810a84ab6e5bbf203624d3, type: 3}
+  - {fileID: 21300000, guid: 9a25a16df7de58542b55dcd2518330ae, type: 3}

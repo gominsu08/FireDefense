@@ -33,7 +33,7 @@ public class MapInfoPanel : MonoSingleton<MapInfoPanel>
         _stageName.SetText(name);
         _stageDifficulty.SetText(difficulty);
         _stageDesc.SetText(desc);
-        _stageClearBossang.SetText($"클리어 시 보상 \n{coin}개");
+        _stageClearBossang.SetText($"클리어 시 보상 \n{coin}코인");
         _stageCost.SetText($"{cost}코스트");
         _stageImage.sprite = image;
     }

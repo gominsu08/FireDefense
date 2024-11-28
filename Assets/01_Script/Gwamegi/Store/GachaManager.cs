@@ -10,6 +10,13 @@ public class GachaManager : MonoBehaviour
 {
     public UnitDataList unitDataList;
 
+    public bool isPickupGyarados;
+
+
+    private void Awake()
+    {
+        PickupGacahGyarados();
+    }
 
     private void Update()
     {
@@ -57,10 +64,41 @@ public class GachaManager : MonoBehaviour
             case UnitRarityEnum.Rare:
                 return unitDataList.rareUnitList[Random.Range(0, unitDataList.rareUnitList.Count)];
             case UnitRarityEnum.Legendary:
+                Unit gyara = new Unit();
+                Unit gold = new Unit();
+
+                foreach (Unit item in unitDataList.legendaryUnitList)
+                {
+                    if (item.unitData.unitName == "갸라도스")
+                    {
+                        gyara = item;
+                    }
+                    if (item.unitData.unitName == "황금 소화기")
+                    {
+                        gold = item;
+                    }
+                }
+                if (isPickupGyarados)
+                {
+                    return gyara;
+                }else if(!isPickupGyarados)
+                {
+                    return gold;
+                }
+
                 return unitDataList.legendaryUnitList[Random.Range(0, unitDataList.legendaryUnitList.Count)];
         }
 
         return null;
     }
 
+    internal void PickupGacahGyarados()
+    {
+        isPickupGyarados = true;
+    }
+
+    internal void PickupGacahGoldFire()
+    {
+        isPickupGyarados = false;
+    }
 }

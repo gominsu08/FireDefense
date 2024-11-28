@@ -32,7 +32,7 @@ public class Agent : MonoBehaviour
 
     [HideInInspector]public LayerMask myLayer;
 
-    [HideInInspector]public float lastAttackTime;
+    public float lastAttackTime;
 
     private Dictionary<StateType, State> StateEnum = new Dictionary<StateType, State>();
 
@@ -62,6 +62,7 @@ public class Agent : MonoBehaviour
         MyLayerFind();
         BulletSpeedReset();
         HealthCompo.Initialize(this);
+        canAttack = false;
     }
     public void BulletSpeedReset()
     {
